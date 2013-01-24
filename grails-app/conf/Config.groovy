@@ -99,3 +99,15 @@ grails.plugins.springsecurity.authority.className = 'mn.xenon.auth.Role'
 grails.plugins.springsecurity.facebook.domain.classname='mn.xenon.auth.FacebookUser'
 grails.plugins.springsecurity.facebook.appId='122933204547697'
 grails.plugins.springsecurity.facebook.secret='9bd5ea032add6fa825f22e2f07a8e4fc'
+
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Annotation
+grails.plugins.springsecurity.controllerAnnotations.staticRules = [
+        '/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/main/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+
+

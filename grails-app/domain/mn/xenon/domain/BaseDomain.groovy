@@ -21,4 +21,7 @@ abstract class BaseDomain implements Serializable {
 	def beforeUpdate() {
         lastUpdated = new Date()
     }
+    def beforeInsert(){
+        author = springSecurityService.currentUser as User
+    }
 }

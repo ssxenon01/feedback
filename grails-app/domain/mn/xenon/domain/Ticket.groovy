@@ -6,6 +6,7 @@ class Ticket extends BaseDomain{
 
 	static mapping = {
 		cache true
+        content type: 'text'
 	}
 
 	static constraints = {
