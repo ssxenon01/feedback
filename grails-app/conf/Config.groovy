@@ -89,3 +89,13 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+grails.plugins.springsecurity.password.algorithm='SHA-512'
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'mn.xenon.auth.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'mn.xenon.auth.UserRole'
+grails.plugins.springsecurity.authority.className = 'mn.xenon.auth.Role'
+
+
+grails.plugins.springsecurity.facebook.domain.classname='mn.xenon.auth.FacebookUser'
+grails.plugins.springsecurity.facebook.appId='122933204547697'
+grails.plugins.springsecurity.facebook.secret='9bd5ea032add6fa825f22e2f07a8e4fc'
