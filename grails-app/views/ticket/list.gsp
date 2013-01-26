@@ -31,7 +31,7 @@
                         
                         <g:sortableColumn property="content" title="${message(code: 'ticket.content.label', default: 'Content')}" />
 					
-						<g:sortableColumn property="created" title="${message(code: 'ticket.created.label', default: 'Created')}" />
+						<g:sortableColumn property="dateCreated" title="${message(code: 'ticket.dateCreated.label', default: 'DateCreated')}" />
 					
 						<g:sortableColumn property="lastUpdated" title="${message(code: 'ticket.lastUpdated.label', default: 'Last Updated')}" />
 					
@@ -52,7 +52,7 @@
 
                         <td>${fieldValue(bean: ticketInstance, field: "content")}</td>
 					
-						<td><g:formatDate date="${ticketInstance.created}" /></td>
+						<td><g:formatDate date="${ticketInstance.dateCreated}" /></td>
 					
 						<td><g:formatDate date="${ticketInstance.lastUpdated}" /></td>
 					

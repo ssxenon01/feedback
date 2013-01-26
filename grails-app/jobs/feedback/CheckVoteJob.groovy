@@ -13,7 +13,7 @@ class CheckVoteJob {
     def execute() {
 
     	def votedTickets = Ticket.createCriteria().list(){
-    		'gt'('vote',500)
+    		'ge'('vote',500)
     		'eq'('objectStatus',ObjectStatus.Open.value)
     	}
     	votedTickets.each{ ticket ->

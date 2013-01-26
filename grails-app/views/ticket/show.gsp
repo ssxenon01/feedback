@@ -50,11 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${ticketInstance?.created}">
+				<g:if test="${ticketInstance?.dateCreated}">
 				<li class="fieldcontain">
-					<span id="created-label" class="property-label"><g:message code="ticket.created.label" default="Created" /></span>
+					<span id="dateCreated-label" class="property-label"><g:message code="ticket.dateCreated.label" default="DateCreated" /></span>
 					
-						<span class="property-value" aria-labelledby="created-label"><g:formatDate date="${ticketInstance?.created}" /></span>
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${ticketInstance?.dateCreated}" /></span>
 					
 				</li>
 				</g:if>

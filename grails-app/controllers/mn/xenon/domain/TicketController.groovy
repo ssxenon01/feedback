@@ -27,7 +27,7 @@ class TicketController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'ticket.label', default: 'Ticket'), ticketInstance.id])
+        flash.message = message(code: 'default.dateCreated.message', args: [message(code: 'ticket.label', default: 'Ticket'), ticketInstance.id])
         redirect(action: "show", id: ticketInstance.id)
     }
 

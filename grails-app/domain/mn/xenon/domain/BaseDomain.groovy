@@ -6,21 +6,22 @@ abstract class BaseDomain implements Serializable {
 
 	transient springSecurityService
 
-	Date created = new Date()
-    Date lastUpdated = new Date()
+	Date dateCreated
+   	Date lastUpdated
+   	
 	User author
 	int objectStatus = ObjectStatus.Open.value
 
 	static constraints = {
         author(nullable: true, lazy: true)
+        dateCreated(nullable: true)
+        lastUpdated(nullable: true)
 	}
 
 	static mapping = {
-	}
-	
-	def beforeUpdate() {
-        lastUpdated = new Date()
-    }
+   	   autoTimestamp true
+   	}
+
     def beforeInsert(){
         author = springSecurityService.currentUser as User
     }
