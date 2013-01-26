@@ -112,4 +112,16 @@ grails.plugins.springsecurity.controllerAnnotations.staticRules = [
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
 
-
+// Here is the Mail server configuration defined by xenon
+grails {
+   mail {
+     host = "smtp.gmail.com"
+     port = 465
+     username = "ssxenon01@gmail.com"
+     password = "yourpassword"
+     props = ["mail.smtp.auth":"true",                     
+              "mail.smtp.socketFactory.port":"465",
+              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+              "mail.smtp.socketFactory.fallback":"false"]
+   }
+}
