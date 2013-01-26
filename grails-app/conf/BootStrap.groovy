@@ -31,7 +31,7 @@ class BootStrap {
     }
     def setupTicket(){
     	if(Ticket.count() == 0){
-    		def ticket = new Ticket(content:'Hello world test ticket 1').save(failOnError:true)
+    		def ticket = new Ticket(title:'test title',content:'Hello world test ticket 1').save(failOnError:true)
     	}
     }
     def destroy = {

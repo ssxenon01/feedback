@@ -9,7 +9,7 @@ abstract class BaseDomain implements Serializable {
 	Date created = new Date()
     Date lastUpdated = new Date()
 	User author
-	int objectStatus = ObjectStatus.Created.value
+	int objectStatus = ObjectStatus.Open.value
 
 	static constraints = {
         author(nullable: true, lazy: true)

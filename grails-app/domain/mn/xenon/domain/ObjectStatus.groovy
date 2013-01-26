@@ -2,16 +2,13 @@ package mn.xenon.domain
 
 public enum ObjectStatus {
 
-    Created(1),
-    Modified(2),
-    Draft(4),
-    Approved(8),
-    Deleted(16),
-    Active(32),
-    Closed(64),
-    Rejected(128),
-    Archived(256),
-    System(512)
+    Open(1),
+    Pending(2), // 500 хүрвэл pending Таны санал 500 хүрлээ , admin саналууд 1000 хүрлээ
+    Closed(3), // Шалгаад closed result
+    Approved(4), 
+    Expired(5), // 1 жилийн хугацаанд дэмжээгүй
+    Deleted(6),
+    Duplicated(7) // Саналийн давхардалт 
 
     final Integer value
 
@@ -20,7 +17,7 @@ public enum ObjectStatus {
     }
 
     static list() {
-        [Created, Draft, Approved, Active, Closed, Rejected, Modified, Archived, Deleted]
+        [Open,Pending,Closed,Approved,Expired,Deleted,Duplicated]
     }
 
     public static ObjectStatus numToEnum(Integer num) {
@@ -34,5 +31,4 @@ public enum ObjectStatus {
             return null
         }
     }
-
 }

@@ -27,6 +27,8 @@
                         <th><g:message code="ticket.author.id" default="ID" /></th>
                         <th><g:message code="ticket.author.label" default="Author" /></th>
 
+                        <g:sortableColumn property="title" title="${message(code: 'ticket.title.label', default: 'Title')}" />
+                        
                         <g:sortableColumn property="content" title="${message(code: 'ticket.content.label', default: 'Content')}" />
 					
 						<g:sortableColumn property="created" title="${message(code: 'ticket.created.label', default: 'Created')}" />
@@ -42,7 +44,11 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${ticketInstance.id}">${fieldValue(bean: ticketInstance, field: "id")}</g:link></td>
+                        
+
                         <td>${fieldValue(bean: ticketInstance, field: "author")}</td>
+                        <td>${fieldValue(bean: ticketInstance, field: "title")}</td>
+                        
 
                         <td>${fieldValue(bean: ticketInstance, field: "content")}</td>
 					
