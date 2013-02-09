@@ -1,91 +1,43 @@
 <html>
 <head>
-	<meta name='layout' content='main'/>
+	<meta name='layout' content='base'/>
 	<title><g:message code="springSecurity.login.title"/></title>
-	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
-		text-align: center;
-	}
-
-	#login .inner {
-		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
-		text-align: left;
-		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
-	}
-
-	#login .inner .fheader {
-		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
-		margin: 0px 0 14px 0;
-		color: #2e3741;
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	#login .inner .cssform p {
-		clear: left;
-		margin: 0;
-		padding: 4px 0 3px 0;
-		padding-left: 105px;
-		margin-bottom: 20px;
-		height: 1%;
-	}
-
-	#login .inner .cssform input[type='text'] {
-		width: 120px;
-	}
-
-	#login .inner .cssform label {
-		font-weight: bold;
-		float: left;
-		text-align: right;
-		margin-left: -105px;
-		width: 110px;
-		padding-top: 3px;
-		padding-right: 10px;
-	}
-
-	#login #remember_me_holder {
-		padding-left: 120px;
-	}
-
-	#login #submit {
-		margin-left: 15px;
-	}
-
-	#login #remember_me_holder label {
-		float: none;
-		margin-left: 0;
-		text-align: left;
-		width: 200px
-	}
-
-	#login .inner .login_message {
-		padding: 6px 25px 20px 25px;
-		color: #c33;
-	}
-
-	#login .inner .text_ {
-		width: 120px;
-	}
-
-	#login .inner .chk {
-		height: 12px;
-	}
-	</style>
+    <link rel="stylesheet" href="${resource(dir:'css',file:'twitter-auth.css')}" />
 </head>
 
 <body>
-<div id='login'>
+<div class="content" style="margin-top: 40px">
+    <div class="container">
+        <article class="container">
+            <div id="login" class="accounts-form">
+                <h2>Систем рүү нэвтрэх</h2>
+                <hr class="small">
+                <div class="connect-buttons">
+                    <form class="connect-button" name="login" method="post" action="#" id="twitter-connect-form">
+                        <a href="#" class="btn" id="twitter_button"><span>Log in with <strong>Twitter</strong></span></a>
+                    </form>
+                    <form class="connect-button" name="login" method="post" action="<g:createLink uri="/j_spring_security_facebook_redirect"/>" id="facebook-connect-form">
+                        <a href="#" onclick="$('#facebook-connect-form').submit(); return false;" class="btn" id="facebook_button"><span>Log in with <strong>Facebook</strong></span></a>
+                    </form>
+                </div>
+                <form action='${postUrl}' method="POST" id="auth-form" autocomplete="off">
+
+                    <div class="input">
+                        <input id="id_username" type="text" name="j_username" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
+
+                    </div>
+                    <div class="input">
+                        <input type="password" name="j_password" id="id_password" placeholder="Нууц үг">
+                    </div>
+                    <div class="actions clearfix">
+                        <input type="submit" value="Log In" class="btn btn-green">
+                    </div>
+                </form></div>
+            <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a> </p>
+        </article>
+    </div>
+</div>
+%{--<div id='login'>
 	<div class='inner'>
 		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
 
@@ -114,11 +66,11 @@
 			</p>
 		</form>
 	</div>
-</div>
+</div>--}%
 <script type='text/javascript'>
 	<!--
 	(function() {
-		document.forms['loginForm'].elements['j_username'].focus();
+		document.forms['auth-form'].elements['j_username'].focus();
 	})();
 	// -->
 </script>

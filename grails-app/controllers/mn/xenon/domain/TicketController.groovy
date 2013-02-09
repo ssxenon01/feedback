@@ -9,8 +9,9 @@ class TicketController {
 
     def ticketService
 
-    def index() {
-        redirect(action: "list", params: params)
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
     }
 
     def list(Integer max) {

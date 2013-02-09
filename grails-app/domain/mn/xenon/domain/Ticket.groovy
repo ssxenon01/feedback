@@ -6,7 +6,7 @@ class Ticket extends BaseDomain{
 	String title
 	String content
 
-	int vote
+	int vote = 0
 
 	Ticket diplicatedWith
 
