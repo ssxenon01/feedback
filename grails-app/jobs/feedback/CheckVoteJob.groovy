@@ -11,7 +11,7 @@ class CheckVoteJob {
     }
 
     def execute() {
-
+        // println "vote job works"
     	def votedTickets = Ticket.createCriteria().list(){
     		'ge'('vote',500)
     		'eq'('objectStatus',ObjectStatus.Open.value)

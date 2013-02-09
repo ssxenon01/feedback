@@ -1,5 +1,7 @@
 package mn.xenon.auth
 
+import mn.xenon.domain.Tag
+
 class User {
 
 	transient springSecurityService
@@ -11,9 +13,12 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	static hasMany = [tags:Tag]
+
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+        tags nullable: true, lazy: true, reference: false
 	}
 
 	static mapping = {

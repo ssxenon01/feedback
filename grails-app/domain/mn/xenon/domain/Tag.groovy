@@ -5,8 +5,6 @@ class Tag implements Serializable{
 	String label
 	int priority = 0
 
-	static belongsTo = [ticket: Ticket]
-	
 	static mapping = {
 		cache true
 	}
