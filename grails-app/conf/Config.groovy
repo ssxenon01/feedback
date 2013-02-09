@@ -125,3 +125,29 @@ grails {
               "mail.smtp.socketFactory.fallback":"false"]
    }
 }
+security {
+    twitter {
+        language = "en_US"
+        button.text = "Login with Twitter"
+        popup = false
+
+        autoCreate {
+            active = true
+            roles = ["ROLE_USER", "ROLE_TWITTER"]
+        }
+
+        filter {
+            processUrl = "/j_spring_twitter_security_check"
+            processPopupUrl = "/twitterAuth/popup"
+        }
+
+        domain {
+            classname = "mn.xenon.auth.TwitterUser"
+            connectionPropertyName = "user"
+        }
+    }
+}
+
+grails.plugins.springsecurity.twitter.app.key='tEVQg1KWGNIkuPmZqFYg2g'
+grails.plugins.springsecurity.twitter.app.consumerKey='tEVQg1KWGNIkuPmZqFYg2g'
+grails.plugins.springsecurity.twitter.app.consumerSecret='3siBH0maCBcB2lGdL1pblN0SObEy74RfvzJvfNhLd4'
