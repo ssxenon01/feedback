@@ -7,14 +7,22 @@ class TicketController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def ticketService
+
     def index() {
         redirect(action: "list", params: params)
     }
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [ticketInstanceList: Ticket.list(params), ticketInstanceTotal: Ticket.count()]
+        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
     }
+
+    def closed(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        [ticketInstanceList: ticketService.closedList(params), ticketInstanceTotal: ticketService.closedCount()]
+    }
+
     @Secured(['ROLE_USER'])
     def create() {
         [ticketInstance: new Ticket(params)]
