@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+    <body style="background: #fff;">
+        <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                    <a class="brand" href="/">Өєрчлєлт</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="petition.html"><i class="icon-white icon-list"></i> Санал,Гомдолууд</a>
+                            </li>
+                            <li>
+                                <a href="petition.html"><i class="icon-white icon-thumbs-up"></i> Нээлттэй санал</a>
+                            </li>
+                            <li>
+                                <a href="petition.html"><i class="icon-white icon-comment"></i> Хариу</a>
+                            </li>
+                            <li class="active">
+                                <a href="petition.html"><i class="icon-info-sign"></i> Заавар</a>
+                            </li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="top_user">
+                                    <i class="icon-white icon-user"></i> Хэрэглэгч <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icon-share-alt"></i> Санал оруулах</a></li>
+                                    <li><a href="#"><i class="icon-list"></i> Миний саналууд</a></li>
+                                    <li><a href="#"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>
+                                    <li><a href="sign.html"><i class="icon-share"></i> Гарах</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="navbar-form pull-right" style="margin-right:15px;">
+                            <div class="input-append">
+                                <input type="text" id="asd" name="q" class="input-medium" placeholder="Саналын №">
+                                <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content" style="margin-top: 40px">
+            <div class="container">
+                <div class="clearfix" style="height: 40px"></div>
+                <div class="row">
+                    <div class="span9">
+                        <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home">Нээлттэй</a></li>
+                        <li><a href="#profile">Шийдвэрлэгдэж байгаа</a></li>
+                        <li><a href="#messages">Шийдвэрлэгдэгдсэн</a></li>
+                    </ul>
+    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <div class="petition-list">
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="petition">
+                                    <span class="pull-right label label-warning">Нээлттэй</span>
+                                    <span class="pull-right date">23 цагийн өмнө үүссэн</span>
+                                    <span class="label label-important">№1302020797</span>
+                                    <div class="title">
+                                        <h3>БЗДүүргийн 6-р хорооны Монтек-1-р байрны Ганманлай СӨХ байрны мөнгөн дээр кв метрээс шалтгаалаад мөнгө авдаг. Бага бол 7000мянган төгрөг. Том бол 14,0мянган төгрөг авдаг. Өнгөрсөн цэвэрлэгээний хогийг цонхон доор хаясан. Өнөөдөр бая цэвэрлэгээний өдөр бас авсангүй үнэхээр хэцүү байна. СӨХ-д болон жижүүрт нь удаа дараа санал тавьсан боловч хүлээж авахгүй ...</h3>
+                                    </div>
+                                    <ul class="pull-left">
+                                        <li>
+                                            <div class="petition-started-by">
+                                                <span class="weak">by</span> 
+                                                <span class="petition-owner-name">
+                                                    <a href="#" >Amar Pagva</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="signatures-badge">
+                                                <div class="weak">
+                                                    <span>338,054</span> <span>дэмжсэн</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Дэмжих</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="pull-right more"><i class="icon-file"></i> Дэлгэрэнгүй ...</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="profile">...</div>
+                        <div class="tab-pane" id="messages">...</div>
+                        <div class="tab-pane" id="settings">...</div>
+                    </div>
+                    </div>
+                    <div class="span3">
+                        <div class="">
+                            <a href="create.html" class="btn btn-large btn-create width100">Санал нэмэх!</a>
+                        </div>
+                        <div class="clear" style="height: 20px"></div>
+                        <div class="input-append">
+                            <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">
+                            <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+                        </div>
+<!--                        <div class="right-section">
+                            <ol>
+                                <li></li>
+                            </ol>
+                        </div>
+                        <section class="bottom-margin-3 compact-petition-list recent-victories-list">
+                            <h4 class="h4">Victories</h4>
+                            <ol class="separated">
+                                <li><div class="compact-petition media-box">
+                                        <div class="content">
+                                            <p class="stealth bottom-margin-0"><a href="http://www.change.org/petitions/sprint-improve-policies-to-keep-domestic-violence-victims-safe">Sprint: Improve policies to keep domestic violence victims safe!</a></p>
+                                            <div class="bottom-margin-0 petition-started-by small weak">
+                                                by <span class="petition-owner-name">
+                                                    <a href="/users/30867786" class="stealth">Jane Doe</a>
+                                                </span>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                            <div class="hr-with-right-content media-box">
+                                <div class="media right">
+                                    <a class="small" href="#">
+                                        More Victories
+                                        <span class="symbol symbol-bracket-down"></span>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <hr>
+                                </div>
+                            </div>
+                        </section>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="span4">Шударга өрсөлдөөн, Хэрэглэгчийн төлөө газар</div>
+                    <div class="span4"></div>
+                    <div class="span4"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+        </script>
+    </body>
+</html>
