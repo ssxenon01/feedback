@@ -31,7 +31,7 @@ class Ticket extends BaseDomain{
 		result  blank: true, nullable: true
 		moderatorComment  blank: true, nullable: true
 		content blank: false, unique: true
-        tags nullable: true, lazy: true, reference: false
+        tags nullable: true, lazy: true
         voteList nullable:true
 	}
 }
