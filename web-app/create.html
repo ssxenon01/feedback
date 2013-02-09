@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+    <body style="background: #fff">
+        <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                    <a class="brand" href="/">Өєрчлєлт</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="/"><i class="icon-white icon-list"></i> Санал,Гомдолууд</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-white icon-thumbs-up"></i> Нээлттэй санал</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-white icon-comment"></i> Хариу</a>
+                            </li>
+                            <li class="active">
+                                <a href="#"><i class="icon-info-sign"></i> Заавар</a>
+                            </li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="top_user">
+                                    <i class="icon-white icon-user"></i> Хэрэглэгч <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icon-share-alt"></i> Санал оруулах</a></li>
+                                    <li><a href="#"><i class="icon-list"></i> Миний саналууд</a></li>
+                                    <li><a href="#"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>
+                                    <li><a href="#"><i class="icon-share"></i> Гарах</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="navbar-form pull-right" style="margin-right:15px;">
+                            <div class="input-append">
+                                <input type="text" id="asd" name="q" class="input-medium" placeholder="Саналын №">
+                                <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content" style="margin-top: 40px">
+            <div class="container">
+                <div class="clearfix" style="height: 40px"></div>
+                <div class="row">
+                    <div class="span8">
+                        <h1 class="create-title">Санал, Гомдол нэмэх</h1>
+                        <form>
+                            <fieldset>
+                                <legend>Your grassroots campaign for change begins here</legend>
+                                <label class="radio">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    Шударга бус өрсөлдөөний улмаас
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    Хэрэглэгчийн эрх ашиг зөрчигдөж байгаа улмаас
+                                </label>
+                                <select class="input-block-level test1" >
+                                    <option>Шударга бус өрсөлдөөний улмаас компаний эрх ашиг зөрчигдсөн бол.</option>
+                                    <option>Шударга бус өрсөлдөөний улмаас иргэний эрх ашиг зөрчигдсөн бол.</option>
+                                    <option>Төрийн шударга бус өрсөлдөөний улмаас эрх ашиг зөрчигдсөн бол.</option>
+                                </select>
+                                
+                                <label>Санал, Гомдлын нэр?</label>
+                                <input name="" type="text" class="input-block-level" placeholder="Та саналынхаа нэрийг 150 тэмдэгтэнд багтаан бичнэ үү ..."/>
+                                <label>Таны дэвшүүлж буй Санал, Гомдол дэлгэрэнгүй</label>
+                                <textarea rows="5" placeholder="Type something…" class="input-block-level"></textarea>
+                                
+                                <span class="help-block" style="font-weight: bold;">Та хамгийн ихдээ гурван салбар сонгох боломжтой</span>
+                                <div class="row test2" style="display: none;">
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Хэрэглэгчийн хууль
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Өрсөлдөөний хууль
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Худалдаа үйлчилгээ
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Төрийн болон Төрийн бус байгууллага
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Хөдөө аж ахуй
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Банк санхүү, худалдаа үйлчилгээний салбар
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Мэдээллийн технологи
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Харилцаа холбоо, Мэдээллийн технологи
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Түлш эрчим хүч, Барилга орон сууц
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Нийтийн аж ахуй, Зам тээвэр
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Аялал жуулчлал
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Боловсрол, Соёл урлаг
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                            Шинжлэх ухаан
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                           Эрүүл мэндийн үйлчилгээ
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                           Эмнэлэгийн хэрэгслийн худалдаа
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                           Үйлдвэрлэл, Ниймгмийн хамгаалал
+                                        </label>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="">
+                                           Түлш эрчим хүч, Уул уурхай
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-large btn-success">Save changes</button>
+                                    <button type="button" class="btn btn-large">Cancel</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="span4">
+                        <p class="">
+                            <a href="#" class="stealth">Өөрчлөлт.мн</a> is a non-partisan organization that empowers anyone, anywhere to start and win campaigns for social change.
+                        </p>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <script>
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+            
+            $('#optionsRadios1').click(function() {
+                if($('#optionsRadios1').is(':checked')) { $('.test2').hide();$('.test1').show(); }
+            });
+            $('#optionsRadios2').click(function() {
+                if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
+            });
+        </script>
+    </body>
+</html>
