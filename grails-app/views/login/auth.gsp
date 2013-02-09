@@ -1,3 +1,4 @@
+<%@ page import="com.the6hours.grails.springsecurity.twitter.TwitterAuthFilter" %>
 <html>
 <head>
 	<meta name='layout' content='base'/>
@@ -13,8 +14,8 @@
                 <h2>Систем рүү нэвтрэх</h2>
                 <hr class="small">
                 <div class="connect-buttons">
-                    <form class="connect-button" name="login" method="post" action="#" id="twitter-connect-form">
-                        <a href="#" class="btn" id="twitter_button"><span>Log in with <strong>Twitter</strong></span></a>
+                    <form class="connect-button" name="login" method="post" action="<twitterAuth:url/>" id="twitter-connect-form">
+                        <a href="#" onclick="$('#twitter-connect-form').submit(); return false;" class="btn" id="twitter_button"><span>Log in with <strong>Twitter</strong></span></a>
                     </form>
                     <form class="connect-button" name="login" method="post" action="<g:createLink uri="/j_spring_security_facebook_redirect"/>" id="facebook-connect-form">
                         <a href="#" onclick="$('#facebook-connect-form').submit(); return false;" class="btn" id="facebook_button"><span>Log in with <strong>Facebook</strong></span></a>

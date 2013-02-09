@@ -14,8 +14,8 @@ class BootStrap {
     def setupUsers(){
 	    Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
         Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
-        Role.findByAuthority('ROLE_FACEBOOK') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
-        Role.findByAuthority('ROLE_TWITTER') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
+        Role.findByAuthority('ROLE_FACEBOOK') ?: new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true)
+        Role.findByAuthority('ROLE_TWITTER') ?: new Role(authority: 'ROLE_TWITTER').save(failOnError: true)
 
         if (User.count() == 0) {
         	def sampleUsers = [
