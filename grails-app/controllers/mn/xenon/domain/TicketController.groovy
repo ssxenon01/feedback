@@ -18,7 +18,11 @@ class TicketController {
         params.max = Math.min(max ?: 10, 100)
         [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
     }
+    def my(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        render(view: "index", model: [ticketInstanceList: ticketService.getMyTickets(params), ticketInstanceTotal: ticketService.getMyTicketsCount()])
 
+    }
     def closed(Integer max){
         params.max = Math.min(max ?: 10, 100)
         [ticketInstanceList: ticketService.closedList(params), ticketInstanceTotal: ticketService.closedCount()]

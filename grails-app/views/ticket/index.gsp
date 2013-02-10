@@ -69,13 +69,15 @@
             </div>
             <div class="span3">
                 <div class="">
-                    <a href="create.html" class="btn btn-large btn-create width100">Санал нэмэх!</a>
+                    <a href="<g:createLink controller="ticket" action="create"/>" class="btn btn-large btn-create width100">Санал нэмэх!</a>
                 </div>
                 <div class="clear" style="height: 20px"></div>
+                <g:form controller="ticket" action="index" method="GET">
                 <div class="input-append">
-                    <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">
-                    <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+                    <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №,Агуулагдсан текст">
+                    <button type="submit" class="btn " id="btn_search"><i class="icon-search"></i></button>
                 </div>
+                </g:form>
                 <!--                        <div class="right-section">
                                         <ol>
                                             <li></li>

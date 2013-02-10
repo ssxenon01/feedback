@@ -25,8 +25,8 @@
                                 <i class="icon-white icon-user"></i> Хэрэглэгч <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon-share-alt"></i> Санал оруулах</a></li>
-                                <li><a href="#"><i class="icon-list"></i> Миний саналууд</a></li>
+                                <li><a href="<g:createLink controller="ticket" action="create"/>"><i class="icon-share-alt"></i> Санал оруулах</a></li>
+                                <li><a href="<g:createLink controller="ticket" action="my"/>"><i class="icon-list"></i> Миний саналууд</a></li>
                                 <li><a href="#"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>
                                 <li><a href="<g:createLink controller="logout"/>"><i class="icon-share"></i> Гарах</a></li>
                             </ul>

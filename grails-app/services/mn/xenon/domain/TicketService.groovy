@@ -1,5 +1,7 @@
 package mn.xenon.domain
 
+import mn.xenon.auth.User
+
 class TicketService {
 	
 	def springSecurityService
@@ -7,6 +9,14 @@ class TicketService {
 	def list(params){
 		return Ticket.createCriteria().list(params){
 			// checking only open and Pending tickets
+            if(params.q){
+                or{
+                    if(params.q.isLong())
+                    'eq'('id',params.q as Long)
+                    'like'('title', "%${params.q}%")
+                    'like'('content', "%${params.q}%")
+                }
+            }
 			'in'('objectStatus',[ObjectStatus.Open.value,ObjectStatus.Pending.value])
 		}
 	}
@@ -63,5 +73,17 @@ class TicketService {
 			eq('objectStatus',ObjectStatus.Pending.value)
 		}
 	}
-	
+
+    def getMyTickets(params = null){
+        return Ticket.createCriteria().list(params) {
+            eq('author',springSecurityService.currentUser as User)
+            'ne'('objectStatus',ObjectStatus.Deleted.value)
+        }
+    }
+    def getMyTicketsCount(){
+        return Ticket.createCriteria().count(params) {
+            eq('author',springSecurityService.currentUser as User)
+            'ne'('objectStatus',ObjectStatus.Deleted.value)
+        }
+    }
 }

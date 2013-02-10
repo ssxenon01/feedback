@@ -33,7 +33,7 @@
                 <div class="row get-started-now">
                     <div class="span10 offset1 white-panel button-text-panel">
                         <h2>Таны эрх ашиг зөрчигдсөн үү?</h2>
-                        <a href="create.html" class="btn btn-large btn-create">Санал нэмэх!</a>
+                        <a href="<g:createLink controller="ticket" action="create"/>" class="btn btn-large btn-create">Санал нэмэх!</a>
                     </div>
                 </div>
                 <div class="row">
