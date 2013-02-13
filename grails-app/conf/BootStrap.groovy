@@ -6,7 +6,9 @@ import mn.xenon.domain.Ticket
 class BootStrap {
 
     def init = { servletContext ->
-
+        javax.servlet.http.HttpServletRequest.metaClass.getSiteUrl = {
+          return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
+        }
     	setupUsers()
     	setupTicket()
     }

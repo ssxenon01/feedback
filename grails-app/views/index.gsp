@@ -12,9 +12,9 @@
         <div class="jumbotron">
             <h2>Change Your Life!</h2>
             <div class="steps clearfix">
-                <a href="#">Санал оруулах</a>
-                <a href="#">Санал дэмжих</a>
-                <a href="#">Саналын хариу</a>
+                <g:link controller="ticket" action="create">Санал оруулах</g:link>
+                <g:link controller="ticket" action="create">Санал дэмжих</g:link>
+                <g:link controller="ticket" action="create">Саналын хариу</g:link>
             </div>
             <div class="create-petition">
                 <a href="#">Шударга бус өрсөлдөөн улмаас !</a>

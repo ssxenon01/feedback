@@ -5,7 +5,7 @@
   Time: 1:42 PM
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page import="mn.xenon.domain.Tag" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -45,7 +45,7 @@
                                 <a href="#">${fieldValue(bean: ticketInstance, field: "title")}</a>
                                 <div class="action">
                                     <i class="icon-picture"></i> <a href="#">Зураг харах</a>
-                                    <a href="<g:createLink controller="ticket" action="view" id="${ticketInstance.id}" />" class="more">Дэлгэрэнгүй</a>
+                                    <a href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" />" class="more">Дэлгэрэнгүй</a>
                                 </div>
                             </div>
                             <div class="clear"></div>
@@ -75,8 +75,9 @@
         </div>
     </div>
     <div class="span4 right-panel">
+        <g:form method="GET">
         <div class="create-pet-btn">
-            <a href="#" class="btn btn-large btn-like" style="width: 87%">Санал нэмэх!</a>
+            <g:link class="btn btn-large btn-like" style="width: 87%" controller="ticket" action="create">Санал нэмэх!</g:link>
         </div>
         <div class="input-append">
             <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">
@@ -95,114 +96,21 @@
             <div class="filter-body">
                 <span class="help-block" style="font-weight: bold;">Та хамгийн ихдээ гурван салбар сонгох боломжтой</span>
                 <div class="row" style="">
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Хэрэглэгчийн хууль
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Өрсөлдөөний хууль
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Худалдаа үйлчилгээ
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Төрийн болон Төрийн бус байгууллага
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Хөдөө аж ахуй
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Банк санхүү, худалдаа үйлчилгээний салбар
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Мэдээллийн технологи
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Харилцаа холбоо, Мэдээллийн технологи
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Түлш эрчим хүч, Барилга орон сууц
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Нийтийн аж ахуй, Зам тээвэр
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Аялал жуулчлал
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Боловсрол, Соёл урлаг
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Шинжлэх ухаан
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Эрүүл мэндийн үйлчилгээ
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Эмнэлэгийн хэрэгслийн худалдаа
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Үйлдвэрлэл, Ниймгмийн хамгаалал
-                        </label>
-                    </div>
-                    <div class="span3">
-                        <label class="checkbox">
-                            <input type="checkbox" value="">
-                            Түлш эрчим хүч, Уул уурхай
-                        </label>
-                    </div>
+                    <g:each in="${Tag.list()}" var="tag">
+                        <div class="span3">
+                            <label class="checkbox">
+                                <g:checkBox name="tags" />
+                                ${fieldValue(bean: tag, field: "label")}
+                            </label>
+                        </div>
+                    </g:each>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-large btn-like">Шүүх</button>
                 </div>
             </div>
         </div>
+        </g:form>
         <div class="clear" style="height: 15px;"></div>
         <div class="popular-petitions">
             <div class="row">
