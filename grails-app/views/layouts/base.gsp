@@ -14,8 +14,12 @@
     <g:layoutHead/>
 </head>
 <body>
-    <g:render template="/includes/header"/>
-    <g:layoutBody/>
-    <g:render template="/includes/footer"/>
+    <div id="page">
+        <g:render template="/includes/header"/>
+        <div class="clear"></div>
+        <g:layoutBody/>
+        <g:render template="/includes/footer"/>
+    </div>
+    <script src="${resource(dir: 'js', file: 'custom.js')}"></script>
 </body>
 </html>

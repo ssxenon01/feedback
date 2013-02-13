@@ -12,12 +12,17 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-
-	static hasMany = [tags:Tag]
+    String firstname
+    String lastname
+    String email
+    static hasMany = [tags:Tag]
 
 	static constraints = {
-		username blank: false, unique: true
-		password blank: false
+        username blank: false, unique: true
+        firstname nullable: true
+        lastname nullable: true
+        email nullable: true
+        password blank: false
         tags nullable: true, lazy: true, reference: false
 	}
 

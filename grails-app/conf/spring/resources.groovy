@@ -1,5 +1,6 @@
 // Place your Spring DSL code here
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl
+import mn.xenon.auth.CustomUserDetailService
 
 beans = {
     roleHierarchy(RoleHierarchyImpl) {
@@ -7,5 +8,8 @@ beans = {
             ROLE_SUPERADMIN  > ROLE_ADMIN
             ROLE_ADMIN  > ROLE_USER
         '''
+    }
+    beans = {
+        userDetailsService(CustomUserDetailService)
     }
 }

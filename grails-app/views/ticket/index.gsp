@@ -13,7 +13,242 @@
     <title>Tickets</title>
 </head>
 <body>
-    <div class="content" style="margin-top: 40px">
+    <div class="content-wrapper">
+    <div class="container">
+    <div class="row">
+    <div class="span12">
+        <div class="header">
+            <div class="pull-left"><h1>Бүх саналууд</h1></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="span8 left-panel">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#open">Нээлттэй</a></li>
+            <li><a href="#pending">Хүлээлтэнд байгаа</a></li>
+            <li><a href="#closed">Хаасан</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="open">
+                <div class="petitions">
+                    <g:each in="${ticketInstanceList}" status="i" var="ticketInstance">
+                        <div class="petition">
+                            <div class="date-box">
+                                <span class="day">${fieldValue(bean: ticketInstance, field: "dateCreated")}</span>
+                                <span class="like-count">${fieldValue(bean: ticketInstance, field: "vote")}</span>
+                                <span class="text">Дэмжсэн</span>
+                                <span class="like-this"><a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a></span>
+                            </div>
+                            <div class="info">
+                                <a href="#">${fieldValue(bean: ticketInstance, field: "title")}</a>
+                                <div class="action">
+                                    <i class="icon-picture"></i> <a href="#">Зураг харах</a>
+                                    <a href="<g:createLink controller="ticket" action="view" id="${ticketInstance.id}" />" class="more">Дэлгэрэнгүй</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </g:each>
+
+                    %{--<div class="petition last">
+                        <div class="date-box">
+                            <span class="day">2013/02/05</span>
+                            <span class="like-count yellow">200</span>
+                            <span class="text">Дэмжсэн</span>
+                            <span class="like-this"><a href="#" class="btn btn-small disabled"><i class="icon-thumbs-up"></i></a></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">Автомашин угаалгын газруудад шалгалт хийвэл яасан юм бэ? Үнэ нь тодорхой биш янз бүрийн үнэ хэлж амандаа багтсан үнээр угааж байна шүү дээ.</a>
+                            <div class="action">
+                                <i class="icon-picture"></i> <a href="#">Зураг харах</a>
+                                <a href="#" class="more">Дэлгэрэнгүй</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>--}%
+                </div>
+            </div>
+            <div class="tab-pane" id="pending">pending</div>
+            <div class="tab-pane" id="closed">closed</div>
+        </div>
+    </div>
+    <div class="span4 right-panel">
+        <div class="create-pet-btn">
+            <a href="#" class="btn btn-large btn-like" style="width: 87%">Санал нэмэх!</a>
+        </div>
+        <div class="input-append">
+            <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">
+            <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+        </div>
+        <div class="header">
+            <div class="pull-left"><h1>Recent</h1></div>
+            <div class="pull-right">
+                <span class="filter">
+                    <a href="#" id="filter-button" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Default tooltip">Шүүлтүүр</a>
+                </span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="filter-collapse">
+            <div class="filter-body">
+                <span class="help-block" style="font-weight: bold;">Та хамгийн ихдээ гурван салбар сонгох боломжтой</span>
+                <div class="row" style="">
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Хэрэглэгчийн хууль
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Өрсөлдөөний хууль
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Худалдаа үйлчилгээ
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Төрийн болон Төрийн бус байгууллага
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Хөдөө аж ахуй
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Банк санхүү, худалдаа үйлчилгээний салбар
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Мэдээллийн технологи
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Харилцаа холбоо, Мэдээллийн технологи
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Түлш эрчим хүч, Барилга орон сууц
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Нийтийн аж ахуй, Зам тээвэр
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Аялал жуулчлал
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Боловсрол, Соёл урлаг
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Шинжлэх ухаан
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Эрүүл мэндийн үйлчилгээ
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Эмнэлэгийн хэрэгслийн худалдаа
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Үйлдвэрлэл, Ниймгмийн хамгаалал
+                        </label>
+                    </div>
+                    <div class="span3">
+                        <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Түлш эрчим хүч, Уул уурхай
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-large btn-like">Шүүх</button>
+                </div>
+            </div>
+        </div>
+        <div class="clear" style="height: 15px;"></div>
+        <div class="popular-petitions">
+            <div class="row">
+                <div class="span4 petition">
+                    <div class="inner">
+                        <div class="title">
+                            <h4><a href="#" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Дэлгэнргүй үзэх" data-placement="bottom">Автомашин угаалгын газруудад шалгалт хийвэл яасан юм бэ?</a></h4>
+                        </div>
+                        <div class="dateline">
+                            <i class=" icon-star"></i> <span class="red">Нээлттэй</span>
+                            <i class=" icon-time"></i> 4:24 PM - 03 May 12
+                        </div>
+                        <div class="pet-graph">
+                            <div class="thermometer" style="">
+                                <div class="mercury" style="width: 78%"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="bottom">
+                            <span class="stats-narrow">
+                                <span class="stats">
+                                    <span class="picture">
+                                        <i class="icon-picture"></i> <a href="#">Зураг харах</a>
+                                    </span>
+                                    <span class="like-count">
+                                        <strong class="">246</strong> Дэмжсэн
+                                    </span>
+
+                                </span>
+                            </span>
+                            <span class="action">
+                                <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                            </span>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    %{--<div class="content" style="margin-top: 40px">
         <div class="container">
             <div class="clearfix" style="height: 40px"></div>
             <div class="row">
@@ -121,6 +356,6 @@
         e.preventDefault();
         $(this).tab('show');
     })
-</script>
+</script>--}%
 </body>
 </html>

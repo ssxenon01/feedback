@@ -81,7 +81,7 @@ class TicketService {
         }
     }
     def getMyTicketsCount(){
-        return Ticket.createCriteria().count(params) {
+        return Ticket.createCriteria().count() {
             eq('author',springSecurityService.currentUser as User)
             'ne'('objectStatus',ObjectStatus.Deleted.value)
         }
