@@ -41,5 +41,11 @@ $(function(){
                 $(this).tab('show');
     });
     $("[rel=tooltip]").tooltip();
+    $('#optionsRadios1').click(function() {
+        if($('#optionsRadios1').is(':checked')) { $('.test2').hide();$('.test1').show(); }
+    });
+    $('#optionsRadios2').click(function() {
+        if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
+    });
 
 })
