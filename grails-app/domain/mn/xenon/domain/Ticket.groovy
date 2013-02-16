@@ -7,6 +7,8 @@ class Ticket extends BaseDomain{
 	String content
 
 	int vote = 0
+	
+	int maxVote = 1000
 
 	Ticket diplicatedWith
 
@@ -27,6 +29,7 @@ class Ticket extends BaseDomain{
 	static constraints = {
 		diplicatedWith nullable:true
 		vote nullable:true
+		maxVote nullable:true
 		title blank: false
 		result  blank: true, nullable: true
 		moderatorComment  blank: true, nullable: true
