@@ -363,7 +363,7 @@ div.steps a:hover {
 }
 .pet-graph{
     position: relative;
-    margin: 5px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
 }
 .pet-graph .thermometer {
     background-color: #5b5b5b;
@@ -611,7 +611,7 @@ hr.small {
     border: 1px solid rgb(209, 38, 29);
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 }
-#with-supporters  input.form-submit {
+#with-supporters  button.form-submit {
     margin-top: 10px;
     width: 80%;
     font: 13px/1.5 Arial,sans-serif;
