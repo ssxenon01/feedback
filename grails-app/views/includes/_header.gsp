@@ -76,7 +76,7 @@
                         <a href="<g:createLink controller="ticket" action="index" />"><i class="icon-white icon-list"></i> Санал,Гомдолууд</a>
                     </li>
                     <li>
-                        <a href="<g:createLink controller="ticket" action="index" />"><i class="icon-white icon-thumbs-up"></i> Нээлттэй санал</a>
+                        <a href="<g:createLink controller="ticket" action="index" />"><i class="icon-thumbs-up"></i> Нээлттэй санал</a>
                     </li>
                     <li>
                         <a href="#"><i class="icon-white icon-comment"></i> Хариу</a>

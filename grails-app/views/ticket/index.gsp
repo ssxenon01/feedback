@@ -34,12 +34,12 @@
             <div class="tab-pane active" id="open">
                 <div class="petitions">
                     <g:each in="${ticketInstanceList}" status="i" var="ticketInstance">
-                        <div class="petition">
+                        <div class="petition" tID="${ticketInstance.id}">
                             <div class="date-box">
                                 <span class="day">${fieldValue(bean: ticketInstance, field: "dateCreated")}</span>
-                                <span class="like-count">${fieldValue(bean: ticketInstance, field: "vote")}</span>
+                                <span class="like-count" tID="${ticketInstance.id}">${fieldValue(bean: ticketInstance, field: "vote")}</span>
                                 <span class="text">Дэмжсэн</span>
-                                <span class="like-this"><a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a></span>
+                                <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a></span>
                             </div>
                             <div class="info">
                                 <a href="#">${fieldValue(bean: ticketInstance, field: "title")}</a>
@@ -142,7 +142,7 @@
                                 </span>
                             </span>
                             <span class="action">
-                                <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                                <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                             </span>
                             <div class="clear"></div>
                         </div>

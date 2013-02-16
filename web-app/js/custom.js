@@ -48,4 +48,26 @@ $(function(){
         if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
     });
 
+    $("a.btn-like").on({
+        click: function() {
+            var node = $(this);
+            if(node.attr('tID')){
+                var countNode = $('span.like-count[tID="'+node.attr('tID')+'"]');
+               if(node.hasClass('disabled')){
+                    node.removeClass('disabled');
+                    node.addClass('btn-like');
+                    countNode.html(parseInt(countNode.html())-1);
+                }else{
+                    node.addClass('disabled');
+                    node.removeClass('btn-like');
+                    countNode.html(parseInt(countNode.html())+1);
+                }
+                
+                
+                // console.log(container.children('span.like-count')); 
+            }
+            
+            return false;
+        }
+    });
 })

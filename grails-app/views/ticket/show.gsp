@@ -54,11 +54,8 @@
                                 <div class="petition-box-head">
                                     <h4 class="">Sign this Petition</h4>
                                     <div id="with-supporters">
-                                        <form action="#" accept-charset="UTF-8" method="post">
                                             <div>${ticketInstance.vote}</div>
-                                            <!--                                            <input type="submit" name="op" id="t" value="Энэ саналыг дэмжих" class="form-submit support btn-like">-->
-                                            <input type="submit" name="op" id="t" value="Энэ саналыг дэмжих" class="form-submit btn disabled">
-                                        </form>
+                                            <button class="form-submit btn disabled">Энэ саналыг дэмжих</button>
                                     </div>
                                     <div class="clear"></div>
                                     <div class="pet-graph">
@@ -196,6 +193,11 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+$(function(){
+	$(window).scroll(function(data){
+		$('div.petition-box').css('top',$(window).scrollTop()+'px');
+	});
+});
 </script>
 	</body>
 </html>
