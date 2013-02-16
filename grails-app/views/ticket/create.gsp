@@ -7,31 +7,34 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-    <div class="content" style="margin-top: 40px">
-        <div class="container">
-            <div class="clearfix" style="height: 40px"></div>
-            <div class="row">
-                <div class="span8">
-                    <h1 class="create-title">Санал, Гомдол нэмэх</h1>
-                    <g:form action="save" >
-                        <fieldset>
-                            <legend>Your grassroots campaign for change begins here</legend>
-                            <g:render template="form"/>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-large btn-success">Save changes</button>
-                                <button type="button" class="btn btn-large">Cancel</button>
-                            </div>
-                        </fieldset>
-                    </g:form>
-                </div>
-                <div class="span4">
-                    <p class="">
-                        <a href="#" class="stealth">Өөрчлөлт.мн</a> is a non-partisan organization that empowers anyone, anywhere to start and win campaigns for social change.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+	%{-- Start --}%
+	<div class="create-wrapper">
+	    <div class="container">
+	        <div class="row">
+	            <div class="span8">
+	                <h1 class="create-title">Санал, Гомдол нэмэх</h1>
+	                <g:form action="save" >
+	                    <fieldset>
+	                        <g:render template="form"/>
+	                        <div class="form-actions">
+	                            <button type="submit" class="btn btn-large btn-success">Үүсгэх</button>
+	                            <button type="button" class="btn btn-large">Цуцлах</button>
+	                        </div>
+	                    </fieldset>
+	                </g:form>
+	            </div>
+	            <div class="span4">
+	                <p class="">
+	                    <a href="#" class="stealth">1284.мн</a> is a non-partisan organization that empowers anyone, anywhere to start and win campaigns for social change.
+	                </p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	%{-- END --}%
+
+    
 		%{--<a href="#create-ticket" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

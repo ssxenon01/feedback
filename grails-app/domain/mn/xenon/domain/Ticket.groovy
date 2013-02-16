@@ -3,12 +3,19 @@ import mn.xenon.auth.User
 
 class Ticket extends BaseDomain{
 
+	transient springSecurityService
+	static transients = ['voted']
+
 	String title
 	String content
 
 	int vote = 0
 	
 	int maxVote = 1000
+
+	boolean getVoted(){
+		return voteList.contains(springSecurityService.currentUser as User)
+	}
 
 	Ticket diplicatedWith
 

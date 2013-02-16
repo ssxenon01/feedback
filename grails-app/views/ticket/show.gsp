@@ -13,12 +13,13 @@
                 <div class="row">
                     <div class="span8" style="min-height: 600px;">
                         <div class="petition-single-content">
-                            <div class="media-box"><img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners" width="600">
-                            </div>
+                            %{-- <div class="media-box"><img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners" width="600">
+                            </div> --}%
                             <div class="media-content">
                                 <h1 class="title">${ticketInstance.title}</h1>
                                 <p>${ticketInstance.content}</p>
-                                <div class="date"><strong>Created:</strong>${ticketInstance.dateCreated}</div>
+                                <div class="date"><strong>Created:</strong>
+                                	<g:formatDate format="yyyy-MM-dd" date="${ticketInstance.dateCreated}"/></div>
                                 <div class="tag"><strong>Category</strong>
                                 	 <g:each in="${Tag.list()}" var="tag">
                                 	 	<a href="#">${fieldValue(bean: tag, field: "label")}</a>,
@@ -27,12 +28,12 @@
                                 <div class="like-num">
                                     <div class="row">
                                         <div class="span4">
-                                            <h4>Signatures needed by March 02, 2013 to reach goal of 100,000</h4>
-                                            <div class="count">999</div>
+                                            <h4><g:formatDate format="yyyy-MM-dd" date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
+                                            <div class="count diff-vote">${ticketInstance.maxVote-ticketInstance.vote}</div>
                                         </div>
                                         <div class="span3">
-                                            <h4>TOTAL SIGNATURES ON THIS PETITION</h4>
-                                            <div class="count">999</div>
+                                            <h4>Нийт Санал</h4>
+                                            <div class="count vote-count">${ticketInstance.vote}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -54,17 +55,18 @@
                                 <div class="petition-box-head">
                                     %{-- <h4 class="">Энэ сана</h4> --}%
                                     <div id="with-supporters">
-                                            <div>${ticketInstance.vote}</div>
-                                            <button class="form-submit btn btn-like %{-- disabled --}%">Энэ саналыг дэмжих</button>
+                                            <div class="vote-count">${ticketInstance.vote}</div>
+                                            <button class="form-submit btn btn-like vote-action-single" tID="${ticketInstance.id}">Энэ саналыг дэмжих</button>
                                     </div>
                                     <div class="clear"></div>
                                     <div class="pet-graph">
                                         <div class="thermometer" style="">
-                                            <div class="mercury" style="width: 78%"></div>
+                                            <div class="mercury" style="width: ${(ticketInstance.vote/ticketInstance.maxVote)*100}%"></div>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
-                                    <div class="count pull-right">${ticketInstance.maxVote - ticketInstance.vote} NEEDED</div>
+                                    <div class="count pull-right">&nbsp;NEEDED</div>
+                                    <div class="count pull-right diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
                                 </div>
                                 <div class="clear"></div>
                                 <sec:ifNotLoggedIn>

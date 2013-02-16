@@ -17,6 +17,11 @@ class TicketService {
                     'like'('content', "%${params.q}%")
                 }
             }
+            if(params.tags){
+            	tags{
+        			'in'('id',params.tags.collect{ it as Long })
+        		}
+            }
 			'in'('objectStatus',[ObjectStatus.Open.value,ObjectStatus.Pending.value])
 		}
 	}

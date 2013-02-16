@@ -36,38 +36,22 @@
                     <g:each in="${ticketInstanceList}" status="i" var="ticketInstance">
                         <div class="petition" tID="${ticketInstance.id}">
                             <div class="date-box">
-                                <span class="day">${fieldValue(bean: ticketInstance, field: "dateCreated")}</span>
+                                <span class="day"><g:formatDate format="yyyy-MM-dd" date="${ticketInstance.dateCreated}"/></span>
                                 <span class="like-count" tID="${ticketInstance.id}">${fieldValue(bean: ticketInstance, field: "vote")}</span>
                                 <span class="text">Дэмжсэн</span>
-                                <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a></span>
+                                <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small btn-like vote-action"><i class="icon-thumbs-up"></i></a></span>
                             </div>
                             <div class="info">
-                                <a href="#">${fieldValue(bean: ticketInstance, field: "title")}</a>
+                                <g:link controller="ticket" action="show" id="${ticketInstance.id}">${ticketInstance.title}</g:link>
+                                <p>${fieldValue(bean: ticketInstance, field: "content")}</p>
                                 <div class="action">
-                                    <i class="icon-picture"></i> <a href="#">Зураг харах</a>
+                                    %{-- <i class="icon-picture"></i> <a href="#">Зураг харах</a> --}%
                                     <a href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" />" class="more">Дэлгэрэнгүй</a>
                                 </div>
                             </div>
                             <div class="clear"></div>
                         </div>
                     </g:each>
-
-                    %{--<div class="petition last">
-                        <div class="date-box">
-                            <span class="day">2013/02/05</span>
-                            <span class="like-count yellow">200</span>
-                            <span class="text">Дэмжсэн</span>
-                            <span class="like-this"><a href="#" class="btn btn-small disabled"><i class="icon-thumbs-up"></i></a></span>
-                        </div>
-                        <div class="info">
-                            <a href="#">Автомашин угаалгын газруудад шалгалт хийвэл яасан юм бэ? Үнэ нь тодорхой биш янз бүрийн үнэ хэлж амандаа багтсан үнээр угааж байна шүү дээ.</a>
-                            <div class="action">
-                                <i class="icon-picture"></i> <a href="#">Зураг харах</a>
-                                <a href="#" class="more">Дэлгэрэнгүй</a>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>--}%
                 </div>
             </div>
             <div class="tab-pane" id="pending">pending</div>
@@ -81,7 +65,7 @@
         </div>
         <div class="input-append">
             <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">
-            <button type="button" class="btn " id="btn_search"><i class="icon-search"></i></button>
+            <button type="submit" class="btn " id="btn_search"><i class="icon-search"></i></button>
         </div>
         <div class="header">
             <div class="pull-left"><h1>Recent</h1></div>
@@ -99,7 +83,7 @@
                     <g:each in="${Tag.list()}" var="tag">
                         <div class="span3">
                             <label class="checkbox">
-                                <g:checkBox name="tags" />
+                                <g:checkBox name="tags" value="${fieldValue(bean: tag, field: "id")}" checked="false"/>
                                 ${fieldValue(bean: tag, field: "label")}
                             </label>
                         </div>

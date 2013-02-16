@@ -37,7 +37,7 @@
                           <input type="password" name="password" id="id_password" placeholder="Нууц үг">
                       </div>
                       <div class="actions clearfix">
-                          <input type="submit" value="Log In" class="btn btn-green">
+                          <input type="submit" value="Нэвтрэх" class="btn btn-green">
                       </div>
                   </form></div>
               <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a> </p>
