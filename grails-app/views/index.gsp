@@ -191,7 +191,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -225,7 +225,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -259,7 +259,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -293,7 +293,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -327,7 +327,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -361,7 +361,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -395,7 +395,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -429,7 +429,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
@@ -463,7 +463,7 @@
                     </span>
                 </span>
                 <span class="action">
-                    <a href="#" class="btn btn-small btn-like"><i class="icon-white icon-thumbs-up"></i></a>
+                    <a href="#" class="btn btn-small btn-like"><i class="icon-thumbs-up"></i></a>
                 </span>
                 <div class="clear"></div>
             </div>
