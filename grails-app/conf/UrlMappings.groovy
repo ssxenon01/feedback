@@ -15,5 +15,7 @@ class UrlMappings {
 		"/layoutlogin"(view:'test/login')
 		"/doregister"(view:'test/register')
 		"/create"(view:'test/create')
+		"/user"(view:'test/user')
+		"/appPetitions"(view:'app/petitionList')
 	}
 }
