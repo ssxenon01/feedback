@@ -45,12 +45,15 @@
 
     <!-- datepicker -->
     <link rel="stylesheet" href="${resource(dir: 'app/lib/datepicker', file: 'datepicker.css')}"/>
+    <!-- notifications -->
+    <link rel="stylesheet" href="${resource(dir: 'app/lib/sticky', file: 'sticky.css')}"/>
+
 
     <!--[if lte IE 8]>
-                    <link rel="stylesheet" href="${resource(dir: 'app/css', file: 'ie.css')}"/>
-                    <script src="${resource(dir: 'app/js/ie', file: 'html5.js')}"></script>
-                    <script src="${resource(dir: 'app/js/ie', file: 'respond.min.js')}"></script>
-        <![endif]-->
+                <link rel="stylesheet" href="${resource(dir: 'app/css', file: 'ie.css')}"/>
+                <script src="${resource(dir: 'app/js/ie', file: 'html5.js')}"></script>
+                <script src="${resource(dir: 'app/js/ie', file: 'respond.min.js')}"></script>
+    <![endif]-->
 
     <script>
         //* hide all elements & show preloader
@@ -97,12 +100,21 @@
 
     <!-- datepicker -->
     <script src="${resource(dir: 'app/lib/datepicker', file: 'bootstrap-datepicker.min.js')}"></script>
+    <!-- sticky  -->
+    <script src="${resource(dir: 'app/lib/sticky', file: 'sticky.min.js')}"></script>
+
+
+
     <!-- common functions -->
     <script src="${resource(dir: 'app/js', file: 'gebo_common.js')}"></script>
     <!-- form functions -->
     <script src="${resource(dir: 'app/js', file: 'gebo_forms.js')}"></script>
     <!-- custom functions -->
     <script src="${resource(dir: 'app/js', file: 'custom.js')}"></script>
+    <!-- validation -->
+    <script src="${resource(dir: 'app/lib/validation', file: 'jquery.validate.min.js')}"></script>
+    <!-- validation functions -->
+    <script src="${resource(dir: 'app/js', file: 'gebo_validation.js')}"></script>
     <script>
         $(document).ready(function () {
             //* show all elements & remove preloader
