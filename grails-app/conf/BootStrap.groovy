@@ -23,11 +23,11 @@ class BootStrap {
 
         if (User.count() == 0) {
         	def sampleUsers = [
-                'admin': [role: 'ROLE_ADMIN', pass: 'pass', firstname: 'Admin', lastname: 'Admin'],
-                'user': [role: 'ROLE_USER', pass: 'pass', firstname: 'User', lastname: 'User']
+                [username:'admin',role: 'ROLE_ADMIN', pass: 'pass', firstname: 'Admin', lastname: 'Admin',email:'admin@example.com',phone:'99999999',registerId:'УБ12345678'],
+                [username:'user',role: 'ROLE_USER', pass: 'pass', firstname: 'User', lastname: 'User',email:'user@example.com',phone:'88888888',registerId:'УБ87654321']
             ]
-            sampleUsers.each { username, attrs ->
-            	def user = new User(username:username, password:attrs.pass,enabled:true).save(failOnError: true)
+            sampleUsers.each { attrs ->
+            	def user = new User(attrs).save(failOnError: true)
             	def role = Role.findByAuthority(attrs.role)
 		        if (!user.authorities.contains(role)) {
 		            UserRole.create(user, role)

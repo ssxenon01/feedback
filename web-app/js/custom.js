@@ -1,5 +1,5 @@
 $(function(){
-    
+
     if($(document).width()<756){
         $(".jumbotron").addClass("phone-visible");
     }else{
@@ -143,4 +143,5 @@ $(function(){
             });
         }
     }
+    
 })

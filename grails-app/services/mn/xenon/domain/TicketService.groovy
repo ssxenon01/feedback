@@ -134,32 +134,33 @@ class TicketService {
         }
     }
     def hotTickets(params = null){
-    	if(springSecurityService.currentUser){
-	    	def myLiked = Ticket.createCriteria().list() {
-	            'gtProperty'('maxVote','vote')
-	    		voteList{
-	    			'eq'('id',springSecurityService.currentUser.id)
-	        	}
-	            'not'{            	
-	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
-	            }
-	            order('vote','desc')
-	        }
-	        return Ticket.createCriteria().list(params){
-	        	'gtProperty'('maxVote','vote')
-	            'not'{            	
-	        		'in'('id',myLiked.id)
-	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
-	            }
-	            order('vote','desc')
-	        }
-        }else{
+    	// if(springSecurityService.currentUser){
+	    // 	def myLiked = Ticket.createCriteria().list() {
+	    //         'gtProperty'('maxVote','vote')
+	    // 		voteList{
+	    // 			'eq'('id',springSecurityService.currentUser.id)
+	    //     	}
+	    //         'not'{            	
+	    //         	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
+	    //         }
+	    //         order('vote','desc')
+	    //     }
+	    //     return Ticket.createCriteria().list(params){
+	    //     	'gtProperty'('maxVote','vote')
+	    //         'not'{ 
+	    //         	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
+	    //         	'in'('id', myLiked.id ) 
+	    //         }
+	    //         order('vote','desc')
+	    //     }
+     //    }else{
         	return Ticket.createCriteria().list(params) {
 	            'gtProperty'('maxVote','vote')
 	            'not'{            	
 	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
 	            }
+	            order('vote','desc')
 	        }
-        }
+        // }
     }
 }

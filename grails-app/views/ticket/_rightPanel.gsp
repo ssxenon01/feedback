@@ -3,7 +3,7 @@
 <div class="span4 right-panel">
     <g:form method="GET">
     <div class="create-pet-btn">
-        <g:link class="btn btn-large btn-like" style="width: 87%" controller="ticket" action="create">Санал нэмэх!</g:link>
+        <g:link class="btn btn-large btn-like" style="width: 87%" controller="ticket" action="create"><g:message code="ticket.add" />!</g:link>
     </div>
     <div class="input-append">
         <input type="text" id="asd" name="q" class="input-large" placeholder="Саналын №">

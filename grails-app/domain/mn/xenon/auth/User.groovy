@@ -1,8 +1,12 @@
 package mn.xenon.auth
 
 import mn.xenon.domain.Tag
+import mn.xenon.domain.Ticket
+import mn.xenon.domain.Gender
+import mn.xenon.domain.BaseDomain
+import mn.xenon.domain.ObjectStatus
 
-class User {
+class User extends BaseDomain{
 
 	transient springSecurityService
 
@@ -15,6 +19,12 @@ class User {
     String firstname
     String lastname
     String email
+    String registerId
+
+    String about
+    String phone
+
+    Gender gender = Gender.Other
     static hasMany = [tags:Tag]
 
 	static constraints = {
@@ -23,10 +33,14 @@ class User {
         lastname nullable: true
         email nullable: true
         password blank: false
+        registerId blank:true, nullable:true,unique:true
         tags nullable: true, lazy: true, reference: false
+        about nullable:true
+        phone nullable:true
 	}
 
 	static mapping = {
+		about type:'text'
 		password column: '`password`'
 	}
 
@@ -41,6 +55,15 @@ class User {
 	def beforeUpdate() {
 		if (isDirty('password')) {
 			encodePassword()
+		}
+	}
+
+	int countTickets(){
+		return Ticket.createCriteria().count(){
+			author{
+				eq('id',this.id)
+			}
+			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
 		}
 	}
 

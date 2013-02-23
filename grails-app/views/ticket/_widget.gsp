@@ -5,7 +5,7 @@
         </div>
         <div class="dateline">
             <i class=" icon-star" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="status"/>" data-placement="bottom"></i> <span class="red"><g:message code="objectStatus.${ticket.objectStatus}"/></span>
-            <i class=" icon-time" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="dateCreated"/>" data-placement="bottom"></i> <g:formatDate locale="mn" formatName="date.short" date="${ticket.dateCreated}"/>
+            <i class=" icon-time" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="dateCreated"/>" data-placement="bottom"></i> <g:formatDate formatName="date.short" date="${ticket.dateCreated}"/>
         </div>
         <div class="pet-graph">
             <div class="thermometer" style="">
@@ -20,7 +20,7 @@
                         <i class="icon-picture"></i> <a href="#">Зураг харах</a>
                     </span> --}%
                     <span class="like-count" tID="${ticket.id}">
-                        <strong class="">${ticket.vote}</strong> Дэмжсэн
+                        <strong class="">${ticket.vote}</strong> <g:message code="likeCount"/>
                     </span>
 
                 </span>

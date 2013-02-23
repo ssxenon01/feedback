@@ -106,7 +106,7 @@
 
                                 <div class="pet_content">
                                     <h4>
-                                        <a href="javascript:void(0)" class="sepV_a">${ticketInstance.title}</a>
+                                        <a href="<g:createLink controller="app" action="show" id="${ticketInstance.id}"/>" class="sepV_a">${ticketInstance.title}</a>
                                         <span class="badge badge-warning">${ticketInstance.vote} хүн дэмжсэн</span>
                                     </h4>
 
