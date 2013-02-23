@@ -22,73 +22,73 @@ class TicketService {
         			'in'('id',params.tags.collect{ it as Long })
         		}
             }
-			'in'('objectStatus',[ObjectStatus.Open.value,ObjectStatus.Pending.value])
+			'in'('objectStatus',[ObjectStatus.Open,ObjectStatus.Pending])
 		}
 	}
 
 	def count(params){
 		return Ticket.createCriteria().count(){
 			// checking only open and Pending tickets
-			'in'('objectStatus',[ObjectStatus.Open.value,ObjectStatus.Pending.value])
+			'in'('objectStatus',[ObjectStatus.Open,ObjectStatus.Pending])
 		}
 	}
 
 	def closedList(params){
 		return Ticket.createCriteria().list(params){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Closed.value)
+			'eq'('objectStatus',ObjectStatus.Closed)
 		}
 	}
 	def closedCount(){
 		return Ticket.createCriteria().count(){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Closed.value)
+			'eq'('objectStatus',ObjectStatus.Closed)
 		}
 	}
 
 	def expiredList(params){
 		return Ticket.createCriteria().list(params){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Expired.value)
+			'eq'('objectStatus',ObjectStatus.Expired)
 		}
 	}
 	def expiredCount(){
 		return Ticket.createCriteria().count(){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Expired.value)
+			'eq'('objectStatus',ObjectStatus.Expired)
 		}
 	}
 
 	def duplicatedList(params){
 		return Ticket.createCriteria().list(params){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Duplicated.value)
+			'eq'('objectStatus',ObjectStatus.Duplicated)
 		}
 	}
 
 	def duplicatedCount(){
 		return Ticket.createCriteria().count(){
 			// checking only closed tickets
-			'eq'('objectStatus',ObjectStatus.Duplicated.value)
+			'eq'('objectStatus',ObjectStatus.Duplicated)
 		}
 	}
 
 	def getPendingTickets(){
 		return Ticket.createCriteria().list(){
-			eq('objectStatus',ObjectStatus.Pending.value)
+			eq('objectStatus',ObjectStatus.Pending)
 		}
 	}
 
     def getMyTickets(params = null){
         return Ticket.createCriteria().list(params) {
             eq('author',springSecurityService.currentUser as User)
-            'ne'('objectStatus',ObjectStatus.Deleted.value)
+            'ne'('objectStatus',ObjectStatus.Deleted)
         }
     }
     def getMyTicketsCount(){
         return Ticket.createCriteria().count() {
             eq('author',springSecurityService.currentUser as User)
-            'ne'('objectStatus',ObjectStatus.Deleted.value)
+            'ne'('objectStatus',ObjectStatus.Deleted)
         }
     }
 }

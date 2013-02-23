@@ -15,10 +15,10 @@ class ExpireTicketJob {
 	        // Check open tickets dateCreated a year ago and set as Expired
 	        def expiredTickets = Ticket.createCriteria().list(){
 	    		'le'('dateCreated',1.year.ago)
-	    		'eq'('objectStatus',ObjectStatus.Open.value)
+	    		'eq'('objectStatus',ObjectStatus.Open)
 	    	}
 	    	expiredTickets.each{ ticket ->
-	    		ticket.setObjectStatus(ObjectStatus.Expired.value)
+	    		ticket.setObjectStatus(ObjectStatus.Expired)
 	    		ticket.save()
 	    	}
 	    }

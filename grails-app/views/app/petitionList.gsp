@@ -215,7 +215,7 @@
                     <tr>
                         <td>
                             <div class="thumbnail pull-left">
-                                <img alt="" src="http://placehold.it/80x80/efefef">
+                                <img alt="" src="${resource(dir: 'app/img', file: 'efefef.gif')}">
                             </div>
 
                             <div class="pet_content">
@@ -238,7 +238,7 @@
                     <tr>
                         <td>
                             <div class="thumbnail pull-left">
-                                <img alt="" src="http://placehold.it/80x80/efefef">
+                                <img alt="" src="${resource(dir: 'app/img', file: 'efefef.gif')}">
                             </div>
 
                             <div class="pet_content">

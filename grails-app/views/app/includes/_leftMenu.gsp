@@ -1,3 +1,4 @@
+<%@ page import="mn.xenon.domain.Statistic" %>
 <!-- sidebar -->
 <a href="javascript:void(0)" class="sidebar_switch on_switch ttip_r" title="Hide Sidebar">Sidebar switch</a>
 <div class="sidebar">
@@ -117,20 +118,21 @@
                 </div>
                 <div class="sidebar_info" style="height: 119px;">
                     <ul class="unstyled">
+                        <g:set var="statistic" value="${Statistic.last('startDate')}" />
                         <li>
-                            <span class="act act-warning">65</span>
+                            <span class="act act-warning">${statistic ? statistic.total : 0 }</span>
                             <strong>Шинэ санал</strong>
                         </li>
                         <li>
-                            <span class="act act-success">10</span>
+                            <span class="act act-success">${statistic ? statistic.closed : 0 }</span>
                             <strong>Өнөөдөр хаагдсан</strong>
                         </li>
                         <li>
-                            <span class="act act-danger">85</span>
+                            <span class="act act-danger">${statistic ? statistic.pending : 0 }</span>
                             <strong>Шалгаж эхэлсэн</strong>
                         </li>
                         <li>
-                            <span class="act act-danger">85</span>
+                            <span class="act act-danger">${statistic ? statistic.suspended : 0 }</span>
                             <strong>Цуцалсан</strong>
                         </li>
                     </ul>

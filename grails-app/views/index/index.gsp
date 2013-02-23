@@ -79,7 +79,7 @@
                         <h4><a href="<g:createLink controller="ticket" action="show" id="${ticket.id}"/>" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Дэлгэнргүй үзэх" data-placement="bottom">${fieldValue(bean: ticket, field: "title")}</a></h4>
                     </div>
                     <div class="dateline">
-                        <i class=" icon-star"></i> <span class="red">${ObjectStatus.numToEnum(ticket.objectStatus)}</span>
+                        <i class=" icon-star"></i> <span class="red"><g:message code="objectStatus.${ticket.objectStatus}"/></span>
                         <i class=" icon-time"></i> ${fieldValue(bean: ticket, field: "dateCreated")}
                     </div>
                     <div class="pet-graph">

@@ -7,10 +7,10 @@ abstract class BaseDomain implements Serializable {
 	transient springSecurityService
 
 	Date dateCreated
-   	Date lastUpdated
+  Date lastUpdated
    	
 	User author
-	int objectStatus = ObjectStatus.Open.value
+	ObjectStatus objectStatus = ObjectStatus.Open
 
 	static constraints = {
         author(nullable: true, lazy: true)

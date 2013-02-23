@@ -8,7 +8,8 @@ public enum ObjectStatus {
     Approved(4), 
     Expired(5), // 1 жилийн хугацаанд дэмжээгүй
     Deleted(6),
-    Duplicated(7) // Саналийн давхардалт 
+    Suspended(7), // Цуцалсан шалгаж үзээд
+    Duplicated(8) // Саналийн давхардалт 
 
     final Integer value
 
