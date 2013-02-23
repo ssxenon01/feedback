@@ -5,7 +5,7 @@
         </div>
         <div class="dateline">
             <i class=" icon-star" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="status"/>" data-placement="bottom"></i> <span class="red"><g:message code="objectStatus.${ticket.objectStatus}"/></span>
-            <i class=" icon-time" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="dateCreated"/>" data-placement="bottom"></i> <g:formatDate locale="mn" format="yyyy оны MM сарын dd" date="${ticket.dateCreated}"/>
+            <i class=" icon-time" rel="tooltip" data-toggle="tooltip" title="" data-original-title="<g:message code="dateCreated"/>" data-placement="bottom"></i> <g:formatDate locale="mn" formatName="date.short" date="${ticket.dateCreated}"/>
         </div>
         <div class="pet-graph">
             <div class="thermometer" style="">
