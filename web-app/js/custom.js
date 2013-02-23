@@ -58,19 +58,18 @@ $(function(){
         click: function() {
             var node = $(this);
             if(node.attr('tID')){
-                var countNode = $('span.like-count[tID="'+node.attr('tID')+'"]');
-               if(node.hasClass('disabled')){
-                    node.removeClass('disabled');
-                    node.addClass('btn-like');
-                    countNode.html(parseInt(countNode.html())-1);
-                }else{
-                    node.addClass('disabled');
-                    node.removeClass('btn-like');
-                    countNode.html(parseInt(countNode.html())+1);
-                }
-                
-                
-                // console.log(container.children('span.like-count')); 
+                voteWithId(node.attr('tID'),function(){
+                    var countNode = $('span.like-count[tID="'+node.attr('tID')+'"]');
+                    if(node.hasClass('disabled')){
+                        node.removeClass('disabled');
+                        node.addClass('btn-like');
+                        countNode.html(parseInt(countNode.html())-1);
+                    }else{
+                        node.addClass('disabled');
+                        node.removeClass('btn-like');
+                        countNode.html(parseInt(countNode.html())+1);
+                    }
+                });
             }
             
             return false;
@@ -80,18 +79,18 @@ $(function(){
         click: function() {
             var node = $(this);
             if(node.attr('tID')){
-                var countNode = $('span.like-count[tID="'+node.attr('tID')+'"] strong');
-               if(node.hasClass('disabled')){
-                    node.removeClass('disabled');
-                    node.addClass('btn-like');
-                    countNode.html(parseInt(countNode.html())-1);
-                }else{
-                    node.addClass('disabled');
-                    node.removeClass('btn-like');
-                    countNode.html(parseInt(countNode.html())+1);
-                }
-                
-                
+                voteWithId(node.attr('tID'),function(){
+                    var countNode = $('span.like-count[tID="'+node.attr('tID')+'"] strong');
+                    if(node.hasClass('disabled')){
+                        node.removeClass('disabled');
+                        node.addClass('btn-like');
+                        countNode.html(parseInt(countNode.html())-1);
+                    }else{
+                        node.addClass('disabled');
+                        node.removeClass('btn-like');
+                        countNode.html(parseInt(countNode.html())+1);
+                    }
+                });
                 // console.log(container.children('span.like-count')); 
             }
             
@@ -102,32 +101,46 @@ $(function(){
         click: function() {
             var node = $(this);
             if(node.attr('tID')){
-                var countNode = $('div.vote-count'),
-                diffNode = $('div.diff-vote'),
-                mercuryNode = $('div.mercury'),
-                totalCount,diffCount;
-               if(node.hasClass('disabled')){
-                    node.removeClass('disabled');
-                    node.addClass('btn-like');
-                    totalCount = parseInt(countNode.html())-1;
-                    diffCount = parseInt(diffNode.html())+1;
-                }else{
-                    node.addClass('disabled');
-                    node.removeClass('btn-like');
-                    diffCount = parseInt(diffNode.html())-1;
-                    totalCount = parseInt(countNode.html())+1;
-                }
-                countNode.html(totalCount);
-                diffNode.html(diffCount);
-                var max =  diffCount+totalCount;
-
-                mercuryNode.css('width',((totalCount/max)*100) +'%');
-                
-                // console.log(container.children('span.like-count')); 
+                voteWithId(node.attr('tID'),function(){
+                    var countNode = $('div.vote-count'),
+                    diffNode = $('div.diff-vote'),
+                    mercuryNode = $('div.mercury'),
+                    totalCount,diffCount;
+                   if(node.hasClass('disabled')){
+                        node.removeClass('disabled');
+                        node.addClass('btn-like');
+                        totalCount = parseInt(countNode.html())-1;
+                        diffCount = parseInt(diffNode.html())+1;
+                    }else{
+                        node.addClass('disabled');
+                        node.removeClass('btn-like');
+                        diffCount = parseInt(diffNode.html())-1;
+                        totalCount = parseInt(countNode.html())+1;
+                    }
+                    countNode.html(totalCount);
+                    diffNode.html(diffCount);
+                    var max =  diffCount+totalCount;
+                    mercuryNode.css('width',((totalCount/max)*100) +'%');
+                });
             }
             
             return false;
         }
     });
-    
+    function voteWithId(id,callback){
+        if(id){
+            $.ajax({
+              type: "GET",
+              url: "/feedback/vote/up/"+id,
+              statusCode: {
+                401: function() {
+                  
+                },
+                200:function(){
+                    callback();
+                }
+              }
+            });
+        }
+    }
 })

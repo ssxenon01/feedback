@@ -38,8 +38,8 @@
                             <div class="date-box">
                                 <span class="day"><g:formatDate format="yyyy-MM-dd" date="${ticketInstance.dateCreated}"/></span>
                                 <span class="like-count" tID="${ticketInstance.id}">${fieldValue(bean: ticketInstance, field: "vote")}</span>
-                                <span class="text">Дэмжсэн</span>
-                                <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small btn-like vote-action"><i class="icon-thumbs-up"></i></a></span>
+                                <span class="text">Дэмжсэн </span>
+                                <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small vote-action ${ticketInstance.getVoted()?"disabled":"btn-like"}"><i class="icon-thumbs-up"></i></a></span>
                             </div>
                             <div class="info">
                                 <g:link controller="ticket" action="show" id="${ticketInstance.id}">${ticketInstance.title}</g:link>

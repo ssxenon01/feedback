@@ -56,7 +56,7 @@
                                     %{-- <h4 class="">Энэ сана</h4> --}%
                                     <div id="with-supporters">
                                             <div class="vote-count">${ticketInstance.vote}</div>
-                                            <button class="form-submit btn btn-like vote-action-single" tID="${ticketInstance.id}">Энэ саналыг дэмжих</button>
+                                            <button class="form-submit btn ${ticketInstance.getVoted()?"disabled":"btn-like"} vote-action-single" tID="${ticketInstance.id}">Энэ саналыг дэмжих</button>
                                     </div>
                                     <div class="clear"></div>
                                     <div class="pet-graph">

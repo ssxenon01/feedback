@@ -15,12 +15,12 @@ class VoteController {
        if(params.id){
            Ticket ticket = Ticket.get(params.id)
            if (ticket){
-               if(!ticket.voteList.contains(currentUser())){
+               if(!ticket.voteList.contains(currentUserId())){
                    ticket.vote ++;
-                   ticket.addToVoteList(currentUser())
+                   ticket.addToVoteList(currentUserId())
                }else{
                    ticket.vote --;
-                   ticket.removeFromVoteList(currentUser())
+                   ticket.removeFromVoteList(currentUserId())
                }
                ticket.save()
                result.vote = ticket.vote
@@ -31,7 +31,7 @@ class VoteController {
     }
     def index() { }
 
-    User currentUser(){
-        return springSecurityService.currentUser as User
+    Long currentUserId(){
+        return springSecurityService.currentUser.id
     }
 }

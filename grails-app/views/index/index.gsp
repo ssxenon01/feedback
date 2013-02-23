@@ -15,7 +15,7 @@
             <h2>Change Your Life!</h2>
             <div class="steps clearfix">
                 <g:link controller="ticket" action="create">Санал оруулах</g:link>
-                <g:link controller="ticket" action="create">Санал дэмжих</g:link>
+                <g:link controller="ticket" action="index">Санал дэмжих</g:link>
                 <g:link controller="ticket" action="create">Саналын хариу</g:link>
             </div>
             <div class="create-petition">
@@ -101,7 +101,7 @@
                             </span>
                         </span>
                         <span class="action">
-                            <a href="#" tID="${ticket.id}" class="btn btn-small btn-like widget-vote-action ${ticket.voted?'disabled':''}"><i class="icon-thumbs-up"></i></a>
+                            <a href="#" tID="${ticket.id}" class="btn btn-small ${ticket.getVoted()?"disabled":"btn-like"} widget-vote-action"><i class="icon-thumbs-up"></i></a>
                         </span>
                         <div class="clear"></div>
                     </div>

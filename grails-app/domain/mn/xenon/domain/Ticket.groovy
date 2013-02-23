@@ -5,25 +5,25 @@ class Ticket extends BaseDomain{
 
 	transient springSecurityService
 	static transients = ['voted']
-
 	String title
 	String content
 
 	int vote = 0
 	
 	int maxVote = 1000
-
 	boolean getVoted(){
-		return voteList.contains(springSecurityService.currentUser as User)
+		if(springSecurityService.currentUser)
+			return voteList.contains(springSecurityService.currentUser.id)
+		else
+			return false
 	}
-
 	Ticket diplicatedWith
 
 	String moderatorComment
 
 	String result
 
-	static hasMany = [tags: Tag,voteList:User]
+	static hasMany = [tags: Tag,voteList:Long]
 
 	static mapping = {
 		cache true
