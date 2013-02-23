@@ -2,7 +2,7 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="#"><i class="icon-home icon-white"></i> 1287</a>
+                <a class="brand" href="#"><i class="icon-home icon-white"></i> 1284</a>
                 <ul class="nav user_menu pull-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Amar Pagva <b class="caret"></b></a>

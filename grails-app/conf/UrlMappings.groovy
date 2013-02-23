@@ -17,5 +17,6 @@ class UrlMappings {
 		"/create"(view:'test/create')
 		"/user"(view:'test/user')
 		"/appPetitions"(view:'app/petitionList')
+		"/userPage"(view:'app/user')
 	}
 }
