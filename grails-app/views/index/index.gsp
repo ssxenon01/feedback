@@ -101,7 +101,7 @@
                             </span>
                         </span>
                         <span class="action">
-                            <a href="#" tID="${ticket.id}" class="btn btn-small btn-like widget-vote-action"><i class="icon-thumbs-up"></i></a>
+                            <a href="#" tID="${ticket.id}" class="btn btn-small btn-like widget-vote-action ${ticket.voted?'disabled':''}"><i class="icon-thumbs-up"></i></a>
                         </span>
                         <div class="clear"></div>
                     </div>
