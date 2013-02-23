@@ -17,7 +17,7 @@
 <body>
 <div class="row-fluid">
     <div class="span12">
-        <h3 class="heading">Системийн хэрэглэгчид</h3>
+        <h3 class="heading">Системийн хэрэглэгчид <span class="label label-success">1284 хэрэглэгч</span></h3>
             <div class="w-box">
                 <div class="w-box-header w-box-header-userlist clearfix">
                     <div class="pull-left">

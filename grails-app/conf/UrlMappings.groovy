@@ -20,6 +20,7 @@ class UrlMappings {
 		"/userPage"(view:'app/user')
 		"/changePass"(view:'app/changepass')
 		"/userlist"(view:'app/users')
+		"/petition"(view:'app/petition')
 
 	}
 }

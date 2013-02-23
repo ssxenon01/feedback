@@ -910,3 +910,64 @@
         margin: 0px 0 0;
         margin-left: -3px;
     }
+    .petitionSingle .doc_view{
+        border: none;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        border-radius: 0px;
+        margin-bottom: 10px;
+    }
+    .doc_view .doc_view_reply{
+        border-top:1px solid #ddd;
+        padding: 20px;
+    }
+    .doc_view .write-msg{
+        padding: 5px;
+    }
+    .doc_view_reply .msg{
+        margin: 10px 5px;
+    }
+    .doc_view_reply .msg .msg-heading {
+        font-size: 11px;
+        padding: 0 5px;
+    }
+    .doc_view_reply .msg .msg-heading  .msg_date {
+        float: right;
+    }
+    .doc_view_reply .msg .msg-heading  .user_name {
+        color: #CC333F;
+        font-weight: 700;
+    }
+    .doc_view_reply .msg .msg_body {
+        padding: 4px 8px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .user-info ul {
+        list-style: none;
+        margin: 0px 0 0 10px;
+        overflow: hidden;
+    }
+    .user-info ul > li:first-child {
+        border-top: 1px dashed #dcdcdc;
+    }
+    .user-info .v-heading {
+        background: #F0F9FF;
+        font-weight: 700;
+    }
+   .user-info ul > li {
+       padding: 8px;
+       border-bottom: 1px dashed #dcdcdc;
+   }
+   .user-info .item-key {
+       float: left;
+       color: #888;
+   }
+   .user-info .vcard-item {
+       margin-left: 120px;
+   }
