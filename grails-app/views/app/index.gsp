@@ -11,34 +11,35 @@
 
 <div class="row-fluid ">
     <div class="span12">
+        <g:form method="GET">
         <div class="w-box">
             <div class="w-box-header">
                 Санал гомдол шүүх
                 <div class="pull-right">
-                    <a href="#" class="btn btn-small btn-file">Шүүх <i class="splashy-zoom icon-white"></i></a>
+                    <button type="submit" class="btn btn-small btn-file">Шүүх <i class="splashy-zoom icon-white"></i></button>
                 </div>
             </div>
 
             <div class="w-box-content cnt_a">
 
                 <div class="input-append date pull-left mr15" id="dp_start">
-                    <input type="text" class="ttip_b" title="Эхлэх огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
+                    <input name="from" type="text" class="ttip_b" title="Эхлэх огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
                 <div class="input-append date date pull-left mr15" id="dp_end">
-                    <input type="text" class="ttip_b" title="Дуусах огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
+                    <input name="to" type="text" class="ttip_b" title="Дуусах огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
                 <div class="input-append date date pull-left mr15" id="dp_end">
-                    <select>
-                        <option>Нээлттэй</option>
-                        <option>Хаасан</option>
-                        <option>Шалгаж байгаа</option>
+                    <select name="objectStatus">
+                        <option value="Open">Нээлттэй</option>
+                        <option value="Closed">Хаасан</option>
+                        <option value="Pending">Шалгаж байгаа</option>
                     </select>
                 </div>
 
                 <div class="pull-left mr15">
-                    <input type="text" class="" placeholder="Санал №, утас, нэр, имэйл, регистер № ...">
+                    <input name="q" type="text" class="" placeholder="Санал №, утас, нэр, имэйл, регистер № ...">
                 </div>
 
                 <div class="pull-left">
@@ -82,6 +83,7 @@
                 </div>
             </div>
         </div>
+        </g:form>
     </div>
 </div>
 

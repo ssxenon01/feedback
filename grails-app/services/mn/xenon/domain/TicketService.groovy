@@ -7,8 +7,20 @@ class TicketService {
 	def springSecurityService
 
 	def list(params){
+		if(params.from)
+			params.from = Date.parse("MM/dd/yyyy", params.from)
+		if(params.to)
+			params.to = Date.parse("MM/dd/yyyy", params.to)
 		return Ticket.createCriteria().list(params){
-			// checking only open and Pending tickets
+			if(params.from && params.to){
+				'between'('dateCreated',params.from,params.to)			
+			}else if(params.from){
+				'ge'('dateCreated',params.from)
+			}else if(params.to){
+				'le'('dateCreated',params.to)
+			}
+			if(params.objectStatus)
+				eq('objectStatus',params.objectStatus as ObjectStatus)
             if(params.q){
                 or{
                     if(params.q.isLong())
@@ -27,8 +39,30 @@ class TicketService {
 	}
 
 	def count(params){
-		return Ticket.createCriteria().count(){
-			// checking only open and Pending tickets
+		
+		return Ticket.createCriteria().list(params){
+			if(params.from && params.to){
+				'between'('dateCreated',params.from,params.to)			
+			}else if(params.from){
+				'ge'('dateCreated',params.from)
+			}else if(params.to){
+				'le'('dateCreated',params.to)
+			}
+			if(params.objectStatus)
+				eq('objectStatus',params.objectStatus as ObjectStatus)
+            if(params.q){
+                or{
+                    if(params.q.isLong())
+                    'eq'('id',params.q as Long)
+                    'like'('title', "%${params.q}%")
+                    'like'('content', "%${params.q}%")
+                }
+            }
+            if(params.tags){
+            	tags{
+        			'in'('id',params.tags.collect{ it as Long })
+        		}
+            }
 			'in'('objectStatus',[ObjectStatus.Open,ObjectStatus.Pending])
 		}
 	}

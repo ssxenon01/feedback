@@ -12,8 +12,8 @@ class AppController {
     def ticketService
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
+        params.max = Math.min(max ?: 20, 100)
+        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count(params)]
     }
 
     def list(Integer max) {
