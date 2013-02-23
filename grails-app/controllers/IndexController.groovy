@@ -9,7 +9,7 @@ def ticketService
 	 */
 	def index = {
 
-		[ticketList: ticketService.list([max:9])]
+		[ticketList: ticketService.hotTickets([max:9])]
 
 	}
 }

@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: shaggy
+  Date: 2/9/13
+  Time: 1:42 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="mn.xenon.domain.Tag" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -18,8 +25,8 @@
     <div class="clear"></div>
     <div class="span8 left-panel">
         <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a>Нээлттэй</a></li>
-            <li><g:link controller="ticket" action="pending">Хүлээлтэнд байгаа</g:link></li>
+            <li><g:link controller="ticket" action="index">Нээлттэй</g:link></li>
+            <li class="active"><a>Хүлээлтэнд байгаа</a></li>
             <li><g:link controller="ticket" action="closed">Хаасан</g:link></li>
         </ul>
 
@@ -33,8 +40,7 @@
             </div>
         </div>
     </div>
-
-        <g:render template="rightPanel" model="['hotTickets':hotTickets]"/>
+    <g:render template="rightPanel" model="['hotTickets':hotTickets]"/>
 
     </div>
     </div>

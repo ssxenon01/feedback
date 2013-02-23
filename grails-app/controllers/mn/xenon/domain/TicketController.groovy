@@ -11,23 +11,17 @@ class TicketController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
-    }
-
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count()]
-    }
-    def my(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        render(view: "index", model: [ticketInstanceList: ticketService.getMyTickets(params), ticketInstanceTotal: ticketService.getMyTicketsCount()])
-
+        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count(params),hotTickets:ticketService.hotTickets([max:4])]
     }
     def closed(Integer max){
         params.max = Math.min(max ?: 10, 100)
-        [ticketInstanceList: ticketService.closedList(params), ticketInstanceTotal: ticketService.closedCount()]
+        [ticketInstanceList: ticketService.closedList(params), ticketInstanceTotal: ticketService.closedCount(),hotTickets:ticketService.hotTickets([max:4])]
     }
-
+    def pending(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        [ticketInstanceList: ticketService.getPendingTickets(params), ticketInstanceTotal: ticketService.getPendingCount(),hotTickets:ticketService.hotTickets([max:4])]
+    }
+    
     @Secured(['ROLE_USER'])
     def create() {
         [ticketInstance: new Ticket(params)]

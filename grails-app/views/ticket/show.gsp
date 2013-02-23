@@ -18,10 +18,10 @@
                             <div class="media-content">
                                 <h1 class="title">${ticketInstance.title}</h1>
                                 <p>${ticketInstance.content}</p>
-                                <div class="date"><strong>Created:</strong>
-                                	<g:formatDate format="yyyy-MM-dd" date="${ticketInstance.dateCreated}"/></div>
+                                <div class="date"><strong>Огноо:</strong>
+                                	<g:formatDate formatName="date.long" date="${ticketInstance.dateCreated}"/></div>
                                 <div class="tag"><strong>Category</strong>
-                                	 <g:each in="${Tag.list()}" var="tag">
+                                	 <g:each in="${ticketInstance.tags}" var="tag">
                                 	 	<a href="#">${fieldValue(bean: tag, field: "label")}</a>,
 								    </g:each>
                                 </div>

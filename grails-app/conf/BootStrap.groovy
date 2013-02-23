@@ -2,7 +2,9 @@ import mn.xenon.auth.User
 import mn.xenon.auth.Role
 import mn.xenon.auth.UserRole
 import mn.xenon.domain.Ticket
-
+import mn.xenon.domain.Tag
+import mn.xenon.domain.ObjectStatus
+import java.util.Random
 class BootStrap {
 
     def init = { servletContext ->
@@ -35,7 +37,23 @@ class BootStrap {
     }
     def setupTicket(){
     	if(Ticket.count() == 0){
-    		def ticket = new Ticket(title:'test title',content:'Hello world test ticket 1').save(failOnError:true)
+            def tagList = []
+            def sampleTags = ['Хэрэглэгчийн хууль','Худалдаа үйлчилгээ','Хөдөө аж ахуй','Мэдээллийн технологи','Түлш эрчим хүч, Барилга орон сууц','Аялал жуулчлал','Шинжлэх ухаан',
+            'Эмнэлэгийн хэрэгслийн худалдаа','Түлш эрчим хүч, Уул уурхай','Өрсөлдөөний хууль','Төрийн болон Төрийн бус байгууллага','Банк санхүү, худалдаа үйлчилгээний салбар',
+            'Харилцаа холбоо, Мэдээллийн технологи','Нийтийн аж ахуй, Зам тээвэр','Боловсрол, Соёл урлаг','Эрүүл мэндийн үйлчилгээ','Үйлдвэрлэл, Ниймгмийн хамгаалал']
+            sampleTags.each{ label ->
+                tagList.add(new Tag(label:label).save(failOnError:true))
+            }
+            def random = new Random()
+            tagList.each { tag ->
+                for(def i in 0..30){
+                    def ticket = new Ticket(title:"Ticket title: ${i} created from tag :${tag.label}",vote:random.nextInt(2000),
+                        content:'Hello world test ticket 1 Hello world test ticket 1 Hello world test ticket 1',
+                        objectStatus: ObjectStatus.numToEnum(random.nextInt(5)+1))
+                    ticket.addToTags(tag)
+                    ticket.save(failOnError:true)
+                }
+            }
     	}
     }
     def destroy = {

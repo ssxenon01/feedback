@@ -6,9 +6,9 @@
         <div class="antiscroll-inner">
             <div class="antiscroll-content">
                 <div class="sidebar_inner">
-                    <form action="#" class="input-append" method="post" >
-                        <input autocomplete="off" name="query" class="search_query input-medium" size="16" type="text" placeholder="Search..." /><button type="submit" class="btn"><i class="icon-search"></i></button>
-                    </form>
+                    <g:form controller="app" action="index" class="input-append" method="GET" >
+                        <input autocomplete="off" name="q" class="search_query input-medium" size="16" type="text" placeholder="Хайлт..." /><button type="submit" class="btn"><i class="icon-search"></i></button>
+                    </g:form>
                     <div id="side_accordion" class="accordion">
 
                         <div class="accordion-group">

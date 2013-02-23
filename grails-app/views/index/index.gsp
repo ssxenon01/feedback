@@ -73,40 +73,8 @@
     <div class="clear" style="height: 15px;"></div>
     %{-- start --}%
     <g:each in="${ticketList}" var="ticket">
-            <div class="span4 petition">
-                <div class="inner">
-                    <div class="title">
-                        <h4><a href="<g:createLink controller="ticket" action="show" id="${ticket.id}"/>" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Дэлгэнргүй үзэх" data-placement="bottom">${fieldValue(bean: ticket, field: "title")}</a></h4>
-                    </div>
-                    <div class="dateline">
-                        <i class=" icon-star"></i> <span class="red"><g:message code="objectStatus.${ticket.objectStatus}"/></span>
-                        <i class=" icon-time"></i> ${fieldValue(bean: ticket, field: "dateCreated")}
-                    </div>
-                    <div class="pet-graph">
-                        <div class="thermometer" style="">
-                            <div class="mercury" style="width: ${(ticket.vote/ticket.maxVote)*100}%"></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom">
-                        <span class="stats-narrow">
-                            <span class="stats">
-                               %{--  <span class="picture">
-                                    <i class="icon-picture"></i> <a href="#">Зураг харах</a>
-                                </span> --}%
-                                <span class="like-count" tID="${ticket.id}">
-                                    <strong class="">${fieldValue(bean: ticket, field: "vote")}</strong> Дэмжсэн
-                                </span>
-
-                            </span>
-                        </span>
-                        <span class="action">
-                            <a href="#" tID="${ticket.id}" class="btn btn-small ${ticket.getVoted()?"disabled":"btn-like"} widget-vote-action"><i class="icon-thumbs-up"></i></a>
-                        </span>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
+        <g:render template="/ticket/widget" model="['ticket':ticket]"/>
+            
     </g:each>
     
     %{-- end --}%

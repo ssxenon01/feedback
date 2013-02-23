@@ -7,9 +7,9 @@ public enum ObjectStatus {
     Closed(3), // Шалгаад closed result
     Approved(4), 
     Expired(5), // 1 жилийн хугацаанд дэмжээгүй
-    Deleted(6),
+    Duplicated(6), // Саналийн давхардалт 
     Suspended(7), // Цуцалсан шалгаж үзээд
-    Duplicated(8) // Саналийн давхардалт 
+    Deleted(8)
 
     final Integer value
 
@@ -24,12 +24,12 @@ public enum ObjectStatus {
     public static ObjectStatus numToEnum(Integer num) {
         if (num != null) {
             for (ObjectStatus s: ObjectStatus.values()) {
-                if (s.getValue().equals(num.intValue())) {
+                if (s.getValue().equals(num)) {
                     return s;
                 }
             }
         } else {
-            return null
+            return ObjectStatus.Open
         }
     }
 }

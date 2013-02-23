@@ -23,11 +23,11 @@
             <div class="w-box-content cnt_a">
 
                 <div class="input-append date pull-left mr15" id="dp_start">
-                    <input name="from" type="text" class="ttip_b" title="Эхлэх огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
+                    <input name="from" type="text" class="ttip_b" title="Эхлэх огноо" value="<g:if test="${params.from}"><g:formatDate format="MM/dd/yyyy" date="${params.from}"/></g:if>" /><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
                 <div class="input-append date date pull-left mr15" id="dp_end">
-                    <input name="to" type="text" class="ttip_b" title="Дуусах огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
+                    <input name="to" type="text" class="ttip_b" title="Дуусах огноо" value="<g:if test="${params.to}"><g:formatDate format="MM/dd/yyyy" date="${params.to}"/></g:if>" /><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
                 <div class="input-append date date pull-left mr15" id="dp_end">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="pull-left mr15">
-                    <input name="q" type="text" class="" placeholder="Санал №, утас, нэр, имэйл, регистер № ...">
+                    <input name="q" type="text" class="" placeholder="Санал №, утас, нэр, имэйл, регистер № ..." value="${params.q}">
                 </div>
 
                 <div class="pull-left">
@@ -68,7 +68,7 @@
                         <g:each in="${Tag.list()}" var="tag">
                             <div class="span5">
                                 <label class="checkbox">
-                                    <input type="checkbox" value="${tag.id}">
+                                    <input name="tags" type="checkbox" value="${tag.id}" ${params.tags?.contains(tag.id.toString())?'checked':''}>
                                     ${tag.label}
                                 </label>
                             </div>
@@ -112,7 +112,7 @@
 
                                     <p class="sepH_b item_description">${ticketInstance.content}</p>
 
-                                    <p class="sepH_a"><strong>Lorem ipsum:</strong> dolor sit amet</p>
+                                    <p class="sepH_a"><strong>Саналын дугаар: №${ticketInstance.id}</strong></p>
                                     <g:each in="${ticketInstance.tags}" var="tag">
                                            <small>${tag.label}</small>
                                     </g:each>

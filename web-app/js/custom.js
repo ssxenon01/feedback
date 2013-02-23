@@ -39,12 +39,12 @@ $(function(){
         return false;
 
     });
-    $('#myTab a').click(function (e) {
+    /*$('#myTab a').click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
         return false;
 
-    });
+    });*/
     $("[rel=tooltip]").tooltip();
     $('#optionsRadios1').click(function() {
         if($('#optionsRadios1').is(':checked')) { $('.test2').hide();$('.test1').show(); }

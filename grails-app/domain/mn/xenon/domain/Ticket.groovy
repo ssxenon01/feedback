@@ -13,7 +13,7 @@ class Ticket extends BaseDomain{
 	int maxVote = 1000
 	boolean getVoted(){
 		if(springSecurityService.currentUser)
-			return voteList.contains(springSecurityService.currentUser.id)
+			return voteList.contains(springSecurityService.currentUser)
 		else
 			return false
 	}
@@ -23,7 +23,7 @@ class Ticket extends BaseDomain{
 
 	String result
 
-	static hasMany = [tags: Tag,voteList:Long]
+	static hasMany = [tags: Tag,voteList:User]
 
 	static mapping = {
 		cache true
@@ -40,7 +40,7 @@ class Ticket extends BaseDomain{
 		title blank: false
 		result  blank: true, nullable: true
 		moderatorComment  blank: true, nullable: true
-		content blank: false, unique: true
+		content blank: false
         tags nullable: true, lazy: true
         voteList nullable:true
 	}

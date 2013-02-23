@@ -2,15 +2,15 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="#"><i class="icon-home icon-white"></i> 1284</a>
+                <a class="brand" href="<g:createLink uri="/app"/>"><i class="icon-home icon-white"></i> 1284</a>
                 <ul class="nav user_menu pull-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Amar Pagva <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username will goes here<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another Action</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><g:link uri="/logout">Гарах</g:link></li>
                         </ul>
                     </li>
                 </ul>

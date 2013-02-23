@@ -34,13 +34,14 @@ class TicketService {
         			'in'('id',params.tags.collect{ it as Long })
         		}
             }
-			'in'('objectStatus',[ObjectStatus.Open,ObjectStatus.Pending])
+			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
+			order('dateCreated','DESC')
 		}
 	}
 
 	def count(params){
 		
-		return Ticket.createCriteria().list(params){
+		return Ticket.createCriteria().count(){
 			if(params.from && params.to){
 				'between'('dateCreated',params.from,params.to)			
 			}else if(params.from){
@@ -63,7 +64,8 @@ class TicketService {
         			'in'('id',params.tags.collect{ it as Long })
         		}
             }
-			'in'('objectStatus',[ObjectStatus.Open,ObjectStatus.Pending])
+			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
+			
 		}
 	}
 
@@ -107,8 +109,14 @@ class TicketService {
 		}
 	}
 
-	def getPendingTickets(){
-		return Ticket.createCriteria().list(){
+	def getPendingTickets(params){
+		return Ticket.createCriteria().list(params){
+			eq('objectStatus',ObjectStatus.Pending)
+		}
+	}
+	
+	def getPendingCount(){
+		return Ticket.createCriteria().count(){
 			eq('objectStatus',ObjectStatus.Pending)
 		}
 	}
@@ -123,6 +131,35 @@ class TicketService {
         return Ticket.createCriteria().count() {
             eq('author',springSecurityService.currentUser as User)
             'ne'('objectStatus',ObjectStatus.Deleted)
+        }
+    }
+    def hotTickets(params = null){
+    	if(springSecurityService.currentUser){
+	    	def myLiked = Ticket.createCriteria().list() {
+	            'gtProperty'('maxVote','vote')
+	    		voteList{
+	    			'eq'('id',springSecurityService.currentUser.id)
+	        	}
+	            'not'{            	
+	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
+	            }
+	            order('vote','desc')
+	        }
+	        return Ticket.createCriteria().list(params){
+	        	'gtProperty'('maxVote','vote')
+	            'not'{            	
+	        		'in'('id',myLiked.id)
+	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
+	            }
+	            order('vote','desc')
+	        }
+        }else{
+        	return Ticket.createCriteria().list(params) {
+	            'gtProperty'('maxVote','vote')
+	            'not'{            	
+	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
+	            }
+	        }
         }
     }
 }
