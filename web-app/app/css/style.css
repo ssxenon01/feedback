@@ -818,3 +818,95 @@
                 table.petition-list tr td strong {
                     color: #666;
                 }
+
+
+
+    .table-borderP {
+        border-collapse: separate;
+        *border-collapse: collapse;
+        border-left: 0;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        border-radius: 0px !important;
+    }
+    .table-borderP .width140{
+        width: 140px;
+    }
+    .table-borderP .width60{
+        width: 60px;
+    }
+    .table-borderP th,
+    .table-borderP td {
+        border-left: 1px solid #dddddd;
+    }
+    .table-borderP caption + thead tr:first-child th,
+    .table-borderP caption + tbody tr:first-child th,
+    .table-borderP caption + tbody tr:first-child td,
+    .table-borderP colgroup + thead tr:first-child th,
+    .table-borderP colgroup + tbody tr:first-child th,
+    .table-borderP colgroup + tbody tr:first-child th,
+    .table-borderP colgroup + tbody tr:first-child td,
+    .table-borderP thead:first-child tr:first-child th,
+    .table-borderP tbody:first-child tr:first-child th,
+    .table-borderP tbody:first-child tr:first-child td {
+        border-top: 0;
+    }
+    .table-borderP thead:first-child tr:first-child > th:first-child,
+    .table-borderP tbody:first-child tr:first-child > td:first-child,
+    .table-borderP tbody:first-child tr:first-child > th:first-child {
+        border-left: none;
+    }
+    .table-borderP thead:first-child tr:first-child > th:last-child,
+    .table-borderP tbody:first-child tr:first-child > td:last-child,
+    .table-borderP tbody:first-child tr:first-child > th:last-child {
+
+    }
+    .table-borderP thead:last-child tr:last-child > th:first-child,
+    .table-borderP tbody:last-child tr:last-child > td:first-child,
+    .table-borderP tbody:last-child tr:last-child > th:first-child,
+    .table-borderP tfoot:last-child tr:last-child > td:first-child,
+    .table-borderP tfoot:last-child tr:last-child > th:first-child {
+        border-left: none;
+    }
+    .table-borderP thead:last-child tr:last-child > th:last-child,
+    .table-borderP tbody:last-child tr:last-child > td:last-child,
+    .table-borderP tbody:last-child tr:last-child > th:last-child,
+    .table-borderP tfoot:last-child tr:last-child > td:last-child,
+    .table-borderP tfoot:last-child tr:last-child > th:last-child {
+
+    }
+    .table-borderP tfoot + tbody:last-child tr:last-child td:first-child {
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-bottom-left-radius: 0;
+    }
+    .table-borderP tfoot + tbody:last-child tr:last-child td:last-child {
+        -webkit-border-bottom-right-radius: 0;
+        -moz-border-radius-bottomright: 0;
+        border-bottom-right-radius: 0;
+    }
+    .table-borderP caption + thead tr:first-child th:first-child,
+    .table-borderP caption + tbody tr:first-child td:first-child,
+    .table-borderP colgroup + thead tr:first-child th:first-child,
+    .table-borderP colgroup + tbody tr:first-child td:first-child {
+        border-left: none;
+    }
+    .table-borderP caption + thead tr:first-child th:last-child,
+    .table-borderP caption + tbody tr:first-child td:last-child,
+    .table-borderP colgroup + thead tr:first-child th:last-child,
+    .table-borderP colgroup + tbody tr:first-child td:last-child {
+
+    }
+
+    .w-box-header-userlist {
+        height: 41px;
+        line-height: 40px;
+    }
+    .w-box-header-userlist .input-prepend{
+        margin-bottom: 0px;
+    }
+    .w-box-header-userlist input {
+        padding: 4px;
+        margin: 0px 0 0;
+        margin-left: -3px;
+    }
