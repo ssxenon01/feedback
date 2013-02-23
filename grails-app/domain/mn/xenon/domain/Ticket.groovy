@@ -14,7 +14,10 @@ class Ticket extends BaseDomain{
 	int maxVote = 1000
 
 	boolean getVoted(){
-		return voteList.contains(springSecurityService.currentUser as User)
+        if(springSecurityService)
+		    return voteList.contains(springSecurityService.currentUser as User)
+        else
+            return false
 	}
 
 	Ticket diplicatedWith

@@ -3,41 +3,112 @@
 <html>
 <head>
     <title><g:layoutTitle default="Grails"/></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" media="screen" href="${resource(dir: 'css', file: 'bootstrap.css')}" />
-    <link href="${resource(dir: 'css', file: 'style.css')}" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>App</title>
     <g:if env="production">
-        <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic" />
+        <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic"/>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
     </g:if>
     <g:if env="development">
         <style>
-            @font-face {
-              font-family: 'PT Sans Narrow';
-              font-style: normal;
-              font-weight: 400;
-              src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(${resource(dir: 'css/font', file: 'UyYrYy3ltEffJV9QueSi4S4mX3cpNo8MnLri8k21-rs.woff')}) format('woff');
-            }
-            @font-face {
-              font-family: 'PT Sans Narrow';
-              font-style: normal;
-              font-weight: 700;
-              src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(${resource(dir: 'css/font', file: 'Q_pTky3Sc3ubRibGToTAYigwe3ZcNEyK1ut-Sjba9Qg.woff')}) format('woff');
-            }
+        @font-face {
+            font-family: 'PT Sans Narrow';
+            font-style: normal;
+            font-weight: 400;
+            src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(${resource(dir: 'css/font', file: 'UyYrYy3ltEffJV9QueSi4S4mX3cpNo8MnLri8k21-rs.woff')}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'PT Sans Narrow';
+            font-style: normal;
+            font-weight: 700;
+            src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(${resource(dir: 'css/font', file: 'Q_pTky3Sc3ubRibGToTAYigwe3ZcNEyK1ut-Sjba9Qg.woff')}) format('woff');
+        }
         </style>
-        <script src="${resource(dir: 'js', file: 'jquery-latest.js')}"></script>
     </g:if>
-    <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+<!-- Bootstrap framework -->
+    <link rel="stylesheet" href="${resource(dir: 'app/bootstrap/css', file: 'bootstrap.min.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: 'app/bootstrap/css', file: 'bootstrap-responsive.min.css')}"/>
+
+    <!-- blue theme-->
+    <link rel="stylesheet" href="${resource(dir: 'app/css', file: 'blue.css')}"/>
+
+    <!-- tooltips-->
+    <link rel="stylesheet" href="${resource(dir: 'app/lib/qtip2', file: 'jquery.qtip.min.css')}"/>
+
+    <!-- main styles -->
+    <link rel="stylesheet" href="${resource(dir: 'app/css', file: 'style.css')}"/>
+
+    <!-- splashy icons -->
+    <link rel="stylesheet" href="${resource(dir: 'app/img/splashy', file: 'splashy.css')}"/>
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="${resource(dir: 'app/lib/datepicker', file: 'datepicker.css')}"/>
+
+    <!--[if lte IE 8]>
+                    <link rel="stylesheet" href="${resource(dir: 'app/css', file: 'ie.css')}"/>
+                    <script src="${resource(dir: 'app/js/ie', file: 'html5.js')}"></script>
+                    <script src="${resource(dir: 'app/js/ie', file: 'respond.min.js')}"></script>
+        <![endif]-->
+
+    <script>
+        //* hide all elements & show preloader
+        document.getElementsByTagName('html')[0].className = 'js';
+    </script>
     <g:layoutHead/>
 </head>
+
 <body>
-    <div id="page">
-        <g:render template="/includes/header"/>
-        <div class="clear"></div>
-        <g:layoutBody/>
-        <g:render template="/includes/footer"/>
+<div id="loading_layer" style="display:none"><img src="${resource(dir: 'app/img', file: 'ajax_loader.gif')}" alt=""/></div>
+<div id="maincontainer" class="clearfix">
+    <g:render template="/app/includes/header"/>
+    <!-- main content -->
+    <div id="contentwrapper">
+        <div class="main_content">
+
+            <g:layoutBody/>
+
+        </div>
     </div>
-    <script src="${resource(dir: 'js', file: 'custom.js')}"></script>
+    <g:render template="/app/includes/leftMenu"/>
+
+    <!-- js files include -->
+
+    <script src="${resource(dir: 'app/js', file: 'jquery.min.js')}"></script>
+    <!-- smart resize event -->
+    <script src="${resource(dir: 'app/js', file: 'jquery.debouncedresize.min.js')}"></script>
+    <!-- hidden elements width/height -->
+    <script src="${resource(dir: 'app/js', file: 'jquery.actual.min.js')}"></script>
+    <!-- js cookie plugin -->
+    <script src="${resource(dir: 'app/js', file: 'jquery.cookie.min.js')}"></script>
+    <!-- main bootstrap js -->
+    <script src="${resource(dir: 'app/bootstrap/js', file: 'bootstrap.min.js')}"></script>
+    <!-- bootstrap plugins -->
+    <script src="${resource(dir: 'app/js', file: 'bootstrap.plugins.min.js')}"></script>
+    <!-- tooltips -->
+    <script src="${resource(dir: 'app/lib/qtip2', file: 'jquery.qtip.min.js')}"></script>
+    <!-- fix for ios orientation change -->
+    <script src="${resource(dir: 'app/js', file: 'ios-orientationchange-fix.js')}"></script>
+
+    <!-- scrollbar -->
+    <script src="${resource(dir: 'app/lib/antiscroll', file: 'antiscroll.js')}"></script>
+    <script src="${resource(dir: 'app/lib/antiscroll', file: 'jquery-mousewheel.js')}"></script>
+
+    <!-- datepicker -->
+    <script src="${resource(dir: 'app/lib/datepicker', file: 'bootstrap-datepicker.min.js')}"></script>
+    <!-- common functions -->
+    <script src="${resource(dir: 'app/js', file: 'gebo_common.js')}"></script>
+    <!-- form functions -->
+    <script src="${resource(dir: 'app/js', file: 'gebo_forms.js')}"></script>
+    <!-- custom functions -->
+    <script src="${resource(dir: 'app/js', file: 'custom.js')}"></script>
+    <script>
+        $(document).ready(function () {
+            //* show all elements & remove preloader
+            setTimeout('$("html").removeClass("js")', 1000);
+        });
+    </script>
+</div>
 </body>
 </html>
