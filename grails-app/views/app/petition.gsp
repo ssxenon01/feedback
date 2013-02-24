@@ -71,7 +71,7 @@
                     <select>
                         <option>Давхардсан</option>
                     </select>
-                    <input type="text" class="input-large ttip_b" value="" placeholder="Давхардсан санлын Дугаар" title="Давхардсан санлын дугаар оруулах" >
+                    <input type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
                     <button class="btn btn-danger" type="submit">Хадгалах</button>
                 </form>
             </div>

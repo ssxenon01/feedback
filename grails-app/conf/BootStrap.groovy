@@ -14,7 +14,7 @@ class BootStrap {
     	setupUsers()
     	setupTicket()
     }
-
+    def defaultUser
     def setupUsers(){
 	    Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
         Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
@@ -23,8 +23,8 @@ class BootStrap {
 
         if (User.count() == 0) {
         	def sampleUsers = [
-                [username:'admin',role: 'ROLE_ADMIN', pass: 'pass', firstname: 'Admin', lastname: 'Admin',email:'admin@example.com',phone:'99999999',registerId:'УБ12345678'],
-                [username:'user',role: 'ROLE_USER', pass: 'pass', firstname: 'User', lastname: 'User',email:'user@example.com',phone:'88888888',registerId:'УБ87654321']
+                [username:'admin',role: 'ROLE_ADMIN', password: 'pass', firstname: 'Admin', lastname: 'Admin',email:'admin@example.com',phone:'99999999',registerId:'УБ12345678'],
+                [username:'user',role: 'ROLE_USER', password: 'pass', firstname: 'User', lastname: 'User',email:'user@example.com',phone:'88888888',registerId:'УБ87654321']
             ]
             sampleUsers.each { attrs ->
             	def user = new User(attrs).save(failOnError: true)
@@ -32,6 +32,7 @@ class BootStrap {
 		        if (!user.authorities.contains(role)) {
 		            UserRole.create(user, role)
 		        }
+                defaultUser = user
             }
         }
     }
@@ -47,7 +48,7 @@ class BootStrap {
             def random = new Random()
             tagList.each { tag ->
                 for(def i in 0..30){
-                    def ticket = new Ticket(title:"Ticket title: ${i} created from tag :${tag.label}",vote:random.nextInt(2000),
+                    def ticket = new Ticket(author:defaultUser, title:"Ticket title: ${i} created from tag :${tag.label}",vote:random.nextInt(2000),
                         content:'Hello world test ticket 1 Hello world test ticket 1 Hello world test ticket 1',
                         objectStatus: ObjectStatus.numToEnum(random.nextInt(5)+1))
                     ticket.addToTags(tag)

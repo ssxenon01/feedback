@@ -144,14 +144,14 @@ gebo_validation = {
                 $(element).closest('div').append(error);
             },
             rules: {
-                oldpassword: { required: true, minlength: 6},
+                oldpassword: { required: true, minlength: 3},
                 newpassword: { required: true, minlength: 6},
                 repeatpassword: { required: true, minlength: 6,equalTo: "#newpassword"}
             },
             messages: {
                 oldpassword: "Одоогийн нууц үгээ зөв оруулна уу",
-                newpassword: "Шинэ нууц үгээ оруулна уу",
-                repeatpassword: "Нууц үгээ шалгана уу"
+                newpassword: "Нууц үг нь 6-20 тэмдэгттэй байна.",
+                repeatpassword: "Давтан оруулсан нууц үг таарахгүй байна"
 
             },
             invalidHandler: function(form, validator) {

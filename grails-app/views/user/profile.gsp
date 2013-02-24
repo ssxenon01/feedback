@@ -51,9 +51,8 @@
 
                         <div class="control-group formSep">
                             <label for="u_fname" class="control-label">Хэрэглэгчийн нэр</label>
-
                             <div class="controls">
-                                <input type="text" id="u_fname" name="firstname" class="input-xlarge" value="Amar Pagva">
+                                <input required="" type="text" id="u_fname" name="firstname" class="input-xlarge" placeholder="Жишээ нь: Болд" value="${user.firstname}">
                             </div>
                         </div>
 
@@ -61,7 +60,7 @@
                             <label for="u_email" class="control-label">Имэйл</label>
 
                             <div class="controls">
-                                <input type="text" id="u_email" name="email" class="input-xlarge" value="amar@eon.mn">
+                                <input required="" type="text" id="u_email" name="email" class="input-xlarge" value="${user.email}" placeholder="Жишээ нь: user@gmail.com">
                             </div>
                         </div>
 
@@ -69,11 +68,17 @@
                             <label for="u_email" class="control-label">Регистерийн дугаар</label>
 
                             <div class="controls">
-                                <input type="text" id="u_registerNumber" class="input-xlarge" value="УЮ87101438">
+                                <input required="" type="text" id="u_registerNumber" class="input-xlarge" value="${user.registerId}" placeholder="Жишээ нь: УЗ85064521">
                             </div>
                         </div>
-
                         <div class="control-group formSep">
+                            <label for="u_email" class="control-label">Харилцах утас</label>
+
+                            <div class="controls">
+                                <input required="" type="text" id="u_phone" class="input-xlarge" value="${user.phone}" placeholder="Жишээ нь: 99199999">
+                            </div>
+                        </div>
+                        %{-- <div class="control-group formSep">
                             <label class="control-label">Хүйс</label>
 
                             <div class="controls">
@@ -86,14 +91,14 @@
                                     Эмэгтэй
                                 </label>
                             </div>
-                        </div>
+                        </div> --}%
 
                         <div class="control-group formSep">
                             <label for="u_signature" class="control-label">Товч танилцуулга</label>
 
                             <div class="controls">
-                                <textarea rows="4" id="u_signature" class="input-xlarge"
-                                          style="overflow: hidden; word-wrap: break-word; max-height: 72px; min-height: 72px; height: 72px;">Lorem ipsum…</textarea>
+                                <textarea rows="4" id="u_signature" class="input-xlarge" placeholder="Жишээ нь: Барилгын салбарт ажилладаг"
+                                          style="overflow: hidden; word-wrap: break-word; max-height: 72px; min-height: 72px; height: 72px;">${user.about}</textarea>
                                 <span class="help-block">Бөглөхгүй байж болно</span>
                             </div>
                         </div>

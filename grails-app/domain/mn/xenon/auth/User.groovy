@@ -12,10 +12,10 @@ class User extends BaseDomain{
 
 	String username
 	String password
-	boolean enabled
-	boolean accountExpired
-	boolean accountLocked
-	boolean passwordExpired
+	boolean enabled = true
+	boolean accountExpired = false
+	boolean accountLocked = false
+	boolean passwordExpired = false
     String firstname
     String lastname
     String email
@@ -23,6 +23,8 @@ class User extends BaseDomain{
 
     String about
     String phone
+    String facebook
+    String twitter
 
     Gender gender = Gender.Other
     static hasMany = [tags:Tag]
@@ -31,12 +33,14 @@ class User extends BaseDomain{
         username blank: false, unique: true
         firstname nullable: true
         lastname nullable: true
-        email nullable: true
+        email nullable: true, unique:true
         password blank: false
         registerId blank:true, nullable:true,unique:true
         tags nullable: true, lazy: true, reference: false
         about nullable:true
         phone nullable:true
+        facebook nullable:true
+        twitter nullable:true
 	}
 
 	static mapping = {

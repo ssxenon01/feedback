@@ -54,6 +54,18 @@ class UserController {
 
     [user:currentUser()]
   }
+  @Secured(['ROLE_USER'])
+  def changepass() {
+    if(springSecurityService.currentUser.password == springSecurityService.encodePassword(params.oldpassword)){
+      def user = User.get(springSecurityService.currentUser.id)
+      user.password = params.newpassword
+      user.save()
+      flash.message = "Нууц үг амжилттай солигдлоо"
+    }else{
+      flash.error = "Хуучин нууц үг буруу байна"
+    }
+    redirect(action: "changePass")
+  }
   User currentUser(){
       return springSecurityService.currentUser
   }

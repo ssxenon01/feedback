@@ -15,28 +15,29 @@
 
 
 <body>
+    
 <div class="row-fluid">
     <div class="span6">
-        <form class="form-horizontal well user_change_password">
+        <g:form controller="user" action="changepass" method="POST" class="form-horizontal well user_change_password">
             <fieldset>
                 <p class="f_legend">Нууц үг солих</p>
                 <div class="control-group">
                     <label class="control-label">Одоогийн нууц үг</label>
                     <div class="controls">
-                        <input type="text" name="oldpassword" id="oldpassword" class="span10">
+                        <input type="password" name="oldpassword" id="oldpassword" class="span10">
                         <span class="help-block">хуучин нууц үгээ оруулна уу</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Шинэ нууц үг</label>
                     <div class="controls">
-                        <input type="text" name="newpassword" id="newpassword" class="span10">
+                        <input type="password" name="newpassword" id="newpassword" class="span10">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Дахин оруулах</label>
                     <div class="controls">
-                        <input type="text" name="repeatpassword" id="repeatpassword" class="span10">
+                        <input type="password" name="repeatpassword" id="repeatpassword" class="span10">
                         <span class="help-block">Нууц үгээ давтан оруулна уу</span>
                     </div>
                 </div>
@@ -47,7 +48,7 @@
                     </div>
                 </div>
             </fieldset>
-        </form>
+        </g:form>
     </div>
     <div class="span6">
         <div class="w-box">

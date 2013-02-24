@@ -4,7 +4,7 @@ import mn.xenon.auth.User
 class Ticket extends BaseDomain{
 
 	transient springSecurityService
-	static transients = ['voted']
+	static transients = ['voted','fetchStatement']
 	String title
 	String content
 
@@ -22,6 +22,10 @@ class Ticket extends BaseDomain{
 	String moderatorComment
 
 	String result
+
+	List<Statement> fetchStatements(){
+		return Statement.list([sord:'dateCreated',order:'DESC',max:10])
+	}
 
 	static hasMany = [tags: Tag,voteList:User]
 

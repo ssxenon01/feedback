@@ -5,10 +5,10 @@
                 <a class="brand" href="<g:createLink uri="/app"/>"><i class="icon-home icon-white"></i> 1284</a>
                 <ul class="nav user_menu pull-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username will goes here<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><g:currentUser/><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another Action</a></li>
+                            <li><g:link controller="user" action="profile">Профайл</g:link></li>
+                            <li><g:link controller="user" action="changePass">Нууц үг солих</g:link></li>
                             <li class="divider"></li>
                             <li><g:link uri="/logout">Гарах</g:link></li>
                         </ul>

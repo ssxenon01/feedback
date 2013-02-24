@@ -26,7 +26,7 @@
                     <ul class="nav pull-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="top_user">
-                                <i class="icon-white icon-user"></i> %{-- <sec:loggedInUserInfo field="username"/> --}% <b class="caret"></b>
+                                <i class="icon-white icon-user"></i> <g:currentUser />%{-- <sec:loggedInUserInfo field="username"/> --}% <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="<g:createLink controller="ticket" action="create"/>"><i class="icon-share-alt"></i> Санал оруулах</a></li>
