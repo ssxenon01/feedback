@@ -1184,3 +1184,7 @@ hr.small {
     right: 10px;
     left: auto;
 }
+
+.forget-message {
+    padding: 5px 40px;
+}
