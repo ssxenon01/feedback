@@ -21,10 +21,8 @@
                 <h2>Нууц үгээ мартсан</h2>
 
                 <div class="forget-message">
-                    <div class="alert alert-info">
-                        <a class="close" data-dismiss="alert">×</a>
-                        Түр ашиглах нууц үг үүсгэгдлээ, нууц үгийг имэйлээр илгээсэн.
-                    </div>
+                    <g:render template="/includes/warning" />
+                    
                 </div>
                 <div class="forget-message">
                     <g:render template="/includes/warning" />
@@ -37,7 +35,7 @@
                         <input type="submit" value="Сэргээх< ></>" class="btn btn-green">
                     </div>
                 </g:form></div>
-            <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a></p>
+                <g:render template="bottom" />
         </article>
     </div>
 </div>

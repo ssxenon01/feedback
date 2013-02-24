@@ -52,7 +52,7 @@
                     </div>
                 </g:form>
             </div>
-            <p class="note">By joining, or logging in via Facebook account and Twitter account, you accept 1284.mn's <a href="#">terms of service</a> and <a href="#">privacy policy</a>.</p>
+            <g:render template="bottom" />
         </article>
     </div>
 </div>

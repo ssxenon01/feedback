@@ -1,0 +1,1 @@
+<p class="note"><g:link action="forgot">Нууц үгээ мартсан?</g:link> · Шинэ бүртгүүлэх хэрэгтэй юу? <g:link action="register">Бүртгүүлэх</g:link></p>
