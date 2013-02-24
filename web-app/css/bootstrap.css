@@ -2528,7 +2528,7 @@ input[type="submit"].btn.btn-mini {
   text-decoration: none;
 }
 .btn-like [class^="icon-"]{
-  background-image: url("../newlayout/img/glyphicons-halflings-white.png");
+  background-image: url("../images/glyphicons-halflings-white.png");
 }
 [class^="icon-"],
 [class*=" icon-"] {
@@ -2538,7 +2538,7 @@ input[type="submit"].btn.btn-mini {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../newlayout/img/glyphicons-halflings.png");
+  background-image: url("../images/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2561,7 +2561,7 @@ input[type="submit"].btn.btn-mini {
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("../newlayout/img/glyphicons-halflings-white.png");
+  background-image: url("../images/glyphicons-halflings-white.png");
 }
 .icon-glass {
   background-position: 0      0;
@@ -3947,7 +3947,7 @@ border-bottom: 1px solid #FFF;
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25),0 -1px 0 rgba(0,0,0,0.1) inset;
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),0 -1px 0 rgba(0,0,0,0.1) inset;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25),0 -1px 0 rgba(0,0,0,0.1) inset;
-    background: #0097C6 url(../newlayout/img/headerbg.png) repeat-x 0 0;
+    background: #0097C6 url(../images/headerbg.png) repeat-x 0 0;
     
 }
 .navbar-inverse .brand,

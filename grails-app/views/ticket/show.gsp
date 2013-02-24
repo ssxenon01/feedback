@@ -38,12 +38,18 @@
                                     </div>
                                 </div>
                                 <div class="social-form">
-                                    <div class="connect-buttons">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-                                        <div class="fb-like" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
-                                        
+                                        <div class="connect-buttons clearfix">
+                                            <div class="pull-left">
+                                                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="fb-like" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
+                                            </div>
+                                        </div>
+
+                                    <div class="facebook-comment">
+                                        <div class="fb-comments" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-width="580" data-num-posts="10"></div>
                                     </div>
-                                	<div class="fb-comments" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-width="580" data-num-posts="10"></div>
                                 </div>
                             </div>
                             

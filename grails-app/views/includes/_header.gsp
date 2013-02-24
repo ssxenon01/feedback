@@ -4,13 +4,13 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
             <g:link elementId="logo" uri="/" title="Home">1284</g:link>
             <form action="/" method="post" id="search-form" class="">
-                <input id="search-q" name="" type="text" maxlength="128" size="15" title="Enter search Petition" placeholder="Search Petition">
+                <input id="search-q" name="" type="text" maxlength="128" size="15" title="Enter search Petition" placeholder="Санал, Гомдлын дугаар ...">
                 <input id="search-submit" name="op" type="submit" value="Search">
             </form>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li>
-                        <a href="<g:createLink controller="ticket" action="index"/>"><i class="icon-white icon-list"></i> Санаlууд</a>
+                        <a href="<g:createLink controller="ticket" action="index"/>"><i class="icon-white icon-list"></i> Саналууд</a>
                     </li>
                     <li>
                         <a href="<g:createLink controller="ticket" action="index"/>#open"><i class="icon-white icon-thumbs-up"></i> Нээлттэй санал</a>

@@ -16,7 +16,7 @@ a:hover{
     color: #FFF;
     font-size: 150%;
     font-weight: 200;
-    line-height: 38px;
+    line-height: 42px;
 }
 #search-form {
     position: relative;
@@ -47,11 +47,7 @@ a:hover{
     -webkit-border-radius: 4px;
     border-radius: 4px;
 }
-#search-q::-webkit-input-placeholder,
-#search-q::-moz-placeholder {
-    color: rgba(255,255,255,0.75);
 
-}
 
 #search-submit {
     position: absolute;
@@ -69,16 +65,30 @@ a:hover{
     -moz-opacity: .5;
     opacity: .5;
 }
-.hover #search-q, #search-q:hover {
-    background: #B2DCEC;
+.hover #search-q{
     background: rgba(255,255,255,0.5);
-    color: #FFF;
+    color:#fff;
 }
 #search-q:hover{
-    background:#B2DCEC;
-    background:rgba(255,255,255,0.5);
-    color:#FFF;}
-
+    background: rgba(255,255,255,0.5);
+    color:#fff;
+}
+#search-q::-webkit-input-placeholder { /* WebKit browsers */
+    color:rgba(255,255,255,0.75);
+    padding-top: 2px;
+}
+#search-q:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:rgba(255,255,255,0.75);
+    padding-top: 2px;
+}
+#search-q::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:rgba(255,255,255,0.75);
+    padding-top: 2px;
+}
+#search-q:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:rgba(255,255,255,0.75);
+    padding-top: 2px;
+}
 #search-q:focus{
     padding:7px 27px 5px 7px;
     background:#FFF;
@@ -88,7 +98,7 @@ a:hover{
     color:#333;
     text-shadow:0 1px 0 #FFF;
 }
-#search-q:-webkit-input-placeholder,#search-q:-moz-placeholder{color:#FFF;}
+
 * html #search-submit {
     background-image:url(../images/sprites-1.png);
 }
@@ -118,7 +128,7 @@ a:hover{
 }
 .home-panel{
     padding-top: 50px;
-    background: url(../images/circles-bird.png) no-repeat right 25px;
+    background: url(../images/1284.png) no-repeat right 25px;
     height: 325px;
     margin-bottom: 0;
 }
@@ -337,6 +347,7 @@ div.steps a:hover {
 .popular-petitions .petition .inner .bottom{
     padding-top: 5px;
     margin-bottom: 5px;
+    height: 28px;
 }
 .popular-petitions .petition .inner .bottom .stats-narrow {
     display: block;
@@ -867,4 +878,7 @@ hr.small {
 .character-limit{
     text-align: right;
     margin-top: -10px;
+}
+.facebook-comment{
+    margin-top: 15px;
 }
