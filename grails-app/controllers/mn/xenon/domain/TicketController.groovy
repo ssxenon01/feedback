@@ -5,7 +5,7 @@ import org.springframework.security.access.annotation.Secured
 
 class TicketController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST",fetch: "POST"]
     def springSecurityService
     def ticketService
 
