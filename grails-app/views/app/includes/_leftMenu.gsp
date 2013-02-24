@@ -85,7 +85,7 @@
                                     <div class="accordion-inner">
                                         <ul class="nav nav-list">
                                             <li><g:link controller="user" action="list">Хэрэглэгчид</g:link></li>
-                                            <li><a href="#">Чиглэлүүд</a></li>
+                                            <li><g:link controller="app" action="statistic">Статистик</g:link></li>
                                             <li><a href="#">Дүрэм журам</a></li>
                                             <li><a href="#">Системийн тухай</a></li>
                                         </ul>
@@ -135,7 +135,7 @@
                     <ul class="unstyled">
                         <g:set var="statistic" value="${Statistic.last('startDate')}" />
                         <li>
-                            <span class="act act-warning">${statistic ? statistic.total : 0 }</span>
+                            <span class="act act-warning">${statistic ? statistic.created : 0 }</span>
                             <strong>Шинэ санал</strong>
                         </li>
                         <li>

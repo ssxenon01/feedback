@@ -108,6 +108,11 @@ grails.plugins.springsecurity.controllerAnnotations.staticRules = [
         '/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/main/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/app/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/app/img/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/app/lib/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/app/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/app/bootstrap/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
 

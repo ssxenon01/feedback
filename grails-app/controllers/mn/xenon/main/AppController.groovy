@@ -6,6 +6,7 @@ import mn.xenon.domain.Ticket
 import mn.xenon.domain.ObjectStatus
 import mn.xenon.domain.Statement
 import org.apache.commons.lang.StringUtils;
+import feedback.StatisticJob
 
 @Secured(['ROLE_USER'])
 class AppController {
@@ -14,7 +15,6 @@ class AppController {
 
     def ticketService
     def springSecurityService
-
     def index(Integer max) {
         params.max = Math.min(max ?: 20, 100)
         [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count(params)]
@@ -58,5 +58,9 @@ class AppController {
             flash.error = "${params.id} дугаартай санал олдсонгүй"
             redirect(action: "index")
         }
+    }
+    @Secured(['ROLE_ADMIN'])
+    def statistic(){
+        
     }
 }

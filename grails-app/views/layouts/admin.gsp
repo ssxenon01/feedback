@@ -138,6 +138,15 @@
     <script src="${resource(dir: 'app/lib/validation', file: 'jquery.validate.min.js')}"></script>
     <!-- validation functions -->
     <script src="${resource(dir: 'app/js', file: 'gebo_validation.js')}"></script>
+
+    <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.min.js')}"></script>
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.resize.min.js')}"></script> --}%
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.pie.min.js')}"></script> --}%
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.curvedLines.min.js')}"></script> --}%
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.orderBars.min.js')}"></script> --}%
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.multihighlight.min.js')}"></script> --}%
+%{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.pyramid.min.js')}"></script> --}%
+<script src="${resource(dir: 'app/lib/moment_js', file: 'moment.min.js')}"></script>
     <script>
         $(document).ready(function () {
             //* show all elements & remove preloader

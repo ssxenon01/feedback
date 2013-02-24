@@ -35,7 +35,9 @@ class LoginController {
 			redirect action: 'auth', params: params
 		}
 	}
-
+	def register = {
+		
+	}
 	/**
 	 * Show the login page.
 	 */

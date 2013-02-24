@@ -4,6 +4,7 @@ import mn.xenon.auth.UserRole
 import mn.xenon.domain.Ticket
 import mn.xenon.domain.Tag
 import mn.xenon.domain.ObjectStatus
+import grails.converters.JSON
 import java.util.Random
 class BootStrap {
 
@@ -11,6 +12,9 @@ class BootStrap {
         javax.servlet.http.HttpServletRequest.metaClass.getSiteUrl = {
           return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
         }
+        JSON.registerObjectMarshaller(Date) {
+            return it?.format("d/M/yyyy H:m:s")
+         }
     	setupUsers()
     	setupTicket()
     }

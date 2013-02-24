@@ -7,6 +7,7 @@ class Tag implements Serializable{
 
 	static mapping = {
 		cache true
+        table 'tag'
 	}
 
 	static constraints = {

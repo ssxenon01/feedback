@@ -33,7 +33,7 @@
                           <input type="submit" value="Нэвтрэх" class="btn btn-green">
                       </div>
                   </form></div>
-              <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a> </p>
+              <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <g:link action="register">Бүртгүүлэх</g:link> </p>
           </article>
       </div>
   </div>

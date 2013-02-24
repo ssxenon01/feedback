@@ -6,9 +6,12 @@ import mn.xenon.domain.Gender
 import mn.xenon.domain.BaseDomain
 import mn.xenon.domain.ObjectStatus
 
-class User extends BaseDomain{
+class User implements Serializable{
 
 	transient springSecurityService
+
+	Date dateCreated
+	Date lastUpdated
 
 	String username
 	String password
@@ -25,6 +28,8 @@ class User extends BaseDomain{
     String phone
     String facebook
     String twitter
+
+
 
     Gender gender = Gender.Other
     static hasMany = [tags:Tag]
@@ -44,6 +49,7 @@ class User extends BaseDomain{
 	}
 
 	static mapping = {
+   	   	autoTimestamp true
 		about type:'text'
 		password column: '`password`'
 	}

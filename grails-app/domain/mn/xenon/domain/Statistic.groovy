@@ -1,7 +1,10 @@
 package mn.xenon.domain
 import mn.xenon.auth.User
 
-class Statistic extends BaseDomain{
+class Statistic{
+
+	Date dateCreated
+	Date lastUpdated
 
 	int total = 0
 	int created = 0
@@ -14,7 +17,9 @@ class Statistic extends BaseDomain{
     Date startDate
 
 	static mapping = {
+   	   	autoTimestamp true
 		cache true
+		table 'statistic'
 	}
 
 	static constraints = {
