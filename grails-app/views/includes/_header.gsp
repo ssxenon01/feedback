@@ -16,7 +16,7 @@
                     </li>
                     <li>
                         <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i
-                                class="icon-white icon-thumbs-up"></i> Шалгагпаж буй</g:link>
+                                class="icon-white icon-thumbs-up"></i> Шалгаж буй</g:link>
                     </li>
                     <li>
                         <a href=""><i class="icon-white icon-comment"></i> Хариу</a>

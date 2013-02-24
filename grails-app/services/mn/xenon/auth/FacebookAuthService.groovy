@@ -13,26 +13,33 @@ class FacebookAuthService {
         fbUser.uid = token.uid
         fbUser.accessToken = token.accessToken?.accessToken
         if (data){
-            def user = new User()
+            def user = User.findByEmail(data.email)
+            if(!user){
+                user = new User()
+                user.username = data.id
+                user.password = token.accessToken.accessToken
+                user.email = data.email
+            }
             user.firstname = data.first_name
             user.lastname = data.last_name
             user.facebook = data.link
             user.gender = data.gender=='male'?Gender.Male:Gender.Female
-            user.username = data.id
-            user.email = data.email
             user.about = data.bio
-            user.password = token.accessToken.accessToken
-            user.save(flush: true,failOnError: true)
-            fbUser.setUser(user)
-            UserRole.withTransaction { status ->
-                ['ROLE_USER','ROLE_FACEBOOK'].each { String roleName ->
-                    def auth = Role.findByAuthority(roleName)
-                    if (auth) {
-                        UserRole.create(user, auth)
-                    } else {
-                        log.error("Can't find authority for name '$roleName'")
+            if(user.validate()){
+                user.save()
+                fbUser.setUser(user)
+                UserRole.withTransaction { status ->
+                    ['ROLE_USER','ROLE_FACEBOOK'].each { String roleName ->
+                        def auth = Role.findByAuthority(roleName)
+                        if (auth) {
+                            UserRole.create(user, auth)
+                        } else {
+                            log.error("Can't find authority for name '$roleName'")
+                        }
                     }
-                }
+                }   
+            }else{
+                log.error("User validate failed while saving")
             }
         }
         fbUser.save(flush: true,failOnError: true)
