@@ -897,7 +897,7 @@ hr.small {
 
 .accounts-form {
     width: 520px;
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
     margin: 90px auto 30px;
     background: #fff;
     text-align: center;
@@ -933,11 +933,24 @@ hr.small {
     border-color: #007ea3;
 }
 
+.accounts-form .connect-buttons .connect-button #twitter_button i {
+    background: url(../images/icon-twitter.png) center center no-repeat;
+    height: 27px;
+    width: 20px;
+    background-size: 32px auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 7px;
+    margin-right: 10px;
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
 .accounts-form .connect-buttons .connect-button .btn {
     background: #0ba8d6;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-    padding: .6em;
+    padding: 7px 5px;
     font-weight: bold;
     box-shadow: 0 0 0 5px #eee;
     width: 13em;
@@ -952,6 +965,20 @@ hr.small {
 .accounts-form .connect-buttons .connect-button #facebook_button {
     background: #415d9c;
     border-color: #3a5695;
+}
+
+.accounts-form .connect-buttons .connect-button #facebook_button i {
+    background: url(../images/icon-facebook.png) center center no-repeat;
+    height: 27px;
+    width: 20px;
+    background-size: 14px auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 7px;
+    margin-right: 10px;
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2);
+
 }
 
 #login #auth-form {

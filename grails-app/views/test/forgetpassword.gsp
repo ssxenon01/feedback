@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="actions clearfix">
-                        <input type="submit" value="Сэргээх< ></>" class="btn btn-green">
+                        <input type="submit" value="Сэргээх" class="btn btn-green">
                     </div>
                 </form></div>
 
