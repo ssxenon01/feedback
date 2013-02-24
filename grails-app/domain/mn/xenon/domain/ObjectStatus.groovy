@@ -2,14 +2,13 @@ package mn.xenon.domain
 
 public enum ObjectStatus {
 
-    Open(1),
+    Open(1), // tsenher
     Pending(2), // 500 хүрвэл pending Таны санал 500 хүрлээ , admin саналууд 1000 хүрлээ
-    Closed(3), // Шалгаад closed result
-    Responded(4), 
-    Expired(5), // 1 жилийн хугацаанд дэмжээгүй
-    Duplicated(6), // Саналийн давхардалт 
-    Suspended(7), // Цуцалсан шалгаж үзээд
-    Deleted(8)
+    Closed(3), // Шалгаад closed result green
+    Expired(4), // 1 жилийн хугацаанд дэмжээгүй
+    Duplicated(5), // Саналийн давхардалт
+    Suspended(6), // Цуцалсан шалгаж үзээд
+    Deleted(7)
 
     final Integer value
 
@@ -18,12 +17,12 @@ public enum ObjectStatus {
     }
 
     static list() {
-        [Open,Pending,Closed,Responded,Expired,Deleted,Duplicated]
+        [Open, Pending, Closed, Expired, Deleted, Duplicated]
     }
 
     public static ObjectStatus numToEnum(Integer num) {
         if (num != null) {
-            for (ObjectStatus s: ObjectStatus.values()) {
+            for (ObjectStatus s : ObjectStatus.values()) {
                 if (s.getValue().equals(num)) {
                     return s;
                 }

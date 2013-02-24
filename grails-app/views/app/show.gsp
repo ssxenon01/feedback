@@ -21,7 +21,8 @@
     <div class="span8">
         <div class="w-box">
             <div class="w-box-header">
-                Саналын дугаар  <span  class="label label-info">#${ticket.id}</span>
+                Саналын дугаар  <span class="label label-info">#${ticket.id}</span>
+
                 <div class="pull-right">
                 <a onClick="window.print()" class="ttip_b" title="Хэвлэх" aria-describedby="ui-tooltip-10">
                 <i class="splashy-printer"></i></a>
@@ -64,9 +65,28 @@
                                 <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
                             </div> --}%
 
-                        </div>
+                    <div class="doc_view_content">
+                        ${ticket.content}
+                    </div>
+
+                    <div class="doc_view_reply">
+                        <g:each in="${ticket.fetchStatements()}" var="statement">
+                            <div class="msg clearfix">
+                                <div class="msg-heading"><span class="msg_date"><g:formatDate formatName="date.long"
+                                                                                              date="${statement.dateCreated}"/></span><span
+                                        class="user_name">${statement.author}</span></div>
+
+                                <div class="msg_body">${statement.content}</div>
+                            </div>
+                        </g:each>
+                    %{-- <div class="msg clearfix">
+                       <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
+                       <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
+                   </div> --}%
 
                     </div>
+
+                </div>
             </div>
             <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <div class="w-box-footer">
@@ -77,6 +97,13 @@
                             <g:each in="${ObjectStatus.list()}" var="status">
                                 <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
                             </g:each>
+                            %{-- <option value="Pending">Шалгагдаж буй</option>
+                            <option value="Closed">Хаасан</option>
+                            <option value="Approved">Зөвшөөрсөн</option>
+                            <option value="Expired">Хугацаа нь дууссан</option>
+                            <option value="Duplicated">Давхардсан</option>
+                            <option value="Suspended">Цуцлагдсан</option>
+                            <option value="Deleted">Устга</option> --}%
                         </select>
                         <input id="duplicatedWithField" type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
                         <button class="btn btn-danger" type="submit">Хадгалах</button>
@@ -120,29 +147,35 @@
                                         <g:if test="${ticket.author?.registerId}">
                                             <li>
                                                 <span class="item-key">Регистер</span>
+
                                                 <div class="vcard-item">${ticket.author?.registerId}&nbsp;</div>
                                             </li>
                                         </g:if>
                                         <g:if test="${ticket.author?.email}">
                                             <li>
                                                 <span class="item-key">Имэйл</span>
+
                                                 <div class="vcard-item">${ticket.author?.email}&nbsp;</div>
                                             </li>
                                         </g:if>
                                         <g:if test="${ticket.author?.phone}">
                                             <li>
                                                 <span class="item-key">Утасны дугаар</span>
+
                                                 <div class="vcard-item">${ticket.author?.phone}&nbsp;</div>
                                             </li>
                                         </g:if>
                                         <g:if test="${ticket.author?.facebook}">
                                             <li>
                                                 <span class="item-key">Фасабүүк</span>
-                                                <div class="vcard-item"><a href="${ticket.author?.facebook}" target="_blank">${ticket.author?.facebook}</a></div>
+
+                                                <div class="vcard-item"><a href="${ticket.author?.facebook}" target="_blank">${ticket.author?.facebook}</a>
+                                                </div>
                                             </li>
                                         </g:if>
                                         <li>
                                             <span class="item-key">Хүйс</span>
+
                                             <div class="vcard-item"><g:message code="gender.${ticket?.author.gender}"/>&nbsp;</div>
                                         </li>
                                     </sec:ifAnyGranted>
@@ -191,12 +224,13 @@
                                 <g:form controller="app" action="changeVote" id="${ticket.id}" class="well form-inline">
                                     <input name="voteCount" type="text" class="input-medium" value="${ticket.vote}">
                                     <button class="btn btn-danger" type="submit">Хадгалах</button>
-                                </g:form>
-                                <g:form controller="app" action="createStatement" id="${ticket.id}" method="POST" class="well form-inline">
-                                    <select name="objectStatus">
-                                        <g:each in="${ObjectStatus.list()}" var="status">
-                                            <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
-                                        </g:each>
+                                </form>
+                                <form class="well form-inline">
+                                    <select>
+                                        <option>Нээлттэй</option>
+                                        <option>Хаасан</option>
+                                        <option>Шалгаж байгаа</option>
+                                        <option>Цуцлах</option>
                                     </select>
                                     <button class="btn btn-danger" type="submit">Хадгалах</button>
                                 </g:form>
