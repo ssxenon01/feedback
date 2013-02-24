@@ -11,7 +11,7 @@
     <div class="row">
     <div class="span12">
         <div class="header">
-            <div class="pull-left"><h1>Бүх саналууд</h1></div>
+            <div class="pull-left"><h1>Бүх саналууд </h1></div>
             <div class="clear"></div>
         </div>
     </div>
@@ -41,13 +41,15 @@
     </div>
     <script>
     $(function(){
-        var offset = 0, max = ${params.max} , objectStatus="${params.objectStatus}";
+        var offset = 0, max = ${params.max} , objectStatus="${params.objectStatus}",limit=${ticketInstanceTotal};
         $(window).scroll(function(){
             if($(document).height()==$(window).scrollTop()+$(window).height()){
                 offset = offset+max;
-                $.post("<g:createLink controller="ticket" action="fetch"/>", {max:max, offset:offset,objectStatus:objectStatus}, function(result){
+                if(offset<limit){
+                    $.post("<g:createLink controller="ticket" action="fetch"/>", {max:max, offset:offset,objectStatus:objectStatus}, function(result){
                     $("div.petitions").append(result);
                 }, "html");
+                }
             }
         });
     });
