@@ -27,6 +27,15 @@ class TicketService {
                     'eq'('id',params.q as Long)
                     'like'('title', "%${params.q}%")
                     'like'('content', "%${params.q}%")
+                    author{
+                    	eq('phone',params.q)
+                    }
+                    author{
+                    	eq('email',params.q)
+                    }
+                    author{
+                    	eq('registerId',params.q)
+                    }
                 }
             }
             if(params.tags){

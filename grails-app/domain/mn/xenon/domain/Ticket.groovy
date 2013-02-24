@@ -24,7 +24,11 @@ class Ticket extends BaseDomain{
 	String result
 
 	List<Statement> fetchStatements(){
-		return Statement.list([sord:'dateCreated',order:'DESC',max:10])
+		return Statement.createCriteria().list([sord:'dateCreated',order:'DESC',max:10]){
+			ticket{
+				eq('id',this.id)
+			}
+		}
 	}
 
 	static hasMany = [tags: Tag,voteList:User]
