@@ -77,13 +77,6 @@
                             <g:each in="${ObjectStatus.list()}" var="status">
                                 <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
                             </g:each>
-                            %{-- <option value="Pending">Шалгагдаж буй</option>
-                            <option value="Closed">Хаасан</option>
-                            <option value="Approved">Зөвшөөрсөн</option>
-                            <option value="Expired">Хугацаа нь дууссан</option>
-                            <option value="Duplicated">Давхардсан</option>
-                            <option value="Suspended">Цуцлагдсан</option>
-                            <option value="Deleted">Устга</option> --}%
                         </select>
                         <input id="duplicatedWithField" type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
                         <button class="btn btn-danger" type="submit">Хадгалах</button>
@@ -195,19 +188,18 @@
                         </div>
                         <sec:ifAnyGranted roles="ROLE_ADMIN">
                             <div class="tab-pane" id="tab3">
-                                <form class="well form-inline">
-                                    <input type="text" class="input-medium" value="1455">
+                                <g:form controller="app" action="changeVote" id="${ticket.id}" class="well form-inline">
+                                    <input name="voteCount" type="text" class="input-medium" value="${ticket.vote}">
                                     <button class="btn btn-danger" type="submit">Хадгалах</button>
-                                </form>
-                                <form class="well form-inline">
-                                    <select>
-                                        <option>Нээлттэй</option>
-                                        <option>Хаасан</option>
-                                        <option>Шалгаж байгаа</option>
-                                        <option>Цуцлах</option>
+                                </g:form>
+                                <g:form controller="app" action="createStatement" id="${ticket.id}" method="POST" class="well form-inline">
+                                    <select name="objectStatus">
+                                        <g:each in="${ObjectStatus.list()}" var="status">
+                                            <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
+                                        </g:each>
                                     </select>
                                     <button class="btn btn-danger" type="submit">Хадгалах</button>
-                                </form>
+                                </g:form>
                             </div>
                         </sec:ifAnyGranted>
                     </div>

@@ -5,7 +5,7 @@ public enum ObjectStatus {
     Open(1),
     Pending(2), // 500 хүрвэл pending Таны санал 500 хүрлээ , admin саналууд 1000 хүрлээ
     Closed(3), // Шалгаад closed result
-    Approved(4), 
+    Responded(4), 
     Expired(5), // 1 жилийн хугацаанд дэмжээгүй
     Duplicated(6), // Саналийн давхардалт 
     Suspended(7), // Цуцалсан шалгаж үзээд
@@ -18,7 +18,7 @@ public enum ObjectStatus {
     }
 
     static list() {
-        [Open,Pending,Closed,Approved,Expired,Deleted,Duplicated]
+        [Open,Pending,Closed,Responded,Expired,Deleted,Duplicated]
     }
 
     public static ObjectStatus numToEnum(Integer num) {

@@ -27,7 +27,7 @@
     <div class="row popular-petitions">
     <div class="span12">
         <div class="header">
-            <div class="pull-left"><h1>Бүх саналууд</h1></div>
+            <div class="pull-left"><h1>Халуун саналууд</h1></div>
             <div class="pull-right">
                 <span class="filter">
                     <a href="#" id="filter-button" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Default tooltip">Шүүлтүүр</a>

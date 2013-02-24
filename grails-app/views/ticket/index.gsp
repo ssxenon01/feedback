@@ -18,9 +18,9 @@
     <div class="clear"></div>
     <div class="span8 left-panel">
         <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a>Нээлттэй</a></li>
-            <li><g:link controller="ticket" action="pending">Хүлээлтэнд байгаа</g:link></li>
-            <li><g:link controller="ticket" action="closed">Хаасан</g:link></li>
+            <li class="${(params.objectStatus == "Open") ? 'active' : ''}"><g:link controller="ticket" action="index" params="${[objectStatus:'Open']}">Нээлттэй</g:link></li>
+            <li class="${params.objectStatus == "Pending" ? 'active' : ''}"><g:link controller="ticket" action="index" params="${[objectStatus:'Pending']}">Хүлээлтэнд байгаа</g:link></li>
+            <li class="${params.objectStatus == "Closed" ? 'active' : ''}"><g:link controller="ticket" action="index" params="${[objectStatus:'Closed']}">Хаасан</g:link></li>
         </ul>
 
         <div class="tab-content">
@@ -39,5 +39,18 @@
     </div>
     </div>
     </div>
+    <script>
+    $(function(){
+        var offset = 0, max = ${params.max} , objectStatus="${params.objectStatus}";
+        $(window).scroll(function(){
+            if($(document).height()==$(window).scrollTop()+$(window).height()){
+                offset = offset+max;
+                $.post("<g:createLink controller="ticket" action="fetch"/>", {max:max, offset:offset,objectStatus:objectStatus}, function(result){
+                    $("div.petitions").append(result);
+                }, "html");
+            }
+        });
+    });
+    </script>
 </body>
 </html>

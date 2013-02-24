@@ -46,4 +46,17 @@ class AppController {
         }
         
     }
+    @Secured(['ROLE_ADMIN'])
+    def changeVote(){
+        def ticket = Ticket.get(params.id)
+        if(ticket){
+            ticket.vote = params.voteCount as Integer
+            ticket.save()
+            flash.success = "Саналыг амжилттай засварлалаа"
+            redirect(action: "show",id:ticket.id)
+        }else{
+            flash.error = "${params.id} дугаартай санал олдсонгүй"
+            redirect(action: "index")
+        }
+    }
 }
