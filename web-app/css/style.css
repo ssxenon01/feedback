@@ -882,3 +882,30 @@ hr.small {
 .facebook-comment{
     margin-top: 15px;
 }
+.tag{
+    margin-top: 5px;
+}
+.tag a{
+    color: #5b5b5b;
+    border: 1px solid #e5e4e1;
+    padding: 2px 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.tag a i{
+    margin-right: 3px;
+}
+.tag a:active {
+    background: #e5e4e1;
+}
+.tag a:focus, .tag a:hover {
+    color: #28708a;
+    background: #e5e4e1;
+}
