@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="base"/>
-		<title>Welcome to Grails</title>
+		<title>Шударга өрсөлдөөн, Хэрэглэгчийн төлөө газар</title>
 	</head>
 	<body>
 
@@ -12,7 +12,7 @@
     <div class="container">
     <div class="home-panel">
         <div class="jumbotron">
-            <h2>Change Your Life!</h2>
+            <h2>Амьдралаа өөрчилцгөөе!</h2>
             <div class="steps clearfix">
                 <g:link controller="ticket" action="create">Санал оруулах</g:link>
                 <g:link controller="ticket" action="index">Санал дэмжих</g:link>

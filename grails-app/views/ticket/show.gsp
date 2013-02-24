@@ -20,9 +20,9 @@
                                 <p>${ticketInstance.content}</p>
                                 <div class="date"><strong>Огноо:</strong>
                                 	<g:formatDate formatName="date.long" date="${ticketInstance.dateCreated}"/></div>
-                                <div class="tag"><strong>Category</strong>
+                                <div class="tag clearfix">
                                 	 <g:each in="${ticketInstance.tags}" var="tag">
-                                	 	<a href="#">${fieldValue(bean: tag, field: "label")}</a>,
+                                	 	<a href="#"><i class="icon-tag"></i>${fieldValue(bean: tag, field: "label")}</a>
 								    </g:each>
                                 </div>
                                 <div class="like-num">
@@ -38,12 +38,18 @@
                                     </div>
                                 </div>
                                 <div class="social-form">
-                                    <div class="connect-buttons">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-                                        <div class="fb-like" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
-                                        
+                                        <div class="connect-buttons clearfix">
+                                            <div class="pull-left">
+                                                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="fb-like" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
+                                            </div>
+                                        </div>
+
+                                    <div class="facebook-comment">
+                                        <div class="fb-comments" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-width="580" data-num-posts="10"></div>
                                     </div>
-                                	<div class="fb-comments" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true" />" data-width="580" data-num-posts="10"></div>
                                 </div>
                             </div>
                             
@@ -65,7 +71,7 @@
                                         </div>
                                         <div class="clear"></div>
                                     </div>
-                                    <div class="count pull-right">&nbsp;NEEDED</div>
+                                    <div class="count pull-right">&nbsp;ДУТУУ</div>
                                     <div class="count pull-right diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
                                 </div>
                                 <div class="clear"></div>

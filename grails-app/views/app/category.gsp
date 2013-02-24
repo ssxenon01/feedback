@@ -15,8 +15,8 @@
 
 
 <body>
+<h3 class="heading">Чиглэл үүсгэх</h3>
 <div class="row-fluid">
-    <h3 class="heading">Чиглэл үүсгэх</h3>
     <div class="span6">
         <form class="well form-inline">
             <label for="wg_message">Чиглэл</label>
