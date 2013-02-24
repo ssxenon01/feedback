@@ -68,26 +68,28 @@
 
                     </div>
             </div>
-            <div class="w-box-footer">
-                <g:form class="well form-inline" controller="app" action="createStatement" id="${ticket.id}" method="POST">
-                        <label for="wg_message">Мэдэгдэл</label>
-                        <textarea name="statement" id="wg_message" cols="10" rows="6" class="span12 auto_expand" style="margin-bottom: 10px;"></textarea>
-                    <select id="selectBoxOnSelect" name="objectStatus">
-                        <g:each in="${ObjectStatus.list()}" var="status">
-                            <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
-                        </g:each>
-                        %{-- <option value="Pending">Шалгагдаж буй</option>
-                        <option value="Closed">Хаасан</option>
-                        <option value="Approved">Зөвшөөрсөн</option>
-                        <option value="Expired">Хугацаа нь дууссан</option>
-                        <option value="Duplicated">Давхардсан</option>
-                        <option value="Suspended">Цуцлагдсан</option>
-                        <option value="Deleted">Устга</option> --}%
-                    </select>
-                    <input id="duplicatedWithField" type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
-                    <button class="btn btn-danger" type="submit">Хадгалах</button>
-                </g:form>
-            </div>
+            <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <div class="w-box-footer">
+                    <g:form class="well form-inline" controller="app" action="createStatement" id="${ticket.id}" method="POST">
+                            <label for="wg_message">Мэдэгдэл</label>
+                            <textarea name="statement" id="wg_message" cols="10" rows="6" class="span12 auto_expand" style="margin-bottom: 10px;"></textarea>
+                        <select id="selectBoxOnSelect" name="objectStatus">
+                            <g:each in="${ObjectStatus.list()}" var="status">
+                                <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
+                            </g:each>
+                            %{-- <option value="Pending">Шалгагдаж буй</option>
+                            <option value="Closed">Хаасан</option>
+                            <option value="Approved">Зөвшөөрсөн</option>
+                            <option value="Expired">Хугацаа нь дууссан</option>
+                            <option value="Duplicated">Давхардсан</option>
+                            <option value="Suspended">Цуцлагдсан</option>
+                            <option value="Deleted">Устга</option> --}%
+                        </select>
+                        <input id="duplicatedWithField" type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
+                        <button class="btn btn-danger" type="submit">Хадгалах</button>
+                    </g:form>
+                </div>
+            </sec:ifAnyGranted>
         </div>
     </div>
     <div class="span4">

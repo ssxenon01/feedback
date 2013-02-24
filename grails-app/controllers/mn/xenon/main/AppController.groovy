@@ -25,7 +25,7 @@ class AppController {
             redirect(action: "index")
         [ticket:Ticket.get(params.id)]
     }
-
+    @Secured(['ROLE_ADMIN'])
     def createStatement(){
         def ticket = Ticket.get(params.id)
         if(ticket){
