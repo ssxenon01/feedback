@@ -1,4 +1,5 @@
 <%@ page import="mn.xenon.domain.Tag" %>
+<%@ page import="mn.xenon.domain.ObjectStatus" %>
 <%@ page import="mn.xenon.domain.Ticket" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -32,9 +33,12 @@
 
                 <div class="input-append date date pull-left mr15" id="dp_end">
                     <select name="objectStatus">
-                        <option value="Open">Нээлттэй</option>
+                        <g:each in="${ObjectStatus.list()}" var="status">
+                            <option ${status.name()==params.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
+                        </g:each>
+                        %{-- <option value="Open">Нээлттэй</option>
                         <option value="Closed">Хаасан</option>
-                        <option value="Pending">Шалгаж байгаа</option>
+                        <option value="Pending">Шалгаж байгаа</option> --}%
                     </select>
                 </div>
 
@@ -91,8 +95,8 @@
     <div class="span12">
         <div class="w-box">
             <div class="w-box-header">
-                Нээлттэй саналууд <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
-                <div class="pull-right"><span class="label label-success">${Ticket.count()} Санал байна</span></div>
+                <g:message code="objectStatus.${params.objectStatus}"/> саналууд <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
+                <div class="pull-right"><span class="label label-success">${ticketInstanceTotal} Санал байна</span></div>
             </div>
 
             <div class="w-box-content">
@@ -131,7 +135,7 @@
                 
                 <div class="pagination pagination-centered">
                     <div class="grails-pagination">
-                        <g:paginate total="${ticketInstanceTotal}" />
+                        <g:paginate total="${ticketInstanceTotal}" params="${params}"/>
                     </div>
                 </div>
             </div>
