@@ -4,6 +4,7 @@ import mn.xenon.auth.User
 class Statistic extends BaseDomain{
 
 	int total = 0
+	int created = 0
 	int closed = 0
 	int pending = 0
 	int suspended = 0
@@ -21,7 +22,8 @@ class Statistic extends BaseDomain{
 	}
 
 	void cumulate(Statistic stat) {
-        total = total + stat.total
+		total = stat.total
+		created = created + stat.created
 		closed = closed + stat.closed
 		pending = pending + stat.pending
 		suspended = suspended + stat.suspended

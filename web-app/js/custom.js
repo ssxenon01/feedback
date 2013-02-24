@@ -53,9 +53,7 @@ $(function(){
         if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
         return false;
     });
-
-    $("a.vote-action").on({
-        click: function() {
+    $("div.petitions").on('click','a.vote-action', function() {
             var node = $(this);
             if(node.attr('tID')){
                 voteWithId(node.attr('tID'),function(){
@@ -73,8 +71,8 @@ $(function(){
             }
             
             return false;
-        }
-    });
+        });
+    
     $("a.widget-vote-action").on({
         click: function() {
             var node = $(this);

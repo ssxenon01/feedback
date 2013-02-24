@@ -14,10 +14,12 @@ class StatisticService {
         if (!stat)
             stat = new Statistic(startDate:startDate,timePeriod:timePeriod)
 
-        def tickets = Ticket.withCriteria {
-
-        }
-        //TODO make statistic service
+        stat.total = Ticket.countByObjectStatusNotEqual(ObjectStatus.Deleted)
+        stat.created = Ticket.countByDateCreatedBetween(startDate,endDate)
+        stat.closed = Ticket.countByObjectStatusAndDateUpdatedBetween(ObjectStatus.Closed,startDate,endDate)
+        stat.pending = Ticket.countByObjectStatusAndDateUpdatedBetween(ObjectStatus.Pending,startDate,endDate)
+        stat.suspended = Ticket.countByObjectStatusAndDateUpdatedBetween(ObjectStatus.Suspended,startDate,endDate)
+        stat.deleted = Ticket.countByObjectStatusAndDateUpdatedBetween(ObjectStatus.Deleted,startDate,endDate)
         stat.save(flush: true, failOnError: true)
     }
 }
