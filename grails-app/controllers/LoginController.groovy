@@ -10,9 +10,14 @@ import org.springframework.security.authentication.DisabledException
 import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
+import mn.xenon.auth.User
+import mn.xenon.auth.Role
+import mn.xenon.auth.UserRole
+
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 class LoginController {
+    static allowedMethods = [regAction: "POST", forgotPass: "POST"]
 
 	/**
 	 * Dependency injection for the authenticationTrustResolver.
@@ -35,8 +40,23 @@ class LoginController {
 			redirect action: 'auth', params: params
 		}
 	}
-	def register = {
-		
+	def register = { }
+	def forgot = {}
+	def forgotPass = {
+
+	}
+	def regAction = {
+		def user = new User(params)
+		user.username = params.email
+		if(user.validate()){
+			user.save(flush:true)
+			UserRole.create(user, Role.findByAuthority("ROLE_ADMIN"))
+			springSecurityService.reauthenticate(params.email,params.password)
+			redirect(controller:'index',action:'index')
+		}else{
+			flash.error = "${params.email} болон ${params.registerId} давхардсан байна."
+			redirect(controller:'login',action:'register')
+		}
 	}
 	/**
 	 * Show the login page.

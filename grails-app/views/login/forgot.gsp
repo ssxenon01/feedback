@@ -21,21 +21,23 @@
                 <h2>Нууц үгээ мартсан</h2>
 
                 <div class="forget-message">
-                    <g:render template="/includes/warning" />
-                </div>
-
-                <form action="forgotPass" method="POST" id="auth-form">
-
-                    <div class="input">
-                        <input id="email" type="text" name="email" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
+                    <div class="alert alert-info">
+                        <a class="close" data-dismiss="alert">×</a>
+                        Түр ашиглах нууц үг үүсгэгдлээ, нууц үгийг имэйлээр илгээсэн.
                     </div>
-
+                </div>
+                <div class="forget-message">
+                    <g:render template="/includes/warning" />
+                  </div>
+                <g:form action="forgetPass" method="POST" id="auth-form">
+                    <div class="input">
+                        <input id="id_username" type="text" name="username" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
+                    </div>
                     <div class="actions clearfix">
                         <input type="submit" value="Сэргээх< ></>" class="btn btn-green">
                     </div>
-                </form></div>
-
-            <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинээр бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a></p>
+                </g:form></div>
+            <p class="note"><a href="#">Нууц үгээ мартсан?</a> · Шинэ бүртгүүлэх хэрэгтэй юу? <a href="#">Бүртгүүлэх</a></p>
         </article>
     </div>
 </div>

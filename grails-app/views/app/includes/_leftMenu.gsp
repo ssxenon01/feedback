@@ -26,10 +26,6 @@
                                             <span class="label label-info">10</span></g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Responded]}">Хариу нь ирсэн
-                                            <span class="label label-info">10</span></g:link>
-                                        </li>
-                                        <li>
                                             <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
                                             <span class="label label-info">10</span></g:link>
                                         </li>

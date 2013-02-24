@@ -27,6 +27,9 @@
                           <a href="#" onclick="$('#facebook-connect-form').submit(); return false;" class="btn" id="facebook_button"><span>Log in with <strong>Facebook</strong></span></a>
                       </form>
                   </div>
+                  <div class="forget-message">
+                    <g:render template="/includes/warning" />
+                  </div>
                   <form action="#" method="POST" id="auth-form">
 
                       <div class="input">
