@@ -12,7 +12,6 @@
         <article class="container">
             <div id="login" class="accounts-form">
                 <h2>Систем рүү нэвтрэх</h2>
-                <hr class="small">
 
                 <div class="connect-buttons">
                     <form class="connect-button" name="login" method="post" action="<twitterAuth:url/>" id="twitter-connect-form">

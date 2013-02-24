@@ -1,19 +1,22 @@
 <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span></a>
             <g:link elementId="logo" uri="/" title="Home">1284</g:link>
-            <g:form controller="ticket" method="get" name="search-form" >
+            <g:form controller="ticket" method="get" name="search-form">
                 <input id="search-q" name="q" type="text" maxlength="128" size="15" title="Enter search Petition" placeholder="Санал, Гомдлын дугаар ...">
                 <input id="search-submit" type="submit" value="Search">
             </g:form>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus:"Open"]}"><i class="icon-white icon-list"></i>Нээлттэй Саналууд</g:link>
+                        <g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><i
+                                class="icon-white icon-list"></i> Нээлттэй Саналууд</g:link>
                     </li>
                     <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus:"Pending"]}"><i class="icon-white icon-thumbs-up"></i> Шалгагпаж буй</g:link>
+                        <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i
+                                class="icon-white icon-thumbs-up"></i> Шалгагпаж буй</g:link>
                     </li>
                     <li>
                         <a href=""><i class="icon-white icon-comment"></i> Хариу</a>
@@ -46,19 +49,19 @@
                         </li>
                     </ul>
                 </sec:ifNotLoggedIn>
-                %{--<ul class="nav pull-right">--}%
-                    %{--<li class="dropdown">--}%
-                        %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="top_user">--}%
-                            %{--<i class="icon-white icon-user"></i> Хэрэглэгч <b class="caret"></b>--}%
-                        %{--</a>--}%
-                        %{--<ul class="dropdown-menu">--}%
-                            %{--<li><a href="#"><i class="icon-share-alt"></i> Санал оруулах</a></li>--}%
-                            %{--<li><a href="#"><i class="icon-list"></i> Миний саналууд</a></li>--}%
-                            %{--<li><a href="#"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>--}%
-                            %{--<li><a href="#"><i class="icon-share"></i> Гарах</a></li>--}%
-                        %{--</ul>--}%
-                    %{--</li>--}%
-                %{--</ul>--}%
+            %{--<ul class="nav pull-right">--}%
+            %{--<li class="dropdown">--}%
+            %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="top_user">--}%
+            %{--<i class="icon-white icon-user"></i> Хэрэглэгч <b class="caret"></b>--}%
+            %{--</a>--}%
+            %{--<ul class="dropdown-menu">--}%
+            %{--<li><a href="#"><i class="icon-share-alt"></i> Санал оруулах</a></li>--}%
+            %{--<li><a href="#"><i class="icon-list"></i> Миний саналууд</a></li>--}%
+            %{--<li><a href="#"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>--}%
+            %{--<li><a href="#"><i class="icon-share"></i> Гарах</a></li>--}%
+            %{--</ul>--}%
+            %{--</li>--}%
+            %{--</ul>--}%
             </div>
         </div>
     </div>

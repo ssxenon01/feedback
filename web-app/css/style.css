@@ -24,11 +24,10 @@ a:hover {
 
 #search-form {
     position: relative;
-    width: 220px;
     height: 33px;
     float: left;
     padding: 6px 0 0 10px;
-    margin: 0 30px 0 0;
+    margin: 0 10px 0 0;
 }
 
 #search-q {
@@ -952,7 +951,7 @@ hr.small {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
     padding: 7px 5px;
     font-weight: bold;
-    box-shadow: 0 0 0 5px #eee;
+    /* box-shadow: 0 0 0 5px #eee; */
     width: 13em;
 }
 
@@ -1033,7 +1032,7 @@ hr.small {
     color: #fff;
 }
 
-.btn-green {
+.btn-green, .btn-green:active {
     background: #65c31f;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
