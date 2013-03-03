@@ -15,7 +15,7 @@ class TagController {
     }
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 20, 100)
         [tagInstanceList: tagService.list(params), tagInstanceTotal: tagService.count(params)]
     }
 

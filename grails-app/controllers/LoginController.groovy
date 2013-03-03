@@ -17,6 +17,9 @@ import mn.xenon.auth.UserRole
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 class LoginController {
+
+	def mailService
+
     static allowedMethods = [regAction: "POST", forgotPass: "POST"]
 
 	/**
@@ -43,13 +46,20 @@ class LoginController {
 	def register = { }
 	def forgot = {}
 	def forgotPass = {
-
+		
 	}
 	def regAction = {
 		def user = new User(params)
 		user.username = params.email
 		if(user.validate()){
 			user.save(flush:true)
+			if(params.email){
+				mailService.sendMail {
+				   to params.email
+				   subject "Welcome to 1284"
+				   body """Та 1284 сайтад амжилттай бүртгүүллээ"""
+				}
+			}
 			UserRole.create(user, Role.findByAuthority("ROLE_ADMIN"))
 			springSecurityService.reauthenticate(params.email,params.password)
 			redirect(controller:'index',action:'index')

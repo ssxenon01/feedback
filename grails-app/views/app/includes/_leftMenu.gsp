@@ -22,6 +22,10 @@
                                 <div class="accordion-inner">
                                     <ul class="nav nav-list">
                                         <li>
+                                            <g:link controller="app" action="index">Бүгд 
+                                            <span class="label label-info">10</span></g:link>
+                                        </li>
+                                        <li>
                                             <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Closed]}">Хаагдсан 
                                             <span class="label label-info">10</span></g:link>
                                         </li>
@@ -33,6 +37,10 @@
                                             <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Open]}">Нээлттэй
                                             <span class="label label-info">10</span></g:link>
                                         </li>
+                                        <sec:ifAnyGranted roles="ROLE_ADMIN">
+                                            <li><g:link controller="app" action="index">Давхардсан</g:link></li>
+                                            <li><g:link controller="app" action="index">Устгагдсан</g:link></li>
+                                        </sec:ifAnyGranted>
                                     </ul>
                                 </div>
                             </div>
@@ -81,45 +89,10 @@
                                     <div class="accordion-inner">
                                         <ul class="nav nav-list">
                                             <li><g:link controller="user" action="list">Хэрэглэгчид</g:link></li>
+                                            <li><g:link controller="tag" action="list">Чиглэлүүд</g:link></li>
                                             <li><g:link controller="app" action="statistic">Статистик</g:link></li>
                                             <li><a href="#">Дүрэм журам</a></li>
                                             <li><a href="#">Системийн тухай</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a href="#adminTickets1" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
-                                        <i class="icon-cog"></i> Шударга бус өрсөлдөөн
-                                    </a>
-                                </div>
-                                <div class="accordion-body collapse" id="adminTickets1">
-                                    <div class="accordion-inner">
-                                        <ul class="nav nav-list">
-                                            <li class="active"><a href="#">Нээлттэй</a></li>
-                                            <li><a href="#">Хаагдсан</a></li>
-                                            <li><a href="#">Шалгаж байгаа</a></li>
-                                            <li><a href="#">Шалгаж байгаа</a></li>
-                                            <li><a href="#">Давхардсан</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a href="#adminTickets2" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
-                                        <i class="icon-cog"></i> Хэрэглэгчийн эрх ашиг
-                                    </a>
-                                </div>
-                                <div class="accordion-body collapse" id="adminTickets2">
-                                    <div class="accordion-inner">
-                                        <ul class="nav nav-list">
-                                            <li class="active"><a href="#">Нээлттэй</a></li>
-                                            <li><a href="#">Хаагдсан</a></li>
-                                            <li><a href="#">Шалгаж байгаа</a></li>
-                                            <li><a href="#">Шалгаж байгаа</a></li>
-                                            <li><a href="#">Давхардсан</a></li>
                                         </ul>
                                     </div>
                                 </div>
