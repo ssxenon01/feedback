@@ -16,7 +16,7 @@ class UrlMappings {
         "/doregister"(view: 'test/register')
         "/create"(view: 'test/create')
         "/user"(view: 'test/user')
-        "/appPetitions"(view: 'app/petitionList')
+        "/z"(view: 'app/petitionList')
         "/userPage"(view: 'app/user')
         "/userlist"(view: 'app/users')
         "/petition"(view: 'app/petition')

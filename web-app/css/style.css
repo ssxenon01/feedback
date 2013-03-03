@@ -479,6 +479,19 @@ div.steps a:hover {
     padding-bottom: 5px;
 }
 
+.q1 {
+    margin-left: 17px;
+    font-weight: bold;
+}
+
+.picture-upload {
+    display: none;
+}
+
+.header .pull-right {
+    margin-top: 0px;
+}
+
 .header .filter a {
     font-weight: bold;
 }
