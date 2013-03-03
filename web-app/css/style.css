@@ -479,6 +479,10 @@ div.steps a:hover {
     padding-bottom: 5px;
 }
 
+.header .pull-right {
+    margin-top: 0px;
+}
+
 .header .filter a {
     font-weight: bold;
 }

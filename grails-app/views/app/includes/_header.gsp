@@ -21,27 +21,23 @@
                     <div class="nav-collapse">
                         <ul class="nav">
                             <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">menu <b class="caret"></b></a>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i>  Хэрэглэгчийн эрх ашиг  <b
+                                        class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
+                                    <li><a href="#">Бүгд</a></li>
+                                    <li><a href="#">Хаагдсан</a></li>
+                                    <li><a href="#">Шалгагдаж байгаа</a></li>
+                                    <li><a href="#">Шалгагдаж байгаа</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">menu <b class="caret"></b></a>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i
+                                        class="icon-th icon-white"></i>  Шударга бус өрсөлдөөний улмаас  <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">menu <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
-                                    <li><a href="#">menu section</a></li>
+                                    <li><a href="#">Бүгд</a></li>
+                                    <li><a href="#">Хаагдсан</a></li>
+                                    <li><a href="#">Шалгагдаж байгаа</a></li>
+                                    <li><a href="#">Шалгагдаж байгаа</a></li>
                                 </ul>
                             </li>
                         </ul>
