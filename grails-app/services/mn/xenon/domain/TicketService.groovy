@@ -21,6 +21,8 @@ class TicketService {
 			}
 			if(params.objectStatus)
 				eq('objectStatus',params.objectStatus as ObjectStatus)
+			if(params.type)
+				eq('type',params.type as Type)
             if(params.q){
                 or{
                     if(params.q.isLong())
@@ -60,6 +62,8 @@ class TicketService {
 			}
 			if(params.objectStatus)
 				eq('objectStatus',params.objectStatus as ObjectStatus)
+			if(params.type)
+				eq('type',params.type as Type)
             if(params.q){
                 or{
                     if(params.q.isLong())

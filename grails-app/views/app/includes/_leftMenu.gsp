@@ -1,5 +1,6 @@
 <%@ page import="mn.xenon.domain.Statistic" %>
 <%@ page import="mn.xenon.domain.ObjectStatus" %>
+<%@ page import="mn.xenon.domain.Type" %>
 <!-- sidebar -->
 <a href="javascript:void(0)" class="sidebar_switch on_switch ttip_r" title="Hide Sidebar">Sidebar switch</a>
 <div class="sidebar">
@@ -18,28 +19,28 @@
                                     <i class="icon-folder-close"></i> Шударга бус өрсөлдөөн
                                 </a>
                             </div>
-                            <div class="accordion-body collapse <g:currentDir checkIn="/app/,/app/index" class="in"/>" id="collapseOne">
+                            <div class="accordion-body collapse ${params.type == 'Competition'?"in":''}" id="collapseOne">
                                 <div class="accordion-inner">
                                     <ul class="nav nav-list">
                                         <li>
-                                            <g:link controller="app" action="index">Бүгд 
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition]}">Бүгд 
                                             <span class="label label-info">10</span></g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Closed]}">Хаагдсан 
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
                                             <span class="label label-info">10</span></g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
                                             <span class="label label-info">10</span></g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Open]}">Нээлттэй
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Open]}">Нээлттэй
                                             <span class="label label-info">10</span></g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index">Давхардсан</g:link></li>
-                                            <li><g:link controller="app" action="index">Устгагдсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition]}">Давхардсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition]}">Устгагдсан</g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>
@@ -51,13 +52,29 @@
                                     <i class="icon-folder-close"></i> Хэрэглэгчийн эрх ашиг
                                 </a>
                             </div>
-                            <div class="accordion-body collapse" id="collapseTwo">
+                            <div class="accordion-body collapse ${params.type == 'Interests'?"in":''}"  id="collapseTwo">
                                 <div class="accordion-inner">
                                     <ul class="nav nav-list">
-                                        <li><a href="#">Хаагдсан <span class="label label-info">10</span></a></li>
-                                        <li><a href="#">Хариу нь ирсэн</a></li>
-                                        <li><a href="#">Шалгагдаж байгаа</a></li>
-                                        <li><a href="#">Нээлттэй</a></li>
+                                        <li>
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests]}">Бүгд 
+                                            <span class="label label-info">10</span></g:link>
+                                        </li>
+                                        <li>
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
+                                            <span class="label label-info">10</span></g:link>
+                                        </li>
+                                        <li>
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
+                                            <span class="label label-info">10</span></g:link>
+                                        </li>
+                                        <li>
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Open]}">Нээлттэй
+                                            <span class="label label-info">10</span></g:link>
+                                        </li>
+                                        <sec:ifAnyGranted roles="ROLE_ADMIN">
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests]}">Давхардсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests]}">Устгагдсан</g:link></li>
+                                        </sec:ifAnyGranted>
                                     </ul>
                                 </div>
                             </div>
