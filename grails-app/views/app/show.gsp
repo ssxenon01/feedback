@@ -1,5 +1,6 @@
 <%@ page import="mn.xenon.domain.TimePeriod" %>
 <%@ page import="mn.xenon.domain.ObjectStatus" %>
+<%@ page import="mn.xenon.domain.Type" %>
 <%--
   Created by IntelliJ IDEA.
   User: cosmos
@@ -34,7 +35,7 @@
                         <div class="doc_view_header">
                             <dl class="dl-horizontal">
                                 <dt>Саналын төрөл</dt>
-                                <dd><span>Шударга бус өрсөлдөөний улмаас&nbsp;</span></dd>
+                                <dd><span><g:message code="ticket.type.${ticket.type}" /></span></dd>
                                 <dt>Саналын гарчиг</dt>
                                 <dd>${ticket.title}&nbsp;</dd>
                                 <dt><a href="#" class="ttip_b" title="Хэрэглэгчийн мэдээлэл харах"><i class="splashy-contact_blue"></i></a></dt>
@@ -42,12 +43,16 @@
 
                                 <dt>Санал үүссэн</dt>
                                 <dd><g:formatDate formatName="date.long" date="${ticket.dateCreated}" /></dd>
-                                <dt><a href="#" class="ttip_b" title="${ticket.vote} Иргэн дэмжсэн"><i class="splashy-thumb_up"></i> </a></dt>
-                                <dd><span class="label label-warning">${ticket.vote}</span></dd>
+                                <g:if test="${ticket.type == Type.Interests}">
+                                    <dt><a href="#" class="ttip_b" title="${ticket.vote} Иргэн дэмжсэн"><i class="splashy-thumb_up"></i> </a></dt>
+                                    <dd><span class="label label-warning">${ticket.vote}</span></dd>
+                                </g:if>
                                 <dt>Саналын статус</dt>
                                 <dd><span class="label label-info"><g:message code="objectStatus.${ticket.objectStatus}"/></span></dd>
+                                <g:if test="${ticket.type == Type.Interests}">
                                 <dt><i class="icon-tag" class="ttip_b" title="Ангилал" aria-describedby="ui-tooltip-10"></i></dt>
                                 <dd>&nbsp;<g:each in="${ticket.tags}" var="tag"><a href="#">${tag.label}</a>, </g:each></dd>
+                                </g:if>
                             </dl>
                         </div>
                         <div class="doc_view_content">

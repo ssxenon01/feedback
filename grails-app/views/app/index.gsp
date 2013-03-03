@@ -1,4 +1,5 @@
 <%@ page import="mn.xenon.domain.Tag" %>
+<%@ page import="mn.xenon.domain.Type" %>
 <%@ page import="mn.xenon.domain.ObjectStatus" %>
 <%@ page import="mn.xenon.domain.Ticket" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -8,7 +9,7 @@
     <title>Application</title>
 </head>
 <body>
-	<h3 class="heading">Нээлттэй саналууд</h3>
+	<h3 class="heading"><g:if test="${params.objectStatus}"><g:message code="objectStatus.${params.objectStatus}"/></g:if> ${title} саналууд</h3>
 
 <div class="row-fluid ">
     <div class="span12">
@@ -111,7 +112,9 @@
                                 <div class="pet_content">
                                     <h4>
                                         <a href="<g:createLink controller="app" action="show" id="${ticketInstance.id}"/>" class="sepV_a">${ticketInstance.title}</a>
-                                        <span class="badge badge-warning">${ticketInstance.vote} хүн дэмжсэн</span>
+                                        <g:if test="${ticketInstance.type == Type.Interests}">
+                                            <span class="badge badge-warning">${ticketInstance.vote} хүн дэмжсэн</span>
+                                        </g:if>
                                     </h4>
 
                                     <p class="sepH_b item_description">${ticketInstance.content}</p>

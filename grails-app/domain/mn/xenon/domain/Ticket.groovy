@@ -10,6 +10,8 @@ class Ticket extends BaseDomain{
 
 	int vote = 0
 	
+	Type type = Type.Interests
+
 	int maxVote = 1000
 	boolean getVoted(){
 		if(springSecurityService.currentUser)
