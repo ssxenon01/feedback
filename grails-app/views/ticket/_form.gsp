@@ -27,38 +27,22 @@
      <g:each in="${Tag.list()}" var="tag">
         <div class="span4">
             <label class="checkbox">
-                <g:checkBox name="tags" value="${fieldValue(bean: tag, field: "id")}"/>
-                ${fieldValue(bean: tag, field: "label")}
+                <input name="tags" type="checkbox" value="${tag.id}">
+                ${tag.label}
             </label>
         </div>
     </g:each>
 </div>
 
 <script>
-    $('#myTab a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
-
-    $('#optionsRadios1').click(function() {
+    /*$('#optionsRadios1').on('click',function() {
         if($('#optionsRadios1').is(':checked')) { $('.test2').hide();$('.test1').show(); }
     });
-    $('#optionsRadios2').click(function() {
+    $('#optionsRadios2').on('click',function() {
         if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
+    });*/
+    $("input[type=checkbox][name=tags]").click(function() {
+        var bol = $("input[type=checkbox][name=tags]:checked").length >= 3;     
+        $("input[type=checkbox][name=tags]").not(":checked").attr("disabled",bol);
     });
 </script>
-%{--<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'title', 'error')} required">
-	<label for="title">
-		<g:message code="ticket.title.label" default="Title" />
-		<span class="required-indicator">*</span>
-	</label>
-
-	<g:textField name="title" required="" value="${ticketInstance?.title}"/>
-</div>
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'content', 'error')} required">
-	<label for="content">
-		<g:message code="ticket.content.label" default="Content" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textArea name="content" required="" value="${ticketInstance?.content}"/>
-</div>--}%

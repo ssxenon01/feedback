@@ -21,6 +21,5 @@ class StatisticService {
         stat.suspended = Ticket.countByObjectStatusAndLastUpdatedBetween(ObjectStatus.Suspended,startDate,endDate)
         stat.deleted = Ticket.countByObjectStatusAndLastUpdatedBetween(ObjectStatus.Deleted,startDate,endDate)
         stat.save(flush: true, failOnError: true)
-        println stat
     }
 }

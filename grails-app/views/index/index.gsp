@@ -19,8 +19,8 @@
                 <g:link controller="ticket" action="create">Саналын хариу</g:link>
             </div>
             <div class="create-petition">
-                <a href="#">Шударга бус өрсөлдөөн улмаас !</a>
-                <a href="#">Хэрэглэгчийн эрх ашиг зөрчигдөж байна уу !</a>
+                <g:link controller="ticket" action="create">Шударга бус өрсөлдөөний улмаас !</g:link>
+                <g:link controller="ticket" action="create">Хэрэглэгчийн эрх ашиг зөрчигдсөний улмаас !</g:link>
             </div>
         </div>
     </div>

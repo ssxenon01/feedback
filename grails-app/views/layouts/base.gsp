@@ -39,5 +39,7 @@
         <g:render template="/includes/footer"/>
     </div>
     <script src="${resource(dir: 'js', file: 'custom.js')}"></script>
+    <g:render template='/includes/ajaxLogin'/>
+    
 </body>
 </html>

@@ -39,19 +39,12 @@ $(function(){
         return false;
 
     });
-    /*$('#myTab a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-        return false;
-
-    });*/
     $("[rel=tooltip]").tooltip();
-    $('#optionsRadios1').click(function() {
+    $('#optionsRadios1').on('click',function() {
         if($('#optionsRadios1').is(':checked')) { $('.test2').hide();$('.test1').show(); }
     });
-    $('#optionsRadios2').click(function() {
+    $('#optionsRadios2').on('click',function() {
         if($('#optionsRadios2').is(':checked')) { $('.test1').hide();$('.test2').show(); }
-        return false;
     });
     $("div.petitions").on('click','a.vote-action', function() {
             var node = $(this);
@@ -125,6 +118,7 @@ $(function(){
             return false;
         }
     });
+
     function voteWithId(id,callback){
         if(id){
             $.ajax({
@@ -132,7 +126,7 @@ $(function(){
               url: "/feedback/vote/up/"+id,
               statusCode: {
                 401: function() {
-                  
+                  showLogin();
                 },
                 200:function(){
                     callback();
