@@ -1,10 +1,14 @@
 package mn.xenon.domain
 
+import org.springframework.security.access.annotation.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+@Secured(['ROLE_ADMIN'])
 class TagController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def tagService
+
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -12,7 +16,7 @@ class TagController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [tagInstanceList: Tag.list(params), tagInstanceTotal: Tag.count()]
+        [tagInstanceList: tagService.list(params), tagInstanceTotal: tagService.count(params)]
     }
 
     def create() {
@@ -26,25 +30,14 @@ class TagController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'tag.label', default: 'Tag'), tagInstance.id])
-        redirect(action: "show", id: tagInstance.id)
-    }
-
-    def show(Long id) {
-        def tagInstance = Tag.get(id)
-        if (!tagInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [tagInstance: tagInstance]
+        flash.success = "{${tagInstance.label}} нэртэй чиглэл амжилттай үүсгэгдлээ"
+        redirect(action: "list")
     }
 
     def edit(Long id) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
+            flash.error = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
             redirect(action: "list")
             return
         }
@@ -55,7 +48,7 @@ class TagController {
     def update(Long id, Long version) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
+            flash.error = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
             redirect(action: "list")
             return
         }
@@ -77,26 +70,26 @@ class TagController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'tag.label', default: 'Tag'), tagInstance.id])
-        redirect(action: "show", id: tagInstance.id)
+        flash.success = "{${tagInstance.label}} чиглэл амжилттай шинэчлэгдлээ"
+        redirect(action: "list")
     }
 
     def delete(Long id) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
+            flash.error = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
             redirect(action: "list")
             return
         }
 
         try {
             tagInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'tag.label', default: 'Tag'), id])
+            flash.success = "{${tagInstance.label}} нэртэй чиглэл устгагдлаа"
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'tag.label', default: 'Tag'), id])
-            redirect(action: "show", id: id)
+            flash.error = message(code: 'default.not.deleted.message', args: [message(code: 'tag.label', default: 'Tag'), id])
+            redirect(action: "list")
         }
     }
 }

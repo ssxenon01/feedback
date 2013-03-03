@@ -2,12 +2,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'tag.label', default: 'Tag')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-tag" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<h3 class="heading">${tagInstance.id?"Чиглэл засварлах":"Чиглэл үүсгэх"}</h3>
+		<div class="row-fluid">
+		    <div class="span6">
+		        <g:form method="POST" action="${tagInstance.id?"update":"create"}" id="${tagInstance.id}" class="well form-inline">
+		            <label for="wg_message">Чиглэл</label>
+		            <textarea name="label" id="wg_message" cols="10" rows="6" class="span12 auto_expand" style="margin-bottom: 10px;">${tagInstance.label}</textarea>
+
+		            <button class="btn btn-danger" type="submit">Хадгалах</button>
+		            <a href="<g:createLink actin="list"/>">Болих</a>
+		        </g:form>
+		    </div>
+		    <div class="span6">
+		        <div class="w-box">
+		            <div class="w-box-header">
+		                Заавар
+		            </div>
+		            <div class="w-box-content cnt_a">
+		                <ul>
+		                    <li>Зөвшөөрөх тэмдэгтүүд: Том, жижиг латин үсгүүд болон цифр.</li>
+		                    <li>Том үсэг, жижиг үсэг, цифр багадаа нэг нэг заавал орсон байна.</li>
+		                    <li>Нууц үг нь 6-20 тэмдэгттэй байна.</li>
+		                </ul>
+		            </div>
+
+		        </div>
+		    </div>
+		</div>
+		%{-- <a href="#edit-tag" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -38,6 +65,6 @@
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
-		</div>
+		</div> --}%
 	</body>
 </html>

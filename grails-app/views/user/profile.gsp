@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <title>${user.username}</title>
     <meta name="layout" content="admin">
 </head>
 
@@ -21,7 +21,7 @@
 
         <div class="row-fluid">
             <div class="span8">
-                <form class="user_reg_valid">
+                <g:form controller="user" action="editProfile" method="POST" class="user_reg_valid">
                     <fieldset>
                         <div class="control-group formSep">
                             <label class="control-label">Нэвтрэх нэр</label>
@@ -65,17 +65,17 @@
                         </div>
 
                         <div class="control-group formSep">
-                            <label for="u_email" class="control-label">Регистерийн дугаар</label>
+                            <label for="u_registerNumber" class="control-label">Регистерийн дугаар</label>
 
                             <div class="controls">
-                                <input required="" type="text" id="u_registerNumber" class="input-xlarge" value="${user.registerId}" placeholder="Жишээ нь: УЗ85064521">
+                                <input required="" id="registerId" name="registerId" type="text" id="u_registerNumber" class="input-xlarge" value="${user.registerId}" placeholder="Жишээ нь: УЗ85064521">
                             </div>
                         </div>
                         <div class="control-group formSep">
-                            <label for="u_email" class="control-label">Харилцах утас</label>
+                            <label for="phone" class="control-label">Харилцах утас</label>
 
                             <div class="controls">
-                                <input required="" type="text" id="u_phone" class="input-xlarge" value="${user.phone}" placeholder="Жишээ нь: 99199999">
+                                <input required="" type="text" id="phone" name="phone" class="input-xlarge" value="${user.phone}" placeholder="Жишээ нь: 99199999">
                             </div>
                         </div>
                         %{-- <div class="control-group formSep">
@@ -94,10 +94,10 @@
                         </div> --}%
 
                         <div class="control-group formSep">
-                            <label for="u_signature" class="control-label">Товч танилцуулга</label>
+                            <label for="about" class="control-label">Товч танилцуулга</label>
 
                             <div class="controls">
-                                <textarea rows="4" id="u_signature" class="input-xlarge" placeholder="Жишээ нь: Барилгын салбарт ажилладаг"
+                                <textarea rows="4" id="about" name="about" class="input-xlarge" placeholder="Жишээ нь: Барилгын салбарт ажилладаг"
                                           style="overflow: hidden; word-wrap: break-word; max-height: 72px; min-height: 72px; height: 72px;">${user.about}</textarea>
                                 <span class="help-block">Бөглөхгүй байж болно</span>
                             </div>
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </g:form>
             </div>
         </div>
     </div>

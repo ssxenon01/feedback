@@ -122,7 +122,7 @@
                                     </g:each>
                                 </div>
                             <td class="status">
-                                <span class="label label-important"><g:message code="objectStatus.${ticketInstance.objectStatus}"/></span>
+                                <span class="label objectStatus${ticketInstance.objectStatus}"><g:message code="objectStatus.${ticketInstance.objectStatus}"/></span>
 
                                 <div class="created_at">${ticketInstance.dateCreated}-д үүссэн</div>
                             </td>

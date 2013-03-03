@@ -88,11 +88,11 @@
 		.pager a {-webkit-border-radius: 6px;-moz-border-radius: 6px;-ms-border-radius: 6px;border-radius: 6px;padding:4px 12px}
 		
 		.label {cursor:default}
-		.label-important,.badge-error {background: #C62626}
-		.label-success,.badge-success {background: #70A415}
-		.label-warning,.badge-warning {background: #F5AA1A}
-		.label-info,.badge-info {background: #058DC7}
-	
+		.objectStatusDeleted,.objectStatusExpired,.objectStatusDuplicated,.objectStatusSuspended,.label-important,.badge-error {background: #C62626}
+		.objectStatusClosed,.label-success,.badge-success {background: #70A415}
+		.objectStatusPending,.label-warning,.badge-warning {background: #F5AA1A}
+		.objectStatusOpen,.label-info,.badge-info {background: #058DC7}
+		
 		.alert .close {top:0}
 		.alert-block p + p,.alert-block ul + p,.alert-block p + ul {margin-top:10px}
 		.alert-block h4 + p,.alert-block h4 + ul {margin-top:5px}

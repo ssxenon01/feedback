@@ -6,9 +6,12 @@ import mn.xenon.auth.User
 import org.springframework.security.access.annotation.Secured
 
 class UserController {
+  
+  static allowedMethods = [editProfile: "POST",changepass:"POST"]
 
   def springSecurityService
-  
+  def messageSource
+
   @Secured(['ROLE_ADMIN'])
   def list(Integer max){
       params.max = Math.min(max ?: 10, 100)
@@ -47,7 +50,21 @@ class UserController {
   }
   @Secured(['ROLE_USER'])
   def profile() {
-    [user:currentUser()]
+    [user:User.get(currentUser().id)]
+  }
+  def editProfile(){
+    if(!params.id){
+      params.id = currentUser().id
+    }
+    def user = User.get(params.id)
+    user.properties = params
+    user.save()
+    if (user.hasErrors()) {
+        flash.error = extractErrors(user).join(";")
+    } else {
+        flash.success = "Профайл амжилттай шинэчлэгдлээ"
+    }
+    redirect(action:'profile')
   }
   @Secured(['ROLE_USER'])
   def changePass() { 
@@ -68,5 +85,11 @@ class UserController {
   }
   User currentUser(){
       return springSecurityService.currentUser
+  }
+  private extractErrors(model) {
+      model.errors.fieldErrors.collect { error ->
+          println error
+          messageSource.getMessage(error, request.locale)
+      }
   }
 }

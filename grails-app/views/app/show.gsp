@@ -65,20 +65,7 @@
                                 <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
                             </div> --}%
 
-                    <div class="doc_view_content">
-                        ${ticket.content}
-                    </div>
-
-                    <div class="doc_view_reply">
-                        <g:each in="${ticket.fetchStatements()}" var="statement">
-                            <div class="msg clearfix">
-                                <div class="msg-heading"><span class="msg_date"><g:formatDate formatName="date.long"
-                                                                                              date="${statement.dateCreated}"/></span><span
-                                        class="user_name">${statement.author}</span></div>
-
-                                <div class="msg_body">${statement.content}</div>
-                            </div>
-                        </g:each>
+                   
                     %{-- <div class="msg clearfix">
                        <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
                        <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>

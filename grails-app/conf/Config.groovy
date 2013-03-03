@@ -115,11 +115,11 @@ grails.plugins.springsecurity.controllerAnnotations.staticRules = [
         '/app/bootstrap/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
-grails.plugins.springsecurity.providerNames = [
+/*grails.plugins.springsecurity.providerNames = [
    'myAuthenticationProvider',
    'anonymousAuthenticationProvider',
    'rememberMeAuthenticationProvider'
-]
+]*/
 // Here is the Mail server configuration defined by xenon
 grails {
    mail {

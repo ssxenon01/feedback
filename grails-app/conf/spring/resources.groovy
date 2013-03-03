@@ -14,7 +14,7 @@ beans = {
     beans = {
         userDetailsService(CustomUserDetailService)
     }
-    myAuthenticationProvider(EmailAuthenticationProvider){
+    /*myAuthenticationProvider(EmailAuthenticationProvider){
     	springSecurityService = ref("springSecurityService")
-    }
+    }*/
 }
