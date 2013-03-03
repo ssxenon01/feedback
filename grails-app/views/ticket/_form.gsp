@@ -1,14 +1,15 @@
 <%@ page import="mn.xenon.domain.Ticket" %>
+<%@ page import="mn.xenon.domain.Type" %>
 <%@ page import="mn.xenon.domain.Tag" %>
 
 %{-- START --}%
 <legend>Өөрчлөлт эндээс эхэлнэ</legend>
 <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+    <input type="radio" name="type" id="optionsRadios1" value="${Type.Competition.name()}" checked="">
     Шударга бус өрсөлдөөний улмаас
 </label>
 <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    <input type="radio" name="type" id="optionsRadios2" value="${Type.Interests.name()}">
     Хэрэглэгчийн эрх ашиг зөрчигдөж байгаа улмаас
 </label>
 <hr/>

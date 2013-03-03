@@ -21,6 +21,8 @@ class TicketService {
 			}
 			if(params.objectStatus)
 				eq('objectStatus',params.objectStatus as ObjectStatus)
+			if(params.type)
+				eq('type',params.type as Type)
             if(params.q){
                 or{
                     if(params.q.isLong())
@@ -60,6 +62,8 @@ class TicketService {
 			}
 			if(params.objectStatus)
 				eq('objectStatus',params.objectStatus as ObjectStatus)
+			if(params.type)
+				eq('type',params.type as Type)
             if(params.q){
                 or{
                     if(params.q.isLong())
@@ -136,35 +140,17 @@ class TicketService {
             'ne'('objectStatus',ObjectStatus.Deleted)
         }
     }
-    def getMyTicketsCount(){
+    
+    def getMyTicketsCount(params = null){
         return Ticket.createCriteria().count() {
             eq('author',springSecurityService.currentUser as User)
             'ne'('objectStatus',ObjectStatus.Deleted)
         }
     }
     def hotTickets(params = null){
-    	// if(springSecurityService.currentUser){
-	    // 	def myLiked = Ticket.createCriteria().list() {
-	    //         'gtProperty'('maxVote','vote')
-	    // 		voteList{
-	    // 			'eq'('id',springSecurityService.currentUser.id)
-	    //     	}
-	    //         'not'{            	
-	    //         	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
-	    //         }
-	    //         order('vote','desc')
-	    //     }
-	    //     return Ticket.createCriteria().list(params){
-	    //     	'gtProperty'('maxVote','vote')
-	    //         'not'{ 
-	    //         	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
-	    //         	'in'('id', myLiked.id ) 
-	    //         }
-	    //         order('vote','desc')
-	    //     }
-     //    }else{
         	return Ticket.createCriteria().list(params) {
 	            'gtProperty'('maxVote','vote')
+	            'eq'('type',Type.Interests)
 	            'not'{            	
 	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
 	            }

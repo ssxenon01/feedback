@@ -7,6 +7,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><g:currentUser/><b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li><g:link controller="app" action="my">Миний саналууд</g:link></li>
                             <li><g:link controller="user" action="profile">Профайл</g:link></li>
                             <li><g:link controller="user" action="changePass">Нууц үг солих</g:link></li>
                             <li class="divider"></li>

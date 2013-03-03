@@ -17,7 +17,7 @@ class AppController {
     def springSecurityService
     def index(Integer max) {
         params.max = Math.min(max ?: 20, 100)
-        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count(params)]
+        [ticketInstanceList: ticketService.list(params), ticketInstanceTotal: ticketService.count(params), title:params.objectStatus?"":"Бүх"]
     }
 
     def show(){
@@ -25,6 +25,12 @@ class AppController {
             redirect(action: "index")
         [ticket:Ticket.get(params.id)]
     }
+    
+    def my(Integer max){
+        params.max = Math.min(max ?: 20, 100)
+        render(view:'index', model:[ticketInstanceList: ticketService.getMyTickets(params), ticketInstanceTotal: ticketService.getMyTicketsCount(params),title:"Миний"])
+    }
+
     @Secured(['ROLE_ADMIN'])
     def createStatement(){
         def ticket = Ticket.get(params.id)

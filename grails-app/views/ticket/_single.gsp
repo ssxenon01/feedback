@@ -1,9 +1,13 @@
+<%@ page import="mn.xenon.domain.Type" %>
+
 <div class="petition" tID="${ticketInstance.id}">
     <div class="date-box">
         <span class="day"><g:formatDate formatName="date.mini" date="${ticketInstance.dateCreated}"/></span>
-        <span class="like-count" tID="${ticketInstance.id}">${ticketInstance.vote}</span>
-        <span class="text"><g:message code="likeCount"/> </span>
-        <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small vote-action ${ticketInstance.getVoted()?"disabled":"btn-like"}"><i class="icon-thumbs-up"></i></a></span>
+        <g:if test="${ticketInstance.type == Type.Interests}">
+            <span class="like-count" tID="${ticketInstance.id}">${ticketInstance.vote}</span>
+            <span class="text"><g:message code="likeCount"/> </span>
+            <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small vote-action ${ticketInstance.getVoted()?"disabled":"btn-like"}"><i class="icon-thumbs-up"></i></a></span>
+        </g:if>
     </div>
     <div class="info">
         <g:link controller="ticket" action="show" id="${ticketInstance.id}">${ticketInstance.title}</g:link>
