@@ -417,8 +417,8 @@ div.steps a:hover {
 }
 
 .popular-petitions .petition .inner .bottom  .stats strong {
-    font-weight: bold;
-    font-size: 12px;
+    font-weight: normal;
+    font-size: 20px;
 }
 
 .popular-petitions .petition .inner .bottom  .stats .picture a {
@@ -582,6 +582,10 @@ div.steps a:hover {
 /* Text color */
 .red {
     color: #ed2d23;
+}
+
+.blue {
+    color: #00A0D1;
 }
 
 .yellow {
@@ -1226,4 +1230,8 @@ hr.small {
 
 .forget-message {
     padding: 5px 40px;
+}
+
+.status-type {
+    font-weight: bold;
 }
