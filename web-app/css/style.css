@@ -191,7 +191,7 @@ div.create-petition a:hover {
 }
 
 div.create-petition a {
-    background-color: #F8F8F8;
+    background-color: #f4f3f3;
     width: 155px;
     color: #0094C2;
 }
@@ -1292,4 +1292,8 @@ hr.small {
 
 .sortby .nav li.dropdown > a {
     font-weight: bold;
+}
+
+#loggedinLabel {
+    font-size: 18px;
 }
