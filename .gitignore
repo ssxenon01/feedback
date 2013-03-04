@@ -12,6 +12,7 @@ feedback.iml
 .idea/vcs.xml
 .idea/workspace.xml
 .idea/
+web-app/tmp/
 .classpath
 .project
 *.iml

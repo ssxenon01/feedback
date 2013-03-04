@@ -11,7 +11,8 @@ class UserController {
 
   def springSecurityService
   def messageSource
-
+  def fileService
+  
   @Secured(['ROLE_ADMIN'])
   def list(Integer max){
       params.max = Math.min(max ?: 10, 100)
@@ -58,6 +59,16 @@ class UserController {
     }
     def user = User.get(params.id)
     user.properties = params
+
+    def multipartFile = request.getFile("file")
+    if(multipartFile){
+        if(user.profile){
+            fileService.deleteFile(user.profile)
+        }
+        def file = fileService.upload(multipartFile)
+        if(file)
+        user.profile = file
+    }
     user.save()
     if (user.hasErrors()) {
         flash.error = extractErrors(user).join(";")

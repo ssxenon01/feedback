@@ -30,7 +30,7 @@
 </label>
 
 <div class="picture-upload">
-    <input type="file" name="file">
+    <input type="file" name="file" accept="image/*">
     Зургаа оруулна уу
 </div>
 
@@ -39,7 +39,7 @@
     <g:each in="${Tag.list()}" var="tag">
         <div class="span4">
             <label class="checkbox">
-                <input name="tags" type="checkbox" value="${tag.id}">
+                <input  name="tags" type="checkbox" value="${tag.id}">
                 ${tag.label}
             </label>
         </div>

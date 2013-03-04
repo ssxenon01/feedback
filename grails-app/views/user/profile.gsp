@@ -21,7 +21,7 @@
 
         <div class="row-fluid">
             <div class="span8">
-                <g:form controller="user" action="editProfile" method="POST" class="user_reg_valid">
+                <g:form controller="user" action="editProfile" method="POST" class="user_reg_valid" enctype="multipart/form-data">
                     <fieldset>
                         <div class="control-group formSep">
                             <label class="control-label">Нэвтрэх нэр</label>
@@ -39,11 +39,11 @@
                                     <input type="hidden">
 
                                     <div style="width: 80px; height: 80px;" class="fileupload-new thumbnail"><img
-                                            src="http://www.placehold.it/80x80/EFEFEF/AAAAAA" alt=""></div>
+                                            src="${user.profile?resource(dir: 'tmp', file: user.profile):'http://www.placehold.it/80x80/EFEFEF/AAAAAA'}" alt=""></div>
 
                                     <div style="width: 80px; height: 80px; line-height: 80px;" class="fileupload-preview fileupload-exists thumbnail"></div>
                                     <span class="btn btn-file"><span class="fileupload-new">Select image</span><span
-                                            class="fileupload-exists">Change</span><input type="file" id="fileinput" name=""></span>
+                                            class="fileupload-exists">Change</span><input type="file" id="fileinput" name="file" accept="image/*"></span>
                                     <a data-dismiss="fileupload" class="btn fileupload-exists" href="#">Remove</a>
                                 </div>
                             </div>
