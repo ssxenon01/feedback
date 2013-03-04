@@ -24,23 +24,23 @@
                                     <ul class="nav nav-list">
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Competition]}">Бүгд 
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Open]}">Нээлттэй
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition]}">Давхардсан</g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition]}">Устгагдсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Duplicated]}">Давхардсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Deleted]}">Устгагдсан</g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>
@@ -57,23 +57,23 @@
                                     <ul class="nav nav-list">
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Interests]}">Бүгд 
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <li>
                                             <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Open]}">Нээлттэй
-                                            <span class="label label-info">10</span></g:link>
+                                           </g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests]}">Давхардсан</g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests]}">Устгагдсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Duplicated]}">Давхардсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Deleted]}">Устгагдсан</g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>

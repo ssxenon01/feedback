@@ -27,7 +27,7 @@
     <div class="row popular-petitions">
     <div class="span12">
         <div class="header">
-            <div class="pull-left"><h1>Халуун саналууд</h1></div>
+            <div class="pull-left"><h1>Халуухан саналууд</h1></div>
             <div class="pull-right">
                 <span class="filter">
                     <a href="#" id="filter-button" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Default tooltip">Шүүлтүүр</a>
@@ -53,7 +53,7 @@
                 <div class="clear"></div>
             </div>
             <div class="filter-body">
-                <span class="help-block" style="font-weight: bold;">Та хамгийн ихдээ гурван салбар сонгох боломжтой</span>
+                <span class="help-block" style="font-weight: bold;">Харах чиглэлээ сонгоно уу</span>
                 <div class="row" style="">
                     <g:each in="${Tag.list()}" var="tag">
                         <div class="span5">

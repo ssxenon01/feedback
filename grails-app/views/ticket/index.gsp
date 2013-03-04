@@ -1,4 +1,5 @@
 <%@ page import="mn.xenon.domain.Tag" %>
+<%@ page import="mn.xenon.domain.Type" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -16,8 +17,8 @@
 
                     <div class="pull-right">
                         <div class="btn-group">
-                            <button class="btn btn-small btn-select">Хэрэглэгчийн эрх ашиг</button>
-                            <button class="btn btn-small">Шударга бус өрсөлдөөн</button>
+                            <a href="<g:createLink params="${[type:'Interests',objectStatus:params.objectStatus]}"/>" class="btn btn-small ${params.type=='Interests'?'btn-select':'' }">Хэрэглэгчийн эрх ашиг</a>
+                            <a href="<g:createLink params="${[type:'Competition',objectStatus:params.objectStatus]}"/>" class="btn btn-small ${(params.type=='Competition')?'btn-select':'' }" >Шударга бус өрсөлдөөн</a>
                         </div>
                     </div>
 
@@ -30,11 +31,11 @@
             <div class="span8 left-panel">
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="${(params.objectStatus == "Open") ? 'active' : ''}"><g:link controller="ticket" action="index"
-                                                                                           params="${[objectStatus: 'Open']}">Нээлттэй</g:link></li>
+                                                                                           params="${[type:params.type,objectStatus: 'Open']}">Нээлттэй</g:link></li>
                     <li class="${params.objectStatus == "Pending" ? 'active' : ''}"><g:link controller="ticket" action="index"
-                                                                                            params="${[objectStatus: 'Pending']}">Хүлээлтэнд байгаа</g:link></li>
+                                                                                            params="${[type:params.type,objectStatus: 'Pending']}">Хүлээлтэнд байгаа</g:link></li>
                     <li class="${params.objectStatus == "Closed" ? 'active' : ''}"><g:link controller="ticket" action="index"
-                                                                                           params="${[objectStatus: 'Closed']}">Хаасан</g:link></li>
+                                                                                           params="${[type:params.type,objectStatus: 'Closed']}">Хаасан</g:link></li>
                 </ul>
 
                 <div class="tab-content">

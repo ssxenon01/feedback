@@ -45,6 +45,7 @@ class TicketService {
         			'in'('id',params.tags.collect{ it as Long })
         		}
             }
+            if(!params.objectStatus)
 			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
 			order('dateCreated','DESC')
 		}
@@ -77,6 +78,7 @@ class TicketService {
         			'in'('id',params.tags.collect{ it as Long })
         		}
             }
+            if(!params.objectStatus)
 			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
 			
 		}
