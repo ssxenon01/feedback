@@ -1,5 +1,4 @@
 $(function () {
-
     $('#ifpic').click(function () {
         if ($('#ifpic').is(':checked')) {
             $(".picture-upload").toggle('slow');
