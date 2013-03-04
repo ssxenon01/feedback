@@ -1,21 +1,23 @@
 <div id="footer">
+    <span class="border"></span>
+
     <div class="container">
-        <div class="row">
-            <div class="span12">
-                <ul class="menu">
-                    <li class="leaf">
-                        <a href="#" title="">About Us</a>
-                    </li>
-                    <li class="leaf">
-                        <a href="#" title="">Terms &amp; Conditions</a>
-                    </li>
-                    <li class="leaf last">
-                        <a href="#" title="">What's the Change</a>
-                    </li>
-                    <li class="leaf ">
-                        <a href="#" title="" class="ext" target="_blank">© 2013 он. Шударга өрсөлдөөн, Хэрэглэгчийн төлөө газар</a>
-                    </li>
-                </ul>
+        <div class="inner">
+            <div class="row">
+                <div class="span12">
+                    <ul>
+                        <li><a class="twitter" href="#" target="_blank"></a></li>
+                        <li><a class="facebook" href="#" target="_blank"></a></li>
+                    </ul>
+
+                    <p><a href="#" id="backtoTop">Back to Top</a> ·
+                        <a href="#" class="dim">Terms &amp; Privacy</a> ·
+                        <a href="#" class="dim">Copyright &amp; Trademark</a> ·
+                        <a id="#" href="#" class="dim">Help</a>
+                    </p>
+
+                    <p class="copyright">© 2013 Шударга бус өрсөлдөөн, Хэрэглэгчийн төлөө газар.</p>
+                </div>
             </div>
         </div>
     </div>
