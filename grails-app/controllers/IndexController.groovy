@@ -8,8 +8,10 @@ def ticketService
 	 * Index action. Redirects to the Spring security logout uri.
 	 */
 	def index = {
-
-		[ticketList: ticketService.hotTickets([max:9])]
-
+		if(params.q == 'new'){
+			[ticketList: ticketService.list([max:9])]
+		}else{
+			[ticketList: ticketService.hotTickets([max:9])]
+		}
 	}
 }

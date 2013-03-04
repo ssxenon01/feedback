@@ -36,9 +36,8 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Эрэмбэлэх <b class="caret"></b></a>
                                 <ul class="dropdown-menu sort-by">
-                                    <li><a href="#">Топууд</a></li>
-                                    <li><a href="#">Өнөөдөр орсон</a></li>
-                                    <li><a href="#">Бүгд</a></li>
+                                    <li><g:link action="index">Топууд</g:link></li>
+                                    <li><g:link action="index" params="${[q:'new']}">Өнөөдөр орсон</g:link></li>
                                 </ul>
                             </li>
                         </ul>

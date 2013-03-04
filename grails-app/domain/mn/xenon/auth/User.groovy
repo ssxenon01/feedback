@@ -28,7 +28,7 @@ class User implements Serializable{
     String phone
     String facebook
     String twitter
-
+    String profile
 
 
     Gender gender = Gender.Other
@@ -46,6 +46,7 @@ class User implements Serializable{
         phone nullable:true
         facebook nullable:true
         twitter nullable:true
+        profile nullable:true
 	}
 
 	static mapping = {

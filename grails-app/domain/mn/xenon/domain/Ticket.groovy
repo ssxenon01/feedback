@@ -7,7 +7,7 @@ class Ticket extends BaseDomain{
 	static transients = ['voted','fetchStatement']
 	String title
 	String content
-
+	String img
 	int vote = 0
 	
 	Type type = Type.Interests
@@ -44,6 +44,7 @@ class Ticket extends BaseDomain{
 	}
 
 	static constraints = {
+		img nullable:true
 		diplicatedWith nullable:true
 		vote nullable:true
 		maxVote nullable:true

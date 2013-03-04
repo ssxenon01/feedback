@@ -15,8 +15,10 @@
         <div class="row">
             <div class="span8" style="min-height: 600px;">
                 <div class="petition-single-content">
-                    %{-- <div class="media-box"><img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners" width="600">
-                   </div> --}%
+                    <g:if test="${ticketInstance.img}">
+                        <div class="media-box"><img src="${resource(dir: 'tmp', file: ticketInstance.img)}" class="rounded-corners" width="600">
+                       </div>
+                    </g:if>
                     <div class="media-content">
                         <h1 class="title">${ticketInstance.title}</h1>
 

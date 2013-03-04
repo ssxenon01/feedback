@@ -8,6 +8,7 @@ class TicketController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST",fetch: "POST"]
     def springSecurityService
     def ticketService
+    def fileService
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -35,6 +36,13 @@ class TicketController {
     @Secured(['ROLE_USER'])
     def save() {
         def ticketInstance = new Ticket(params)
+        def multipartFile = request.getFile("file")
+        if(multipartFile){
+            def file = fileService.upload(multipartFile)
+            if(file)
+            ticketInstance.img = file
+        }
+
         ticketInstance.author = springSecurityService.currentUser
         if (!ticketInstance.save(flush: true)) {
             render(view: "create", model: [ticketInstance: ticketInstance])
@@ -86,7 +94,15 @@ class TicketController {
         }
 
         ticketInstance.properties = params
-
+        def multipartFile = request.getFile("file")
+        if(multipartFile){
+            if(ticketInstance.img){
+                fileService.deleteFile(ticketInstance.img)
+            }
+            def file = fileService.upload(multipartFile)
+            if(file)
+            ticketInstance.img = file
+        }
         if (!ticketInstance.save(flush: true)) {
             render(view: "edit", model: [ticketInstance: ticketInstance])
             return

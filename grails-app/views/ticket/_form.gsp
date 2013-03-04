@@ -30,7 +30,7 @@
 </label>
 
 <div class="picture-upload">
-    <input type="file">
+    <input type="file" name="file">
     Зургаа оруулна уу
 </div>
 

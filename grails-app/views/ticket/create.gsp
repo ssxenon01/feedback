@@ -15,7 +15,7 @@
         <div class="row">
             <div class="span8">
                 <h1 class="create-title">Санал, Гомдол нэмэх</h1>
-                <g:form action="save">
+                <g:form action="save" enctype="multipart/form-data">
                     <fieldset>
                         <g:render template="form"/>
                         <div class="form-actions">
