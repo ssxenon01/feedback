@@ -15,7 +15,7 @@
             <h2>Амьдралаа өөрчилцгөөе!</h2>
             <div class="steps clearfix">
                 <g:link controller="ticket" action="create">Санал оруулах</g:link>
-                <g:link controller="ticket" action="index">Санал дэмжих</g:link>
+                <g:link controller="ticket" action="index" params="${[objectStatus: "Open",type: "Interests"]}">Санал дэмжих</g:link>
                 <g:link controller="ticket" action="create">Саналын хариу</g:link>
             </div>
             <div class="create-petition">
@@ -43,30 +43,33 @@
                     <button id="filter-close" class="btn btn-small btn-pet" type="button"><i class="icon-arrow-up icon-white"></i>Хаах</button>
                 </div>
                 <div class="pull-right">
-                    <div class="btn-group">
-                        <button class="btn btn-small btn-select">Бүгд</button>
-                        <button class="btn btn-small">Нээлттэй</button>
-                        <button class="btn btn-small">Шалгаж байгаа</button>
-                        <button class="btn btn-small">Хаасан</button>
+                    <div class="btn-group" data-toggle="buttons-radio">
+                        <imput id="objectStatusHidden" name="objectStatus" type="hidden" value=""/>
+                        <button name="b" type="radio" value="<g:message code="objectStatus.null" />" class="btn btn-small active">Бүгд</button>
+                        <button name="b" type="radio" value="<g:message code="objectStatus.Open" />" class="btn btn-small">Нээлттэй</button>
+                        <button name="b" type="radio" value="<g:message code="objectStatus.Pending" />" class="btn btn-small">Шалгаж байгаа</button>
+                        <button name="b" type="radio" value="<g:message code="objectStatus.Closed" />" class="btn btn-small">Хаасан</button>
                     </div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="filter-body">
-                <span class="help-block" style="font-weight: bold;">Харах чиглэлээ сонгоно уу</span>
-                <div class="row" style="">
-                    <g:each in="${Tag.list()}" var="tag">
-                        <div class="span5">
-                            <label class="checkbox">
-                                <input type="checkbox" value="${fieldValue(bean: tag, field: "id")}">
-                                ${fieldValue(bean: tag, field: "label")}
-                            </label>
-                        </div>
-                    </g:each>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-large btn-like">Шүүх</button>
-                </div>
+                <g:form method="GET" controller="ticket" action="index">
+                    <span class="help-block" style="font-weight: bold;">Харах чиглэлээ сонгоно уу</span>
+                    <div class="row" style="">
+                        <g:each in="${Tag.list()}" var="tag">
+                            <div class="span5">
+                                <label class="checkbox">
+                                    <input name="tag" type="checkbox" value="${fieldValue(bean: tag, field: "id")}">
+                                    ${fieldValue(bean: tag, field: "label")}
+                                </label>
+                            </div>
+                        </g:each>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-large btn-like">Шүүх</button>
+                    </div>
+                </g:form>
             </div>
         </div>
     </div>
