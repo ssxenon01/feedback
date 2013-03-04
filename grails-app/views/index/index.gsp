@@ -31,11 +31,23 @@
         <div class="row popular-petitions">
             <div class="span12">
                 <div class="header">
-                    <div class="pull-left"><h1>Халуухан саналууд</h1></div>
+                    <div class="pull-left sortby">
+                        <ul class="nav nav-pills">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Эрэмбэлэх <b class="caret"></b></a>
+                                <ul class="dropdown-menu sort-by">
+                                    <li><a href="#">Топууд</a></li>
+                                    <li><a href="#">Өнөөдөр орсон</a></li>
+                                    <li><a href="#">Бүгд</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
                     <div class="pull-right">
                         <span class="filter">
-                            <a href="#" id="filter-button" rel="tooltip" data-toggle="tooltip" title="" data-original-title="Default tooltip">Шүүлтүүр</a>
+                            <a href="#" id="filter-button" rel="tooltip" data-placement="bottom" data-toggle="tooltip" title=""
+                               data-original-title="Текстэн дээр дарна уу">Чиглэлээр ангилах</a>
                         </span>
                     </div>
 
