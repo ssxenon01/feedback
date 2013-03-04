@@ -25,20 +25,18 @@
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i>  Хэрэглэгчийн эрх ашиг  <b
                                         class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Бүгд</a></li>
-                                    <li><a href="#">Хаагдсан</a></li>
-                                    <li><a href="#">Шалгагдаж байгаа</a></li>
-                                    <li><a href="#">Шалгагдаж байгаа</a></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests"]}">Бүгд</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Closed"]}">Хаагдсан</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Pending"]}">Шалгагдаж байгаа</g:link></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i
                                         class="icon-th icon-white"></i>  Шударга бус өрсөлдөөний улмаас  <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Бүгд</a></li>
-                                    <li><a href="#">Хаагдсан</a></li>
-                                    <li><a href="#">Шалгагдаж байгаа</a></li>
-                                    <li><a href="#">Шалгагдаж байгаа</a></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition"]}">Бүгд</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Closed"]}">Хаагдсан</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Pending"]}">Шалгагдаж байгаа</g:link></li>
                                 </ul>
                             </li>
                         </ul>

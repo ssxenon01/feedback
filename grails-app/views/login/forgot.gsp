@@ -22,12 +22,8 @@
 
                 <div class="forget-message">
                     <g:render template="/includes/warning" />
-                    
                 </div>
-                <div class="forget-message">
-                    <g:render template="/includes/warning" />
-                  </div>
-                <g:form action="forgetPass" method="POST" id="auth-form">
+                <g:form action="forgetPass" method="POST" name="auth-form">
                     <div class="input">
                         <input id="id_username" type="text" name="username" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
                     </div>

@@ -45,8 +45,20 @@ class LoginController {
 	}
 	def register = { }
 	def forgot = {}
-	def forgotPass = {
+	def forgetPass = {
+		def user = User.findByEmailOrUsername(params.username,params.username)
+		if(user){
+			mailService.sendMail {
+			   to user.email
+			   subject "Welcome to 1284"
+			   html g.render(template:"/includes/mail/forgotpass",model:[user:user])
+			}
+			flash.success = "Таны email хаяг руу шинэ нууц үгийг илгээсэн"
+		}else{
+			flash.error = "Та манай системд бүртгэлгүй байна"
+		}
 		
+		redirect action:'forgot'
 	}
 	def regAction = {
 		def user = new User(params)
@@ -57,7 +69,7 @@ class LoginController {
 				mailService.sendMail {
 				   to params.email
 				   subject "Welcome to 1284"
-				   body """Та 1284 сайтад амжилттай бүртгүүллээ"""
+				   html g.render(template:"/includes/mail/registered",model:[user:user])
 				}
 			}
 			UserRole.create(user, Role.findByAuthority("ROLE_ADMIN"))
