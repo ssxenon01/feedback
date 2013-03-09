@@ -9,9 +9,9 @@ def ticketService
 	 */
 	def index = {
 		if(params.q == 'new'){
-			[ticketList: ticketService.list([max:9])]
+			[ticketList: ticketService.list([max:30])]
 		}else{
-			[ticketList: ticketService.hotTickets([max:9])]
+			[ticketList: ticketService.hotTickets([max:30])]
 		}
 	}
 }

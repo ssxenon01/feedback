@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="span8">
                         <h1 class="create-title">Санал, Гомдол нэмэх</h1>
-                        <g:form method="post" >
+                        <g:form method="post" enctype="multipart/form-data">
                             <g:hiddenField name="id" value="${ticketInstance?.id}" />
                             <g:hiddenField name="version" value="${ticketInstance?.version}" />
                             <fieldset>

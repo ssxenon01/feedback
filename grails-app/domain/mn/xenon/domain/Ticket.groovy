@@ -11,6 +11,7 @@ class Ticket extends BaseDomain{
 	int vote = 0
 	
 	Type type = Type.Interests
+	Group group = Group.Citizen
 
 	int maxVote = 1000
 	boolean getVoted(){
@@ -41,7 +42,12 @@ class Ticket extends BaseDomain{
         moderatorComment type: 'text'
         result type: 'text'
         table 'ticket'
+        group column:'ticket_group'
 	}
+
+	static searchable = {
+        only = ["title", "content"]
+    }
 
 	static constraints = {
 		img nullable:true

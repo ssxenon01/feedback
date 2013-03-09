@@ -11,7 +11,9 @@
         <g:link controller="ticket" action="show" id="${ticketInstance.id}">${ticketInstance.title}</g:link>
         <p>${fieldValue(bean: ticketInstance, field: "content")}</p>
         <div class="action">
-            %{-- <i class="icon-picture"></i> <a href="#">Зураг харах</a> --}%
+            <g:if test="${ticketInstance.img}">
+                <i class="icon-picture"></i> <a href="${resource(dir: 'tmp', file: ticketInstance.img)}">Зураг харах</a>
+            </g:if>
             <a href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" />" class="more"><g:message code="readMore"/></a>
         </div>
     </div>

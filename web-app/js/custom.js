@@ -7,6 +7,21 @@ $(function () {
         }
 
     });
+    $('#ticket-title-unique').typeahead({
+        items:10,
+        minLength:4,
+        source: function (query, process) {
+            $('#character-limit-unique').html(150-query.length);
+            $.get('/feedback/ticket/complete', { q: query }, function (data) {
+                return process(data.data);
+            });
+        },
+        matcher:function(){
+            return true;
+        }
+        
+    });
+
     if ($(document).width() < 756) {
         $(".jumbotron").addClass("phone-visible");
     } else {
@@ -32,19 +47,6 @@ $(function () {
         } else {
             $(".jumbotron").removeClass("phone-visible");
         }
-    });
-    $('#filter-button').click(function () {
-        $('.filter-collapse').slideToggle('slow', function () {
-            // Animation complete.
-        });
-        return false;
-    });
-    $('#filter-close').click(function () {
-        $('.filter-collapse').slideToggle('slow', function () {
-            // Animation complete.
-        });
-        return false;
-
     });
     $("[rel=tooltip]").tooltip();
     $('#optionsRadios1').on('click', function () {
@@ -139,7 +141,8 @@ $(function () {
                 url:"/feedback/vote/up/" + id,
                 statusCode:{
                     401:function () {
-                        showLogin();
+                        $('#loggedin').modal('show');
+                        // showLogin();
                     },
                     200:function () {
                         callback();

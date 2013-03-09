@@ -2,6 +2,7 @@ package mn.xenon.domain
 
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.security.access.annotation.Secured
+import grails.converters.JSON
 
 class TicketController {
 
@@ -129,5 +130,23 @@ class TicketController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'ticket.label', default: 'Ticket'), id])
             redirect(action: "show", id: id)
         }
+    }
+
+    def complete(){
+        def result = [success:true]
+        if(params.q){
+            def list = params.q.split(' ')
+            result.data = Ticket.createCriteria().list([max:4]){
+                or{
+                    list.each{
+                        if(it.size() > 3){
+                            'ilike'('title', "%${it}%")
+                        }
+                    }
+                }
+            }.collect{it.title}
+        }
+
+        render result as JSON
     }
 }
