@@ -16,8 +16,9 @@
             <div class="span8" style="min-height: 600px;">
                 <div class="petition-single-content">
                     <g:if test="${ticketInstance.img}">
-                        <div class="media-box"><img src="${resource(dir: 'tmp', file: ticketInstance.img)}" class="rounded-corners" width="600">
-                       </div>
+                        <div class="media-box"><img src="${resource(dir: 'tmp', file: ticketInstance.img)}"
+                                                    class="rounded-corners" width="600">
+                        </div>
                     </g:if>
                     <div class="media-content">
                         <h1 class="title">${ticketInstance.title}</h1>
@@ -36,7 +37,8 @@
                             <div class="like-num">
                                 <div class="row">
                                     <div class="span4">
-                                        <h4><g:formatDate formatName="date.short" date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
+                                        <h4><g:formatDate formatName="date.short"
+                                                          date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
 
                                         <div class="count diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
                                     </div>
@@ -51,50 +53,60 @@
                         </g:if>
                         <g:each in="${ticketInstance.fetchStatements()}" var="statement">
 
-                             <div class="well result">
+                            <div class="well result">
                                 <div class="title">
                                     <h2 class="">Шийдвэрлэсэн</h2>
-                                    <div class="pull-right small"><g:formatDate formatName="date.long" date="${statement.dateCreated}" /></div>
+
+                                    <div class="pull-right small"><g:formatDate formatName="date.long"
+                                                                                date="${statement.dateCreated}"/></div>
                                 </div>
-                                <p> ${statement.content} </p>
-                                <p><strong>Мэдэгдэл өгсөн: </strong> ${statement.author?.firstname} ${statement.author?.lastname}</p>
+
+                                <p>${statement.content}</p>
+
+                                <p><strong>Мэдэгдэл өгсөн:</strong> ${statement.author?.firstname} ${statement.author?.lastname}
+                                </p>
                                 %{-- <img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners"
                                      width="600"> --}%
                             </div>
 
-                            
                         </g:each>
 
-                       
 
-                        %{-- <div class="well result">
-                            <div class="title">
-                                <h2 class="">Дүгнэлт</h2>
 
-                                <div class="pull-right small">2012/0305</div>
-                            </div>
+                    %{-- <div class="well result">
+                       <div class="title">
+                           <h2 class="">Дүгнэлт</h2>
 
-                            <p>
-                                On March 6th, Bettina Seigel started a Change.org petition asking USDA to stop the use of LFTB in ground beef destined for school food. A mere nine days into the petition (when it reached over 200,000 signatures), USDA announced that starting in the fall of 2012 it will offer school districts a choice of beef either with LFTB or without the filler.
-                            </p>
-                            <img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners"
-                                 width="600">
-                        </div> --}%
+                           <div class="pull-right small">2012/0305</div>
+                       </div>
+
+                       <p>
+                           On March 6th, Bettina Seigel started a Change.org petition asking USDA to stop the use of LFTB in ground beef destined for school food. A mere nine days into the petition (when it reached over 200,000 signatures), USDA announced that starting in the fall of 2012 it will offer school districts a choice of beef either with LFTB or without the filler.
+                       </p>
+                       <img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners"
+                            width="600">
+                   </div> --}%
 
                         <div class="social-form">
                             <div class="connect-buttons clearfix">
                                 <div class="pull-left">
-                                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                                    <a href="https://twitter.com/share" class="twitter-share-button"
+                                       data-lang="en">Tweet</a>
                                 </div>
 
                                 <div class="pull-left">
-                                    <div class="fb-like" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true"/>"
-                                         data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
+                                    <div class="fb-like" data-href="<g:createLink controller="ticket" action="show"
+                                                                                  id="${ticketInstance.id}"
+                                                                                  absolute="true"/>"
+                                         data-send="true" data-width="450" data-show-faces="true"
+                                         data-action="recommend"></div>
                                 </div>
                             </div>
 
                             <div class="facebook-comment">
-                                <div class="fb-comments" data-href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" absolute="true"/>"
+                                <div class="fb-comments" data-href="<g:createLink controller="ticket" action="show"
+                                                                                  id="${ticketInstance.id}"
+                                                                                  absolute="true"/>"
                                      data-width="580" data-num-posts="10"></div>
                             </div>
                         </div>
@@ -120,7 +132,8 @@
 
                             <div class="pet-graph">
                                 <div class="thermometer" style="">
-                                    <div class="mercury" style="width: ${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
+                                    <div class="mercury"
+                                         style="width: ${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
                                 </div>
 
                                 <div class="clear"></div>
@@ -136,11 +149,14 @@
                             <g:form action="${request.contextPath}/j_spring_security_check">
                                 <fieldset>
                                     <label>User name</label>
-                                    <input name="j_username" type="text" class="input-block-level" placeholder="User name">
+                                    <input name="j_username" type="text" class="input-block-level"
+                                           placeholder="User name">
                                     <label>Password</label>
                                     <input name="j_password" type="password" class="input-block-level" placeholder="">
-                                    <span class="help-block">Хэрэвээ та хараахан бүртгүүлээгүй бол <a href="#">энд</a> дарж бүргтгүүлнэ үү.</span>
-                                    <button type="submit" class="btn btn-large btn-like" style="width: 100%">Нэвтрэх</button>
+                                    <span class="help-block">Хэрэвээ та хараахан бүртгүүлээгүй бол <a
+                                            href="#">энд</a> дарж бүргтгүүлнэ үү.</span>
+                                    <button type="submit" class="btn btn-large btn-like"
+                                            style="width: 100%">Нэвтрэх</button>
                                 </fieldset>
                             </g:form>
                             <div class="clear"></div>
@@ -148,12 +164,16 @@
 
                             <div class="social-form">
                                 <div class="connect-buttons">
-                                    <form class="connect-button" name="login" method="post" action="#" id="twitter-connect-form">
-                                        <a href="#" class="btn" id="twitter_button"><span>Log in with <strong>Twitter</strong></span></a>
+                                    <form class="connect-button" name="login" method="post" action="#"
+                                          id="twitter-connect-form">
+                                        <a href="#" class="btn"
+                                           id="twitter_button"><span>Log in with <strong>Twitter</strong></span></a>
                                     </form>
 
-                                    <form class="connect-button" name="login" method="post" action="#" id="facebook-connect-form">
-                                        <a href="#" class="btn" id="facebook_button"><span>Log in with <strong>Facebook</strong></span></a>
+                                    <form class="connect-button" name="login" method="post" action="#"
+                                          id="facebook-connect-form">
+                                        <a href="#" class="btn"
+                                           id="facebook_button"><span>Log in with <strong>Facebook</strong></span></a>
                                     </form>
                                 </div>
                             </div>
@@ -194,11 +214,11 @@
             fjs.parentNode.insertBefore(js, fjs);
         }
     }(document, "script", "twitter-wjs");
-    $(function () {
-        $(window).scroll(function (data) {
-            $('div.petition-box').css('top', $(window).scrollTop() + 'px');
-        });
-    });
+    /* $(function () {
+     $(window).scroll(function (data) {
+     $('div.petition-box').css('top', $(window).scrollTop() + 'px');
+     });
+     });   */
 </script>
 </body>
 </html>
