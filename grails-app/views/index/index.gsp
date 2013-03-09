@@ -106,5 +106,25 @@
     </div>
 </div>
 </div>
+<a href="#loggedin" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+<!-- Modal -->
+<div id="loggedin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loggedinLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+        <h3 id="loggedinLabel">Та системд нэвтрээгүй байна.</h3>
+    </div>
+
+    <div class="modal-body">
+        <p>Санал өгөхийн тулд заавал нэвтрэх шаардлагтай.</p>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary">Нэвтрэх</button>
+        <button class="btn btn-primary">Бүртгүүлэх</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Хаах</button>
+    </div>
+</div>
 </body>
 </html>
