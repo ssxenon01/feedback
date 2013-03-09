@@ -63,10 +63,10 @@
 
                         <div class="pull-right">
                             <div class="btn-group">
-                                <button class="btn btn-small btn-select">Бүгд</button>
-                                <button class="btn btn-small">Нээлттэй</button>
-                                <button class="btn btn-small">Шалгаж байгаа</button>
-                                <button class="btn btn-small">Хаасан</button>
+                                <button class="btn btn-small btn-select"><g:message code="objectStatus.null"/></button>
+                                <button class="btn btn-small"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/></button>
+                                <button class="btn btn-small"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/></button>
+                                <button class="btn btn-small"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/></button>
                             </div>
                         </div>
 

@@ -1,3 +1,5 @@
+<%@ page import="mn.xenon.domain.ObjectStatus" %>
+
 <header>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -25,18 +27,18 @@
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i>  Хэрэглэгчийн эрх ашиг  <b
                                         class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests"]}">Бүгд</g:link></li>
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Closed"]}">Хаагдсан</g:link></li>
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Pending"]}">Шалгагдаж байгаа</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests"]}"><g:message code="objectStatus.null"/></g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Closed"]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/></g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Interests",objectStatus:"Pending"]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/></g:link></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i
                                         class="icon-th icon-white"></i>  Шударга бус өрсөлдөөний улмаас  <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition"]}">Бүгд</g:link></li>
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Closed"]}">Хаагдсан</g:link></li>
-                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Pending"]}">Шалгагдаж байгаа</g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition"]}"><g:message code="objectStatus.null"/></g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Closed"]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/></g:link></li>
+                                    <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Pending"]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/></g:link></li>
                                 </ul>
                             </li>
                         </ul>

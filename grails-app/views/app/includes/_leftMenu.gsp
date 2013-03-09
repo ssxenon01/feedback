@@ -23,24 +23,24 @@
                                 <div class="accordion-inner">
                                     <ul class="nav nav-list">
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition]}">Бүгд 
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition]}"><g:message code="objectStatus.null"/> 
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Closed]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/> 
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Pending]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/>
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Open]}">Нээлттэй
+                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Open]}"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/>
                                            </g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Duplicated]}">Давхардсан</g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Deleted]}">Устгагдсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Duplicated]}"><g:message code="objectStatus.${ObjectStatus.Duplicated.name()}"/></g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Deleted]}"><g:message code="objectStatus.${ObjectStatus.Deleted.name()}"/></g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>
@@ -60,20 +60,20 @@
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Closed]}">Хаагдсан 
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Closed]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/> 
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Pending]}">Шалгагдаж байгаа
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Pending]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/>
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Open]}">Нээлттэй
+                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Open]}"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/>
                                            </g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Duplicated]}">Давхардсан</g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Deleted]}">Устгагдсан</g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Duplicated]}"><g:message code="objectStatus.${ObjectStatus.Duplicated.name()}"/></g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Deleted]}"><g:message code="objectStatus.${ObjectStatus.Deleted.name()}"/></g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>
@@ -126,7 +126,7 @@
                         </li>
                         <li>
                             <span class="act act-success">${statistic ? statistic.closed : 0 }</span>
-                            <strong>Өнөөдөр хаагдсан</strong>
+                            <strong>Өнөөдөр шийдвэрлэгдсэн</strong>
                         </li>
                         <li>
                             <span class="act act-danger">${statistic ? statistic.pending : 0 }</span>
