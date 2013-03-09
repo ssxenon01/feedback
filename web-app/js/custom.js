@@ -9,19 +9,52 @@ $(function () {
     });
     $('#ticket-title-unique').typeahead({
         items:10,
-        minLength:4,
+        minLength:10,
         source: function (query, process) {
+            var me = this;
             $('#character-limit-unique').html(150-query.length);
             $.get('/feedback/ticket/complete', { q: query }, function (data) {
-                return process(data.data);
+                me.process(data.data);
             });
         },
-        matcher:function(){
-            return true;
-        }
+        process: function (items) {
+          if (!items.length) {
+            return this.shown ? this.hide() : this
+          }
+
+          return this.render(items).show()
+        },
+        render: function (items) {
+          var that = this
+          items = $(items).map(function (i, item) {
+            i = $(that.options.item).attr('data-value', item.title)
+            i.find('a').html(that.highlighter(item.title));
+            i.find('a').attr('href', '/feedback/ticket/show/'+item.id );
+            i.find('a').attr('href', '/feedback/ticket/show/'+item.id );
+            i.find('a').attr('target', '_blank');
+            return i[0]
+          })
+
+          items.first().addClass('active')
+          this.$menu.html(items)
+          return this
+        },
+        click: function (e) { }
         
     });
+    $('#filter-button').click(function () {
+        $('.filter-collapse').slideToggle('slow', function () {
+            // Animation complete.
+        });
+        return false;
+    });
+    $('#filter-close').click(function () {
+        $('.filter-collapse').slideToggle('slow', function () {
+            // Animation complete.
+        });
+        return false;
 
+    });
     if ($(document).width() < 756) {
         $(".jumbotron").addClass("phone-visible");
     } else {

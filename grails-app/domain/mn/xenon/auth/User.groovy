@@ -3,7 +3,6 @@ package mn.xenon.auth
 import mn.xenon.domain.Tag
 import mn.xenon.domain.Ticket
 import mn.xenon.domain.Gender
-import mn.xenon.domain.BaseDomain
 import mn.xenon.domain.ObjectStatus
 
 class User implements Serializable{

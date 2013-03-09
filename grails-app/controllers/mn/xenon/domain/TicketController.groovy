@@ -136,15 +136,15 @@ class TicketController {
         def result = [success:true]
         if(params.q){
             def list = params.q.split(' ')
-            result.data = Ticket.createCriteria().list([max:4]){
+            result.data = Ticket.createCriteria().list([max:8]){
                 or{
                     list.each{
-                        if(it.size() > 3){
+                        if(it.size() > 5){
                             'ilike'('title', "%${it}%")
                         }
                     }
                 }
-            }.collect{it.title}
+            }.collect{[id:it.id, title:it.title, content:it.content]}
         }
 
         render result as JSON

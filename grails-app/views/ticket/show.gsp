@@ -29,7 +29,7 @@
 
                         <div class="tag clearfix">
                             <g:each in="${ticketInstance.tags}" var="tag">
-                                <a href="#"><i class="icon-tag"></i>${fieldValue(bean: tag, field: "label")}</a>
+                                <g:link action="index" params="${[tags:tag.id]}"><i class="icon-tag"></i>${tag.label}</g:link>
                             </g:each>
                         </div>
                         <g:if test="${ticketInstance.type == Type.Interests}">

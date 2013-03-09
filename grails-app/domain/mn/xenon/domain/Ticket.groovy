@@ -1,17 +1,32 @@
 package mn.xenon.domain
 import mn.xenon.auth.User
 
-class Ticket extends BaseDomain{
+class Ticket implements Serializable{
 
 	transient springSecurityService
+
+	Date dateCreated
+  	Date lastUpdated
+   	
+	User author
+	ObjectStatus objectStatus = ObjectStatus.Open
+	
+	Type type = Type.Interests
+	Group group = Group.Citizen
+
+    def beforeInsert(){
+        if(springSecurityService)
+        author = springSecurityService.currentUser as User
+    }
+
 	static transients = ['voted','fetchStatement']
+
 	String title
 	String content
 	String img
 	int vote = 0
 	
-	Type type = Type.Interests
-	Group group = Group.Citizen
+
 
 	int maxVote = 1000
 	boolean getVoted(){
@@ -37,6 +52,7 @@ class Ticket extends BaseDomain{
 	static hasMany = [tags: Tag,voteList:User]
 
 	static mapping = {
+   	   	autoTimestamp true
 		cache true
         content type: 'text'
         moderatorComment type: 'text'
@@ -45,11 +61,10 @@ class Ticket extends BaseDomain{
         group column:'ticket_group'
 	}
 
-	static searchable = {
-        only = ["title", "content"]
-    }
-
 	static constraints = {
+        author(nullable: true, lazy: true)
+        dateCreated(nullable: true)
+        lastUpdated(nullable: true)
 		img nullable:true
 		diplicatedWith nullable:true
 		vote nullable:true
