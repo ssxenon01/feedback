@@ -17,6 +17,21 @@
 <body>
 <div class="row-fluid">
     <div class="span12">
+        <ul class="dshb_icoNav tac">
+            <li><a href="javascript:void(0)" style="background-image: url(app/img/gCons/chat-.png)"><span
+                    class="label label-info">+10</span> Өнөөдөр</a></li>
+            <li><a href="javascript:void(0)" style="background-image: url(app/img/gCons/recycle-full.png)"><span
+                    class="label label-important">-26</span> Устгагдсан</a></li>
+            <li><a href="javascript:void(0)" style="background-image: url(app/img/gCons/badge.png)"><span
+                    class="label label-success">26</span> Шийдвэрлэсэн</a></li>
+            <li><a href="javascript:void(0)" style="background-image: url(app/img/gCons/chat-.png)"><span
+                    class="label label-important">1200</span> Нийт</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
         <h3 class="heading">Хяналтын чиглэлүүд <span class="label label-success">1284 чиглэл байна</span></h3>
 
         <div class="w-box">

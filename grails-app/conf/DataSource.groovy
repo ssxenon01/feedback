@@ -14,7 +14,7 @@ environments {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
             url = "jdbc:mysql://localhost/devfeedback?useUnicode=yes&characterEncoding=UTF-8"
-            username = "root"
+            username = "user"
             password = "pass"
         }
         hibernate {
