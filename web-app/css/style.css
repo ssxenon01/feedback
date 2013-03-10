@@ -336,6 +336,9 @@ a:hover {
 .petitions .petition .info .action a {
     font-size: 11px;
 }
+a.ticket-img{
+    margin-right: 10px;
+}
 
 .petitions .petition .info .action a.more {
     background-color: #41b7d8;

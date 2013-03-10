@@ -33,9 +33,9 @@
                     <li class="${(params.objectStatus == "Open") ? 'active' : ''}"><g:link controller="ticket" action="index"
                                                                                            params="${[type:params.type,objectStatus: 'Open']}">Нээлттэй</g:link></li>
                     <li class="${params.objectStatus == "Pending" ? 'active' : ''}"><g:link controller="ticket" action="index"
-                                                                                            params="${[type:params.type,objectStatus: 'Pending']}">Хүлээлтэнд байгаа</g:link></li>
+                                                                                            params="${[type:params.type,objectStatus: 'Pending']}">Шалгагдаж буй</g:link></li>
                     <li class="${params.objectStatus == "Closed" ? 'active' : ''}"><g:link controller="ticket" action="index"
-                                                                                           params="${[type:params.type,objectStatus: 'Closed']}">Хаасан</g:link></li>
+                                                                                           params="${[type:params.type,objectStatus: 'Closed']}">Шийдвэрлэсэн</g:link></li>
                 </ul>
 
                 <div class="tab-content">

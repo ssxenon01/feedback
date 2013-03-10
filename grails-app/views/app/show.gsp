@@ -63,7 +63,7 @@
                                 <div id="statement-${statement.id}" class="msg clearfix">
                                     <g:render template="/ticket/statement" model="['statement':statement]" />
                                 </div>
-                                <div id="statement-collapse-${statement.id}" class="collapse">
+                                <sec:ifAnyGranted roles="ROLE_ADMIN"><div id="statement-collapse-${statement.id}" class="collapse">
                                     <div class="row-fluid filter">
                                         <g:formRemote name="statement-remote{statement.id}" update="statement-${statement.id}" url="[controller: 'Statement', action:'edit' , params:[id:statement.id]]"> 
                                             <textarea name="content" cols="10" rows="6" class="span10">${statement.content}</textarea>
@@ -71,6 +71,7 @@
                                         </g:formRemote>
                                     </div>
                                 </div>
+                                </sec:ifAnyGranted>
                             </g:each>
                             %{-- <div class="msg clearfix">
                                 <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>

@@ -3,6 +3,8 @@
 	<span class="user_name">${statement.author}</span>
 </div>
 <div class="msg_body">${statement.content}
+	<sec:ifAnyGranted roles="ROLE_ADMIN">
 	<button sid="${statement.id}" class="del-statement btn btn-mini"><span class="icon icon-remove"></span></button>
 	<button class="btn btn-mini" data-toggle="collapse" data-target="#statement-collapse-${statement.id}"><span class="icon icon-edit"></span></button>
+	</sec:ifAnyGranted>
 </div>
