@@ -19,10 +19,10 @@
                                 class="icon-white icon-thumbs-up"></i> Шалгаж буй</g:link>
                     </li>
                     <li>
-                        <a href=""><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </a>
+                        <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </g:link>
                     </li>
                     <li class="">
-                        <a href=""><i class="icon-white icon-info-sign"></i> Заавар</a>
+                        <g:link uri="/guide"><i class="icon-white icon-info-sign"></i> Заавар</g:link>
                     </li>
                 </ul>
                 <sec:ifLoggedIn>

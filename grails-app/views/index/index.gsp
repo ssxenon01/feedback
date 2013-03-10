@@ -18,7 +18,7 @@
                     </h2>
 
                     <div class="create">
-                        <a href="#" class="btn btn-large btn-like">Санал нэмэх!</a>
+                        <a href="<g:createLink controller="ticket" action="create"/>" class="btn btn-large btn-like">Санал нэмэх!</a>
                     </div>
                 </div>
             </div>

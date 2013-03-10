@@ -2,7 +2,7 @@ $(function(){
 
     $('.doc_view_reply').on('click', 'button.del-statement',function(){
         var id = $(this).attr('sid');
-        var r=confirm("Press a button");
+        var r=confirm("Энэ мэдэгдэлийг устгах уу ?");
         if (r==true){
             $.ajax({
                 type:"POST",

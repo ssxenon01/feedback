@@ -34,7 +34,6 @@
                                 <g:link action="index" params="${[tags:tag.id]}"><i class="icon-tag"></i>${tag.label}</g:link>
                             </g:each>
                         </div>
-                        <g:if test="${ticketInstance.type == Type.Interests}">
                             <div class="like-num">
                                 <div class="row">
                                     <div class="span4">
@@ -51,7 +50,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </g:if>
                         <g:each in="${ticketInstance.fetchStatements()}" var="statement">
 
                             <div class="well ${statement.type == StatementType.Result?'result':'news'}">
