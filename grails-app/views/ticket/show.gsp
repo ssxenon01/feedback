@@ -41,7 +41,7 @@
                                         <h4><g:formatDate formatName="date.short"
                                                           date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
 
-                                        <div class="count diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
+                                        <div class="count diff-vote">${ticketInstance.voteStatus != 'hot'? 0: ticketInstance.maxVote - ticketInstance.vote}</div>
                                     </div>
 
                                     <div class="span3">
@@ -121,24 +121,24 @@
                     <div class="inner">
                         <div class="petition-box-head">
                             <h4 class="#">Идэвхтэй санал</h4>
-
-                            <div id="with-supporters">
-                                <div class="vote-count">${ticketInstance.vote}</div>
-                                <button class="form-submit btn ${ticketInstance.getVoted() ? "disabled" : "btn-like"} vote-action-single"
-                                        tID="${ticketInstance.id}">Энэ саналыг дэмжих</button>
-                            </div>
-
+                            <g:if test="${ticketInstance.voteStatus !='win'}">
+                                <div id="with-supporters">
+                                    <div class="vote-count">${ticketInstance.vote}</div>
+                                    <button class="form-submit btn ${ticketInstance.getVoted() ? "disabled" : "btn-like"} vote-action-single"
+                                            tID="${ticketInstance.id}">Энэ саналыг дэмжих</button>
+                                </div>
+                            </g:if>
                             <div class="clear"></div>
 
                             <div class="pet-graph">
                                 <div class="thermometer" style="">
-                                    <div class="mercury ${ (ticketInstance.maxVote - ticketInstance.vote) < 0 ? 'winb' : ((ticketInstance.maxVote / 2 - ticketInstance.vote) < 0 ? 'hotb' : 'openb')}" termo="${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
+                                    <div class="mercury ${ticketInstance.voteStatus}b" termo="${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
                                 </div>
 
                                 <div class="clear"></div>
                             </div>
 
-                            <div class="count pull-right">&nbsp;${(ticketInstance.maxVote - ticketInstance.vote) > 0 ? 'Дутуу' :'Ялсан'}</div>
+                            <div class="count pull-right">&nbsp;${(ticketInstance.maxVote - ticketInstance.vote) > 0 ? 'Дутуу' :ticketInstance.vote}</div>
 
                             <div class="count pull-right diff-vote">${(ticketInstance.maxVote - ticketInstance.vote) > 0 ? ticketInstance.maxVote - ticketInstance.vote :''}</div>
                         </div>

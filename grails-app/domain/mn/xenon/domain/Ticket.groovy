@@ -42,7 +42,13 @@ class Ticket implements Serializable{
 	String result
 
 	String getVoteStatus(){
-		return 'hot'
+		def str = 'open'
+		if(maxVote <= vote){
+			str = 'win'
+		}else if(maxVote/2 <= vote){
+			str = 'hot'
+		}
+		return str
 	}
 
 	List<Statement> fetchStatements(){
