@@ -168,7 +168,7 @@
                                         <li>
                                             <span class="item-key">Хүйс</span>
 
-                                            <div class="vcard-item"><g:message code="gender.${ticket?.author.gender}"/>&nbsp;</div>
+                                            <div class="vcard-item"><g:message code="gender.${ticket?.author?.gender}"/>&nbsp;</div>
                                         </li>
                                     </sec:ifAnyGranted>
 

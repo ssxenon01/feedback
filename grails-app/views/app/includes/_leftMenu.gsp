@@ -16,64 +16,31 @@
                         <div class="accordion-group">
                             <div class="accordion-heading">
                                 <a href="#collapseOne" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
-                                    <i class="icon-folder-close"></i> Шударга бус өрсөлдөөн
+                                    <i class="icon-folder-close"></i> Саналууд
                                 </a>
                             </div>
-                            <div class="accordion-body collapse ${params.type == 'Competition'?"in":''}" id="collapseOne">
+                            <div class="accordion-body collapse <g:currentDir checkIn="/app/index,/app" class="in"/>" id="collapseOne">
                                 <div class="accordion-inner">
                                     <ul class="nav nav-list">
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition]}"><g:message code="objectStatus.null"/> 
+                                            <g:link controller="app" action="index"><g:message code="objectStatus.null"/> 
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Closed]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/> 
+                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Closed]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/> 
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Pending]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/>
+                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Pending]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/>
                                            </g:link>
                                         </li>
                                         <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Open]}"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/>
+                                            <g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Open]}"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/>
                                            </g:link>
                                         </li>
                                         <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Duplicated]}"><g:message code="objectStatus.${ObjectStatus.Duplicated.name()}"/></g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Competition,objectStatus:ObjectStatus.Deleted]}"><g:message code="objectStatus.${ObjectStatus.Deleted.name()}"/></g:link></li>
-                                        </sec:ifAnyGranted>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a href="#collapseTwo" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
-                                    <i class="icon-folder-close"></i> Хэрэглэгчийн эрх ашиг
-                                </a>
-                            </div>
-                            <div class="accordion-body collapse ${params.type == 'Interests'?"in":''}"  id="collapseTwo">
-                                <div class="accordion-inner">
-                                    <ul class="nav nav-list">
-                                        <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests]}">Бүгд 
-                                           </g:link>
-                                        </li>
-                                        <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Closed]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/> 
-                                           </g:link>
-                                        </li>
-                                        <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Pending]}"><g:message code="objectStatus.${ObjectStatus.Pending.name()}"/>
-                                           </g:link>
-                                        </li>
-                                        <li>
-                                            <g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Open]}"><g:message code="objectStatus.${ObjectStatus.Open.name()}"/>
-                                           </g:link>
-                                        </li>
-                                        <sec:ifAnyGranted roles="ROLE_ADMIN">
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Duplicated]}"><g:message code="objectStatus.${ObjectStatus.Duplicated.name()}"/></g:link></li>
-                                            <li><g:link controller="app" action="index" params="${[type:Type.Interests,objectStatus:ObjectStatus.Deleted]}"><g:message code="objectStatus.${ObjectStatus.Deleted.name()}"/></g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Duplicated]}"><g:message code="objectStatus.${ObjectStatus.Duplicated.name()}"/></g:link></li>
+                                            <li><g:link controller="app" action="index" params="${[objectStatus:ObjectStatus.Deleted]}"><g:message code="objectStatus.${ObjectStatus.Deleted.name()}"/></g:link></li>
                                         </sec:ifAnyGranted>
                                     </ul>
                                 </div>

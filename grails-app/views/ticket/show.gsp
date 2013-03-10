@@ -55,7 +55,7 @@
 
                             <div class="well result">
                                 <div class="title">
-                                    <h2 class="">Шийдвэрлэсэн</h2>
+                                    <h2 class="">Дүгнэлт</h2>
 
                                     <div class="pull-right small"><g:formatDate formatName="date.long"
                                                                                 date="${statement.dateCreated}"/></div>

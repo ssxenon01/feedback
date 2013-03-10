@@ -1,16 +1,20 @@
 package mn.xenon.domain
 
 import mn.xenon.auth.User
-
+import mn.xenon.domain.TimePeriod
 class TicketService {
 	
 	def springSecurityService
 
 	def list(params){
+
+		params.sort = params.sort?:"dateCreated"
+        params.order = params.order?:"desc"
+
 		if(params.from)
 			params.from = Date.parse("MM/dd/yyyy", params.from)
 		if(params.to)
-			params.to = Date.parse("MM/dd/yyyy", params.to)
+			params.to = TimePeriod.day.to2DatePeriod(Date.parse("MM/dd/yyyy", params.to))
 		return Ticket.createCriteria().list(params){
 			if(params.from && params.to){
 				'between'('dateCreated',params.from,params.to)			
@@ -47,7 +51,6 @@ class TicketService {
             }
             if(!params.objectStatus)
 			'not' {'in'("objectStatus", [ObjectStatus.Deleted,ObjectStatus.Duplicated])}
-			order('dateCreated','DESC')
 		}
 	}
 

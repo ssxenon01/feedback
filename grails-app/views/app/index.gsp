@@ -15,10 +15,10 @@
         <div class="span12">
             <ul class="dshb_icoNav tac">
                 <g:set var="statistic" value="${Statistic.last('startDate')}" />
-                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/chat-.png)"><span class="label label-info">+${statistic?.created}</span> Өнөөдөр</a></li>
-                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/recycle-full.png)"><span class="label label-important">-${statistic?.deleted}</span> Устгагдсан</a></li>
-                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/badge.png)"><span class="label label-success">${statistic?.closed}</span> Шийдвэрлэсэн</a></li>
-                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/chat-.png)"><span class="label label-important">${statistic?.total}</span> Нийт</a></li>
+                <li><a href="<g:createLink params="${[from:new Date().format("MM/dd/yyyy")]}"/>" style="background-image: url(img/gCons/chat-.png)"><span class="label label-info">+${statistic?.created}</span> Өнөөдөр</a></li>
+                <li><a href="<g:createLink params="${[objectStatus:ObjectStatus.Deleted]}"/>" style="background-image: url(img/gCons/recycle-full.png)"><span class="label label-important">-${statistic?.deleted}</span> Устгагдсан</a></li>
+                <li><a href="<g:createLink params="${[objectStatus:ObjectStatus.Closed]}"/>" style="background-image: url(img/gCons/badge.png)"><span class="label label-success">${statistic?.closed}</span> Шийдвэрлэсэн</a></li>
+                <li><a href="<g:createLink params="${}"/>" style="background-image: url(img/gCons/chat-.png)"><span class="label label-important">${statistic?.total}</span> Нийт</a></li>
             </ul>
         </div>
     </div>
@@ -68,19 +68,19 @@
                 <div class="clearfix"></div>
 
                 <div class="">
-                    <label class="checkbox">
-                        <input type="checkbox" value="option1" name="optionsCheckboxList1">
+                    <label class="radio">
+                        <input type="radio" value="${Type.Competition.name()}" name="type" ${params.type=="Interests"?'checked=""':''}>
                         Шударга бус өрсөлдөөний улмаас
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option2" name="optionsCheckboxList2">
-                        Хэрэглэгчийн эрх зөрчигдсөний улмаас
+                    <label class="radio">
+                        <input type="radio" value="${Type.Interests.name()}" name="type" ${params.type=="Competition"?'checked=""':''}>
+                        Хэрэглэгчийн эрх ашиг зөрчигдсөний улмаас
                     </label>
                 </div>
 
                 <div class="clearfix"></div>
 
-                <div class="filter-collapse" style="display: none;">
+                <div class="filter-collapse" style="display: ${params.tags?'block':'none'};">
                     <hr>
 
                     <div class="row-fluid filter">
