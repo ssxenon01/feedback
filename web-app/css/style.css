@@ -923,9 +923,11 @@ hr.small {
     position: relative;
 
 }
-.petition-single-content .media-box img{
+
+.petition-single-content .media-box img {
     background: #f0f0f0;
 }
+
 .petition-single-content .media-box:before, .petition-single-content .media-box:after {
     z-index: -1;
     position: absolute;
@@ -1454,4 +1456,26 @@ hr.small {
     text-shadow: #fff 1px 1px 0;
     color: #0088cc;
 
+}
+
+.container-create {
+    background-color: #f5f4ee;
+    color: #5b5b5b;
+    padding: 20px 30px;
+}
+
+.container-create .btn-like {
+    width: 240px;
+    padding: 10px 25px;
+}
+
+.container-create h1 {
+    text-shadow: #fff 1px 1px 0;
+    font-size: 38px;
+    margin-bottom: 0px;
+}
+
+.container-create legend {
+    color: #5b5b5b;
+    text-shadow: #fff 1px 1px 0;
 }

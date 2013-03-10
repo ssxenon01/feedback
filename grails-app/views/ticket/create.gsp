@@ -14,23 +14,25 @@
     <div class="container">
         <div class="row">
             <div class="span8">
-                <h1 class="create-title">Таны санал нийгэмийг өөрчилнө</h1>
-                <g:form action="save" enctype="multipart/form-data">
-                    <fieldset>
-                        <g:render template="form"/>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-large btn-success">Үүсгэх</button>
-                            <button type="button" class="btn btn-large">Цуцлах</button>
-                        </div>
-                    </fieldset>
-                </g:form>
+                <div class="container-create">
+                    <h1 class="create-title">Санал нэмэх</h1>
+                    <g:form action="save" enctype="multipart/form-data">
+                        <fieldset>
+                            <g:render template="form"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-large btn-like">Санал оруулах</button>
+                            </div>
+                        </fieldset>
+                    </g:form>
+                </div>
             </div>
 
             <div class="span4">
                 <div class="well ">
                     <p>
                         Таны оруулсан санал 1 жилийн хугацаанд хүчинтэй байх ба  <span class="badge badge-important"><i
-                            class="icon-thumbs-up icon-white"></i> 1000</span> хүртэлх хүний дэмжлэгтэйгээр Шийдвэрлэгдэх шатанд хүрч шийдвэрлэгдэнэ. <br>
+                            class="icon-thumbs-up icon-white"></i> 1000
+                    </span> хүртэлх хүний дэмжлэгтэйгээр Шийдвэрлэгдэх шатанд хүрч шийдвэрлэгдэнэ. <br>
 
                     </p>
 
