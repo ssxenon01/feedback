@@ -7,7 +7,7 @@
     <title>Шударга өрсөлдөөн, Хэрэглэгчийн төлөө газар</title>
 </head>
 
-<body>
+<body style="background-color: #f0f0f0;">
 <div class="content-wrapper">
     <div class="top">
         <div class="container">

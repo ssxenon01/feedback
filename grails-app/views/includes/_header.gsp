@@ -12,14 +12,14 @@
                 <ul class="nav">
                     <li>
                         <g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><i
-                                class="icon-white icon-list"></i> Нээлттэй Саналууд</g:link>
+                                class="icon-white icon-list"></i> Нээлттэй</g:link>
                     </li>
                     <li>
                         <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i
                                 class="icon-white icon-thumbs-up"></i> Шалгаж буй</g:link>
                     </li>
                     <li>
-                        <a href=""><i class="icon-white icon-comment"></i> Хариу</a>
+                        <a href=""><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </a>
                     </li>
                     <li class="">
                         <a href=""><i class="icon-white icon-info-sign"></i> Заавар</a>

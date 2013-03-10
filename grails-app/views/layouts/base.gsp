@@ -31,7 +31,7 @@
     <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
     <g:layoutHead/>
 </head>
-<body>
+<body style="${pageProperty(name:'body.style')}" >
     <div id="page">
         <g:render template="/includes/header"/>
         <div class="clear"></div>

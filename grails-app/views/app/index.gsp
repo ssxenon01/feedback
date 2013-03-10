@@ -2,6 +2,7 @@
 <%@ page import="mn.xenon.domain.Type" %>
 <%@ page import="mn.xenon.domain.ObjectStatus" %>
 <%@ page import="mn.xenon.domain.Ticket" %>
+<%@ page import="mn.xenon.domain.Statistic" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -9,6 +10,19 @@
     <title>Application</title>
 </head>
 <body>
+<sec:ifAnyGranted roles="ROLE_ADMIN">
+    <div class="row-fluid">
+        <div class="span12">
+            <ul class="dshb_icoNav tac">
+                <g:set var="statistic" value="${Statistic.last('startDate')}" />
+                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/chat-.png)"><span class="label label-info">+${statistic?.created}</span> Өнөөдөр</a></li>
+                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/recycle-full.png)"><span class="label label-important">-${statistic?.deleted}</span> Устгагдсан</a></li>
+                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/badge.png)"><span class="label label-success">${statistic?.closed}</span> Шийдвэрлэсэн</a></li>
+                <li><a href="javascript:void(0)" style="background-image: url(img/gCons/chat-.png)"><span class="label label-important">${statistic?.total}</span> Нийт</a></li>
+            </ul>
+        </div>
+    </div>
+</sec:ifAnyGranted>
 	<h3 class="heading"><g:if test="${params.objectStatus}"><g:message code="objectStatus.${params.objectStatus}"/></g:if> ${title} саналууд</h3>
 
 <div class="row-fluid ">
