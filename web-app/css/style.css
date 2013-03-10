@@ -153,6 +153,14 @@ a:hover {
     padding-top: 60px;
 }
 
+.content-wrapper-g {
+    padding-top: 40px;
+}
+
+.content-wrapper-g .hero-unit .all-count h1 {
+    font-size: 43px;
+}
+
 .home-panel {
     background: url(../images/top.png) no-repeat right 0px;
     height: 186px;
@@ -336,7 +344,8 @@ a:hover {
 .petitions .petition .info .action a {
     font-size: 11px;
 }
-a.ticket-img{
+
+a.ticket-img {
     margin-right: 10px;
 }
 
@@ -1481,4 +1490,37 @@ hr.small {
 .container-create legend {
     color: #5b5b5b;
     text-shadow: #fff 1px 1px 0;
+}
+
+.guide h2 {
+    color: #00bcdc;
+    font-size: 28px;
+    text-shadow: rgb(139, 139, 139) 1px 1px 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.guide p {
+    color: #404040;
+    font-size: 18px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 26px;
+}
+
+.guide .row {
+    margin-bottom: 20px;
+}
+
+.guide .divider {
+    clear: both;
+    margin: 0 auto 30px;
+    width: 100%;
+    padding-right: 20px;
+    height: 13px;
+    background: url("../images/break.png") top center no-repeat;
+}
+
+.guide img {
+    width: auto;
+    height: auto;
+    max-width: auto;
 }
