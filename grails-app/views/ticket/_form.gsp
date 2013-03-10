@@ -4,7 +4,7 @@
 <%@ page import="mn.xenon.domain.Group" %>
 
 %{-- START --}%
-<legend>Өөрчлөлт эндээс эхэлнэ</legend>
+<legend>Таны санал нийгмийг өөрчлөнө !</legend>
 <label class="radio">
     <input type="radio" name="type" id="optionsRadios1" value="${Type.Competition.name()}" checked="">
     Шударга бус өрсөлдөөний улмаас
@@ -20,11 +20,14 @@
     </g:each>
 </select>
 <label>Санал, Гомдлын нэр?</label>
-<g:textField id="ticket-title-unique" name="title" required="" value="${ticketInstance?.title}" class="input-block-level"
-             placeholder="Та саналынхаа нэрийг 150 тэмдэгтэнд багтаан бичнэ үү ..." data-provide="typeahead" autocomplete="off"/>
+<g:textField id="ticket-title-unique" name="title" required="" value="${ticketInstance?.title}"
+             class="input-block-level"
+             placeholder="Та саналынхаа нэрийг 150 тэмдэгтэнд багтаан бичнэ үү ..." data-provide="typeahead"
+             autocomplete="off"/>
 <div class="character-limit" id="character-limit-unique">150</div>
 <label>Таны дэвшүүлж буй Санал, Гомдол дэлгэрэнгүй</label>
-<g:textArea name="content" required="" value="${ticketInstance?.content}" placeholder="Type something…" class="input-block-level" rows="5" cols=""/>
+<g:textArea name="content" required="" value="${ticketInstance?.content}" placeholder="Type something…"
+            class="input-block-level" rows="5" cols=""/>
 <label class="checkbox">
     <input type="checkbox" value="" id="ifpic">
     Зураг хавсаргах бол
@@ -40,7 +43,7 @@
     <g:each in="${Tag.list()}" var="tag">
         <div class="span4">
             <label class="checkbox">
-                <input  name="tags" type="checkbox" value="${tag.id}">
+                <input name="tags" type="checkbox" value="${tag.id}">
                 ${tag.label}
             </label>
         </div>
