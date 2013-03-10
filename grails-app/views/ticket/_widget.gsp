@@ -14,7 +14,7 @@
 
         <div class="pet-graph">
             <div class="thermometer" style="">
-                <div class="mercury ${(ticket.maxVote / 2 - ticket.vote) < 0 ? 'hotb' : ''}" style="width: ${(ticket.vote / ticket.maxVote) * 100}%"></div>
+                <div class="mercury ${(ticket.maxVote / 2 - ticket.vote) < 0 ? 'hotb' : ''}" termo="${(ticket.vote / ticket.maxVote) * 100}%"></div>
             </div>
 
             <div class="clear"></div>

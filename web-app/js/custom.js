@@ -1,4 +1,7 @@
 $(function () {
+    $(".mercury").each(function(i,el){
+        $(el).width($(el).attr('termo'));
+    });
     $('#ifpic').click(function () {
         if ($('#ifpic').is(':checked')) {
             $(".picture-upload").toggle('slow');
