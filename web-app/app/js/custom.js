@@ -1,4 +1,23 @@
 $(function(){
+
+    $('.doc_view_reply').on('click', 'button.del-statement',function(){
+        var id = $(this).attr('sid');
+        var r=confirm("Press a button");
+        if (r==true){
+            $.ajax({
+                type:"POST",
+                url:contextPath+"/statement/delete/" + id,
+                statusCode:{
+                    200:function () {
+                        $('#statement-'+id).remove();
+                        $('#statement-collapse-'+id).remove();
+                    }
+                }
+            });
+        }        
+        
+    });
+
     $('#filter-button').click(function() {
         $('.filter-collapse').slideToggle('slow', function() {
             // Animation complete.

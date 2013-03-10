@@ -16,7 +16,7 @@ $(function () {
         source: function (query, process) {
             var me = this;
             $('#character-limit-unique').html(150-query.length);
-            $.get('/feedback/ticket/complete', { q: query }, function (data) {
+            $.get(contextPath+'/ticket/complete', { q: query }, function (data) {
                 me.process(data.data);
             });
         },
@@ -32,8 +32,7 @@ $(function () {
           items = $(items).map(function (i, item) {
             i = $(that.options.item).attr('data-value', item.title)
             i.find('a').html(that.highlighter(item.title));
-            i.find('a').attr('href', '/feedback/ticket/show/'+item.id );
-            i.find('a').attr('href', '/feedback/ticket/show/'+item.id );
+            i.find('a').attr('href', contextPath+'/ticket/show/'+item.id );
             i.find('a').attr('target', '_blank');
             return i[0]
           })
@@ -174,7 +173,7 @@ $(function () {
         if (id) {
             $.ajax({
                 type:"GET",
-                url:"/feedback/vote/up/" + id,
+                url:contextPath+"/vote/up/" + id,
                 statusCode:{
                     401:function () {
                         $('#loggedin').modal('show');
@@ -188,5 +187,6 @@ $(function () {
         }
     }
 
+    
     
 });

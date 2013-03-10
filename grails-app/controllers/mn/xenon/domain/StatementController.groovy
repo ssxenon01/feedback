@@ -21,7 +21,7 @@ class StatementController {
     def delete(){
         def statement = Statement.get(params.id)
         statement.delete()
-        
-        render ''
+        def result = [success:true]
+        render result as JSON
     }
 }

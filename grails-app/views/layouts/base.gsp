@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" media="screen" href="${resource(dir: 'css', file: 'bootstrap.css')}" />
     <link href="${resource(dir: 'css', file: 'style.css')}" rel="stylesheet">
+    <script>
+      contextPath = "${request.contextPath}";
+    </script>
     <g:if env="production">
         <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic" />
         <script src="http://code.jquery.com/jquery-latest.js"></script>
