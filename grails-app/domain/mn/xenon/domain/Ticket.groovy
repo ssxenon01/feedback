@@ -19,7 +19,7 @@ class Ticket implements Serializable{
         author = springSecurityService.currentUser as User
     }
 
-	static transients = ['voted','fetchStatement']
+	static transients = ['voted','fetchStatement','voteStatus']
 
 	String title
 	String content
@@ -40,6 +40,10 @@ class Ticket implements Serializable{
 	String moderatorComment
 
 	String result
+
+	String getVoteStatus(){
+		return 'hot'
+	}
 
 	List<Statement> fetchStatements(){
 		return Statement.createCriteria().list([sord:'dateCreated',order:'DESC',max:10]){

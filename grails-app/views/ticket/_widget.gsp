@@ -14,7 +14,7 @@
 
         <div class="pet-graph">
             <div class="thermometer" style="">
-                <div class="mercury ${(ticket.maxVote / 2 - ticket.vote) < 0 ? 'hotb' : ''}" termo="${(ticket.vote / ticket.maxVote) * 100}%"></div>
+                <div class="mercury ${ (ticket.maxVote - ticket.vote) < 0 ? 'winb' : ((ticket.maxVote / 2 - ticket.vote) < 0 ? 'hotb' : 'openb')}" termo="${(ticket.vote / ticket.maxVote) * 100}%"></div>
             </div>
 
             <div class="clear"></div>
@@ -29,7 +29,7 @@
                     %{--  <span class="picture">
                        <i class="icon-picture"></i> <a href="#">Зураг харах</a>
                    </span> --}%
-                    <span class="like-count ${(ticket.maxVote / 2 - ticket.vote) < 0 ? 'hott' : ''}" tID="${ticket.id}">
+                    <span class="like-count ${ (ticket.maxVote - ticket.vote) < 0 ? 'wint' : ((ticket.maxVote / 2 - ticket.vote) < 0 ? 'hott' : 'opent')}" tID="${ticket.id}">
                         <strong class="">${ticket.vote}</strong> <g:message code="likeCount"/>
                     </span>
 

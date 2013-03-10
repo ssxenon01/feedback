@@ -4,6 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.security.access.annotation.Secured
 import mn.xenon.domain.Ticket
 import mn.xenon.domain.ObjectStatus
+import mn.xenon.domain.StatementType
 import mn.xenon.domain.Statement
 import org.apache.commons.lang.StringUtils;
 import feedback.StatisticJob
@@ -42,7 +43,7 @@ class AppController {
             }
             ticket.save()
             if(StringUtils.isNotBlank(params.statement)){
-                def statement = new Statement(content:params.statement,ticket:ticket,author:springSecurityService.currentUser).save()
+                def statement = new Statement(type:params.satementType as StatementType, content:params.statement,ticket:ticket,author:springSecurityService.currentUser).save()
             }
             flash.success = "Саналыг амжилттай засварлалаа"
             redirect(action: "show",id:ticket.id)

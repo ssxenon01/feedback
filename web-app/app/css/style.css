@@ -965,6 +965,11 @@
         -ms-border-radius: 6px;
         border-radius: 6px;
     }
+    .doc_view_reply .msg .msg_body button{
+	    float: right;
+	    margin-top: -1px;
+	    margin-left: 6px;
+    }
     .user-info ul {
         list-style: none;
         margin: 0px 0 0 10px;

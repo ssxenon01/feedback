@@ -854,8 +854,11 @@ hr.small {
     width: 600px;
     z-index: 3;
     position: relative;
-}
 
+}
+.petition-single-content .media-box img{
+    background: #f0f0f0;
+}
 .petition-single-content .media-box:before, .petition-single-content .media-box:after {
     z-index: -1;
     position: absolute;

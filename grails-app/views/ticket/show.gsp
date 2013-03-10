@@ -1,5 +1,6 @@
 <%@ page import="mn.xenon.domain.Tag" %>
 <%@ page import="mn.xenon.domain.Type" %>
+<%@ page import="mn.xenon.domain.StatementType" %>
 <%@ page import="mn.xenon.domain.Ticket" %>
 <!DOCTYPE html>
 <html>
@@ -53,9 +54,9 @@
                         </g:if>
                         <g:each in="${ticketInstance.fetchStatements()}" var="statement">
 
-                            <div class="well result">
+                            <div class="well ${statement.type == StatementType.Result?'result':'news'}">
                                 <div class="title">
-                                    <h2 class="">Дүгнэлт</h2>
+                                    <h2 class="">${statement.type == StatementType.Result?'Дүгнэлт':'Мэдэгдэл'}</h2>
 
                                     <div class="pull-right small"><g:formatDate formatName="date.long"
                                                                                 date="${statement.dateCreated}"/></div>
@@ -115,7 +116,6 @@
                 </div>
 
             </div>
-            <g:if test="${ticketInstance.type == Type.Interests}">
                 <div class="span4" style="position: relative">
                     <div class="petition-box">
                     <div class="inner">
@@ -132,16 +132,15 @@
 
                             <div class="pet-graph">
                                 <div class="thermometer" style="">
-                                    <div class="mercury"
-                                         style="width: ${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
+                                    <div class="mercury ${ (ticketInstance.maxVote - ticketInstance.vote) < 0 ? 'winb' : ((ticketInstance.maxVote / 2 - ticketInstance.vote) < 0 ? 'hotb' : 'openb')}" termo="${(ticketInstance.vote / ticketInstance.maxVote) * 100}%"></div>
                                 </div>
 
                                 <div class="clear"></div>
                             </div>
 
-                            <div class="count pull-right">&nbsp;ДУТУУ</div>
+                            <div class="count pull-right">&nbsp;${(ticketInstance.maxVote - ticketInstance.vote) > 0 ? 'Дутуу' :'Ялсан'}</div>
 
-                            <div class="count pull-right diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
+                            <div class="count pull-right diff-vote">${(ticketInstance.maxVote - ticketInstance.vote) > 0 ? ticketInstance.maxVote - ticketInstance.vote :''}</div>
                         </div>
 
                         <div class="clear"></div>
@@ -182,7 +181,6 @@
 
                     </div>
                 </div>
-            </g:if>
         </div>
     </div>
 </div>

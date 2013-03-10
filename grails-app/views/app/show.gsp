@@ -60,9 +60,16 @@
                         </div>
                         <div class="doc_view_reply">
                             <g:each in="${ticket.fetchStatements()}" var="statement">
-                                <div class="msg clearfix">
-                                    <div class="msg-heading"><span class="msg_date"><g:formatDate formatName="date.long" date="${statement.dateCreated}" /></span><span class="user_name">${statement.author}</span></div>
-                                    <div class="msg_body">${statement.content}</div>
+                                <div id="statement-${statement.id}" class="msg clearfix">
+                                    <g:render template="/ticket/statement" model="['statement':statement]" />
+                                </div>
+                                <div id="statement-collapse-${statement.id}" class="collapse">
+                                    <div class="row-fluid filter">
+                                        <g:formRemote name="statement-remote{statement.id}" update="statement-${statement.id}" url="[controller: 'Statement', action:'edit' , params:[id:statement.id]]"> 
+                                            <textarea name="content" cols="10" rows="6" class="span10">${statement.content}</textarea>
+                                            <button class="btn btn-danger" type="submit">Хадгалах</button>
+                                        </g:formRemote>
+                                    </div>
                                 </div>
                             </g:each>
                             %{-- <div class="msg clearfix">
@@ -83,19 +90,15 @@
             <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <div class="w-box-footer">
                     <g:form class="well form-inline" controller="app" action="createStatement" id="${ticket.id}" method="POST">
-                            <label for="wg_message">Мэдэгдэл</label>
+                            <select name="satementType" class="span3">
+                                <option value="News">Мэдэгдэл</option>
+                                <option value="Result">Дүгнэлт</option>
+                            </select>
                             <textarea name="statement" id="wg_message" cols="10" rows="6" class="span12 auto_expand" style="margin-bottom: 10px;"></textarea>
                         <select id="selectBoxOnSelect" name="objectStatus">
                             <g:each in="${ObjectStatus.list()}" var="status">
                                 <option ${status==ticket.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
                             </g:each>
-                            %{-- <option value="Pending">Шалгагдаж буй</option>
-                            <option value="Closed">Хаасан</option>
-                            <option value="Approved">Зөвшөөрсөн</option>
-                            <option value="Expired">Хугацаа нь дууссан</option>
-                            <option value="Duplicated">Давхардсан</option>
-                            <option value="Suspended">Цуцлагдсан</option>
-                            <option value="Deleted">Устга</option> --}%
                         </select>
                         <input id="duplicatedWithField" type="text" class="input-large ttip_b" value="" placeholder="Давхардсан Саналын Дугаар" title="Давхардсан Саналын дугаар оруулах" >
                         <button class="btn btn-danger" type="submit">Хадгалах</button>

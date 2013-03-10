@@ -13,7 +13,7 @@ class Statement{
 	String title
 	Ticket ticket
 	String content
-
+	StatementType type = StatementType.News
 	static mapping = {
    	   	autoTimestamp true
 		cache true
@@ -28,5 +28,6 @@ class Statement{
 		title nullable: true
 		ticket nullable: true
         content nullable: false,blank:false
+        type nullable:true
 	}
 }
