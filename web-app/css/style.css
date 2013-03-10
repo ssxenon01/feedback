@@ -219,8 +219,41 @@ a:hover {
 /* Recent Petitions */
 .petitions .petition {
     margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f0f0f0;
+    position: relative;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.petitions .petition:before, .petitions .petition:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 6px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.petitions .petition:after {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 6px;
+    left: auto;
 }
 
 .petitions .last {
@@ -236,9 +269,13 @@ a:hover {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    background: #E8E8E8;
-    color: #999;
-    border: 1px solid #c1c1c1;
+    background: rgb(255, 255, 255);
+    color: #777;
+    border: 1px solid rgb(202, 202, 202);
+    -webkit-box-shadow: 0 1px 0px #41b7d8;
+    -moz-box-shadow: 0 1px 0px #41b7d8;
+    box-shadow: 0 1px 0px #41b7d8;
+    border-bottom: 1px solid #41b7d8;
 }
 
 .petitions .petition .date-box span {
@@ -249,6 +286,13 @@ a:hover {
 }
 
 .petitions .petition .date-box .day {
+    /*color: #41b7d8;
+    color: #e12e10;*/
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #41b7d8;
+    border-bottom: 1px solid rgb(207, 207, 207);
 }
 
 .petitions .petition .date-box .like-count {
@@ -270,8 +314,10 @@ a:hover {
 }
 
 .petitions .petition .info a {
-    color: #333;
+    color: #5b5b5b;
     font-weight: bold;
+    text-shadow: #fff 1px 1px 0;
+    font-size: 14px;
 }
 
 .petitions .petition .info p {
@@ -283,17 +329,37 @@ a:hover {
     color: #28708a;
 }
 
+.petitions .petition .info .action {
+    text-align: right;
+}
+
 .petitions .petition .info .action a {
-    color: #333;
-    margin-right: 10px;
+    font-size: 11px;
 }
 
 .petitions .petition .info .action a.more {
-    color: #008fbb;
+    background-color: #41b7d8;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: .35em .65em;
+    border: 1px solid rgba(0, 0, 0, .1);
+    text-shadow: rgba(78, 78, 78, 0.44) 1px 1px 0;
+}
+
+.petitions .petition .info .action a:hover.more {
+    -webkit-box-shadow: 0 1px 0px rgb(43, 132, 156);
+    -moz-box-shadow: 0 1px 0px rgb(43, 132, 156);
+    box-shadow: 0 1px 0px rgb(43, 132, 156);
 }
 
 .petitions .petition .info .action a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .petitions .petition .info .action i {
@@ -469,7 +535,7 @@ a:hover {
 
 .header {
     border-bottom: 1px solid #c1c1c1;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }
 
 .header h3 {
@@ -506,7 +572,8 @@ a:hover {
     line-height: 22px;
     margin: 5px 0;
     padding: 0px;
-    color: #333 !important;
+    text-shadow: #fff 1px 1px 0;
+    color: #5b5b5b;
 }
 
 .header .pull-right {
