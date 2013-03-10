@@ -154,16 +154,21 @@ a:hover {
 }
 
 .home-panel {
-    padding-top: 50px;
-    background: url(../images/1284.png) no-repeat right 25px;
-    height: 325px;
+    background: url(../images/top.png) no-repeat right 0px;
+    height: 186px;
     margin-bottom: 0;
+    position: relative;
 }
 
-.home-panel div {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    line-height: 1.1em;
+.home-panel .create {
+    position: absolute;
+    right: 0;
+    bottom: 34px;
+}
+
+.home-panel .create a {
+    width: 200px;
+    padding: 10px 25px;
 }
 
 .jumbotron h2 {
@@ -174,7 +179,13 @@ a:hover {
     width: 60%;
     margin: 0;
     padding: 0;
-    margin-bottom: 40px;
+    padding-top: 27px;
+    color: #5b5b5b;
+    text-shadow: 0 1px 0px rgb(255, 255, 255);
+}
+
+.jumbotron h2 span {
+    color: #5b5b5b;
 }
 
 .jumbotron a {
@@ -185,51 +196,6 @@ a:hover {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-}
-
-div.steps a {
-    color: #FFF;
-    width: 80px;
-    display: block;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    moz-box-shadow: #c31910 0 1px 0;
-    -webkit-box-shadow: #c31910 0 1px 0;
-    -o-box-shadow: #c31910 0 1px 0;
-    box-shadow: #c31910 0 1px 0;
-    background-color: #ed2d23;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f05149), color-stop(70%, #ed2d23));
-    background-image: -webkit-linear-gradient(#f05149, #ed2d23 70%);
-    background-image: -moz-linear-gradient(#f05149, #ed2d23 70%);
-    background-image: -o-linear-gradient(#f05149, #ed2d23 70%);
-    background-image: -ms-linear-gradient(#f05149, #ed2d23 70%);
-    background-image: linear-gradient(#f05149, #ed2d23 70%);
-}
-
-div.create-petition a:hover {
-    text-decoration: none;
-    background-color: #CCC !important;
-}
-
-div.create-petition a {
-    width: 155px;
-    color: #0094C2;
-
-}
-
-div.steps a:hover {
-    color: #fff;
-    -moz-box-shadow: #f43f06 0 1px 0;
-    -webkit-box-shadow: #f43f06 0 1px 0;
-    -o-box-shadow: #f43f06 0 1px 0;
-    box-shadow: #f43f06 0 1px 0;
-    background-color: #f94c16;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fa6b3e), color-stop(70%, #f94c16));
-    background-image: -webkit-linear-gradient(#fa6b3e, #f94c16 70%);
-    background-image: -moz-linear-gradient(#fa6b3e, #f94c16 70%);
-    background-image: -o-linear-gradient(#fa6b3e, #f94c16 70%);
-    background-image: -ms-linear-gradient(#fa6b3e, #f94c16 70%);
-    background-image: linear-gradient(#fa6b3e, #f94c16 70%);
-
 }
 
 .phone-visible a {
@@ -504,6 +470,17 @@ div.steps a:hover {
 .header {
     border-bottom: 1px solid #c1c1c1;
     padding-bottom: 5px;
+}
+
+.header h3 {
+    text-shadow: #fff 1px 1px 0;
+    color: #5b5b5b;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
 }
 
 .q1 {
@@ -1319,6 +1296,7 @@ hr.small {
 
 .sortby .nav li.dropdown > a {
     font-weight: bold;
+    line-height: 15px;
 }
 
 #loggedinLabel {
@@ -1327,4 +1305,83 @@ hr.small {
 
 #backtoTop {
     color: #cb2027;
+}
+
+.hero-unit .all-count {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-unit .all-count h1 {
+    font-size: 70px;
+
+}
+
+.hero-unit .all-count h1 a {
+    color: #fff;
+    text-shadow: 0 1px 10px rgb(3, 3, 3), 0 0 30px rgba(255, 255, 255, 0.27);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.hero-unit .all-count h1 a:hover {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .4);
+}
+
+.howitworks {
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+
+.howitworks .content {
+    padding-top: 0px;
+    height: 52px;
+}
+
+.howitworks .step .add {
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: url('../images/add.png');
+    margin-right: 30px;
+}
+
+.howitworks .step .like {
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: url('../images/like.png');
+    margin-right: 30px;
+}
+
+.howitworks .step .conclusion {
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: url('../images/result.png');
+    margin-right: 30px;
+}
+
+.howitworks .content h3 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 22px;
+    padding-top: 10px;
+}
+
+.howitworks .content h3 a {
+    text-shadow: #fff 1px 1px 0;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1), 0 0 30px rgba(255, 255, 255, .4);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+    color: #5b5b5b;
+}
+
+.howitworks .content h3 a:hover {
+    text-shadow: #fff 1px 1px 0;
+    color: #0088cc;
+
 }

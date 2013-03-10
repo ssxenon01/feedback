@@ -5414,16 +5414,17 @@ a.thumbnail:focus {
 }
 
 .hero-unit {
-    padding: 60px;
+    background-image: url('../images/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     margin-bottom: 30px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
     color: inherit;
     background-color: #eeeeee;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
+    height: 272px;
 }
 
 .hero-unit h1 {
@@ -6384,6 +6385,10 @@ button.close {
     .hidden-tablet {
         display: none !important;
     }
+
+    .jumbotron h2 {
+        font-size: 40px !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -6403,8 +6408,18 @@ button.close {
         display: none !important;
     }
 
-    .create-petition a {
-        width: 100%;
+    .home-panel .create {
+        position: relative !important;
+        right: 0 !important;
+        bottom: 0px !important;
+    }
+
+    .create a {
+        width: 100% !important;
+    }
+
+    .jumbotron h2 {
+        display: none;
     }
 }
 

@@ -22,7 +22,7 @@ class UrlMappings {
         "/petition"(view: 'app/petition')
         "/categorylist"(view: 'app/categorylist')
         "/category"(view: 'app/category')
-        "/admin"(view: 'app/admin')
+        "/adminindex"(view: 'app/admin')
 
     }
 }

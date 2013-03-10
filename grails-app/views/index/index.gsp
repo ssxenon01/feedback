@@ -8,24 +8,73 @@
 </head>
 
 <body>
-
 <div class="content-wrapper">
-    <div class="container">
-        <div class="home-panel">
-            <div class="jumbotron">
-                <h2>Амьдралаа өөрчилцгөөе!</h2>
+    <div class="top">
+        <div class="container">
+            <div class="home-panel">
+                <div class="jumbotron">
+                    <h2>Иргэний оролцоо <br>
+                        <span class="grey">Шууд засаглал!</span>
+                    </h2>
 
-                <div class="steps clearfix">
-                    <g:link controller="ticket" action="create">Санал оруулах</g:link>
-                    <g:link controller="ticket" action="index">Санал дэмжих</g:link>
-                    <g:link controller="ticket" action="create">Саналын хариу</g:link>
-                </div>
-
-                <div class="create-petition">
-                    <g:link controller="ticket" action="create">Шударга бус өрсөлдөөний улмаас !</g:link>
-                    <g:link controller="ticket" action="create">Хэрэглэгчийн эрх ашиг зөрчигдсөний улмаас !</g:link>
+                    <div class="create">
+                        <a href="#" class="btn btn-large btn-like">Санал нэмэх!</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="hero-unit">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="all-count">
+                            <h1><a href="#">311.256</a></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="header">
+                    <h3>1284 Хэрхэн ажилдаг вэ</h3>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="howitworks clearfix">
+                <div class="span4">
+                    <div class="step">
+                        <div class="add"></div>
+
+                        <div class="content"><h3><a href="#">Саналаа оруулах</a></h3></div>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="step">
+                        <div class="like"></div>
+
+                        <div class="content"><h3><a href="#">Саналаа дэмжүүлэх</a></h3></div>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="step">
+                        <div class="conclusion"></div>
+
+                        <div class="content"><h3><a href="#">Шийдвэрлүүлэх</a></h3></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="row popular-petitions">
@@ -34,23 +83,22 @@
                     <div class="pull-left sortby">
                         <ul class="nav nav-pills">
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Эрэмбэлэх <b class="caret"></b></a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Эрэмбэлэх <b
+                                        class="caret"></b></a>
                                 <ul class="dropdown-menu sort-by">
                                     <li><g:link action="index">Топууд</g:link></li>
-                                    <li><g:link action="index" params="${[q:'new']}">Өнөөдөр орсон</g:link></li>
+                                    <li><g:link action="index" params="${[q: 'new']}">Өнөөдөр орсон</g:link></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
 
-                    
 
                     <div class="clear"></div>
                 </div>
 
                 <div class="clear"></div>
 
-                
             </div>
 
             <div class="clear" style="height: 15px;"></div>
