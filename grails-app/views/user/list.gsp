@@ -44,9 +44,11 @@
                     <table class="table table-striped table-borderP">
                         <thead>
                         <tr>
-                            <th>Хэрэглэгчийн нэр</th>
-                            <th>Овог нэр</th>
-                            <th class="width140">Бүртгүүлсэн Огноо</th>
+                            <g:sortableColumn property="username" title="Хэрэглэгчийн нэр" />
+                            <g:sortableColumn property="firstname" title="Овог нэр" />
+                            <g:sortableColumn property="enabled" title="Идэвхитэй" />
+                            <th>Хандах эрх</th>
+                            <g:sortableColumn property="dateCreated" title="Бүртгүүлсэн Огноо" />
                             <th class="width140">Саналын тоо</th>
                             <th class="width60">Үйлдэл</th>
                         </tr>
@@ -56,6 +58,8 @@
                             <tr>
                                 <td >${user.username}</td>
                                 <td >${user.firstname} ${user.lastname}</td>
+                                <td >${user.enabled}</td>
+                                <td ><g:each in="${user.getAuthorities()}" var="role"><g:message code="authority.${role.authority}"/></g:each></td>
                                 <td >${user.dateCreated}</td>
                                 <td >${user.countTickets()}</td>
                                 <td>

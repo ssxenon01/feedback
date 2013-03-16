@@ -19,7 +19,7 @@
                                 class="icon-white icon-thumbs-up"></i> Шалгаж буй</g:link>
                     </li>
                     <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </g:link>
+                        <g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}"><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </g:link>
                     </li>
                     <li class="">
                         <g:link uri="/guide"><i class="icon-white icon-info-sign"></i> Заавар</g:link>

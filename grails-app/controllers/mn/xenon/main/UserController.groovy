@@ -4,7 +4,7 @@ import mn.xenon.domain.Ticket
 import grails.converters.JSON
 import mn.xenon.auth.User
 import org.springframework.security.access.annotation.Secured
-
+import mn.xenon.auth.RegistrationCode
 class UserController {
   
   static allowedMethods = [editProfile: "POST",changepass:"POST"]
@@ -84,8 +84,12 @@ class UserController {
   }
   @Secured(['ROLE_USER'])
   def changepass() {
-    if(springSecurityService.currentUser.password == springSecurityService.encodePassword(params.oldpassword)){
+    if(params.token || springSecurityService.currentUser.password == springSecurityService.encodePassword(params.oldpassword)){
       def user = User.get(springSecurityService.currentUser.id)
+      def listTokens = RegistrationCode.findAllByUserId(user.id)
+      listTokens.each{ token ->
+        token.delete()
+      }
       user.password = params.newpassword
       user.save()
       flash.message = "Нууц үг амжилттай солигдлоо"

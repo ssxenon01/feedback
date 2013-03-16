@@ -5,6 +5,7 @@ import org.springframework.security.core.authority.GrantedAuthorityImpl
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.core.userdetails.UserDetails
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import org.apache.commons.lang.time.DateUtils
 
 class CustomUserDetailService implements GrailsUserDetailsService{
 
@@ -39,5 +40,42 @@ class CustomUserDetailService implements GrailsUserDetailsService{
                     !user.accountLocked, authorities ?: NO_ROLES, user.id,
                     user.firstname + " " + user.lastname)
         }
+    }
+
+    String lostPassToken(String username) {
+
+        if (!username) {
+            return null
+        }
+
+        def user = User.findByUsernameOrEmail(username,username)
+        if(!user)
+            return null
+        def registrationCode = new RegistrationCode(userId: user.id, dateCreated: new Date())
+        registrationCode.save(failOnError: true, flush: true)
+
+        return registrationCode.token
+    }
+
+    Boolean hasLost2ManyTimes(String username) {
+        Date start = DateUtils.truncate(new Date(), Calendar.DATE)
+        Date end = start + 1
+        end = DateUtils.addMilliseconds(end, -1)
+        def user = User.findByUsername(username)
+
+        def c = RegistrationCode.createCriteria()
+        int count = c.count() {
+            and {
+
+                lt("dateCreated", end)
+                gt("dateCreated", start)
+            }
+            eq('userId', user.id)
+        }
+
+        if (count > 2)
+            return true
+        else
+            return false
     }
 }

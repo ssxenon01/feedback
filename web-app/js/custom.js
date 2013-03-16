@@ -8,7 +8,6 @@ $(function () {
         } else {
             $(".picture-upload").hide();
         }
-
     });
     $('#ticket-title-unique').typeahead({
         items:10,
@@ -178,6 +177,9 @@ $(function () {
                     401:function () {
                         $('#loggedin').modal('show');
                         // showLogin();
+                    },
+                    402:function () {
+                        window.location = contextPath+"/login/id"
                     },
                     200:function () {
                         callback();

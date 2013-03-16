@@ -2,6 +2,7 @@
 <%@ page import="mn.xenon.domain.Type" %>
 <%@ page import="mn.xenon.domain.StatementType" %>
 <%@ page import="mn.xenon.domain.Ticket" %>
+<%@ page import="mn.xenon.domain.ObjectStatus" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +63,7 @@
 
                                 <p>${statement.content}</p>
 
-                                <p><strong>Мэдэгдэл өгсөн:</strong> ${statement.author?.firstname} ${statement.author?.lastname}
+                                <p><strong>${statement.type == StatementType.Result?'Шийдвэрлэсэн':'Мэдэгдэл өгсөн'}:</strong> ${statement.author?.firstname} ${statement.author?.lastname}
                                 </p>
                                 %{-- <img src="http://d22r54gnmuhwmk.cloudfront.net/photos/8/dd/rg/cYDdrGzjakFdCUX-556x313-noPad.jpg" class="rounded-corners"
                                      width="600"> --}%
@@ -118,8 +119,8 @@
                     <div class="petition-box">
                     <div class="inner">
                         <div class="petition-box-head">
-                            <h4 class="#">Идэвхтэй санал</h4>
-                            <g:if test="${ticketInstance.voteStatus !='win'}">
+                            <h4 class="${ticketInstance.voteStatus}t">${(ticketInstance.voteStatus !='win' && ticketInstance.objectStatus == ObjectStatus.Open) ? "Идэвхтэй санал":g.message(code:"objectStatus.${ticketInstance.objectStatus}")}</h4>
+                            <g:if test="${ticketInstance.voteStatus !='win' && ticketInstance.objectStatus == ObjectStatus.Open}">
                                 <div id="with-supporters">
                                     <div class="vote-count">${ticketInstance.vote}</div>
                                     <button class="form-submit btn ${ticketInstance.getVoted() ? "disabled" : "btn-like"} vote-action-single"

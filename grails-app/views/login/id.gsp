@@ -18,17 +18,17 @@
     <div class="container">
         <article class="container">
             <div id="login" class="accounts-form">
-                <h2>Нууц үгээ мартсан</h2>
+                <h2>Регистерийн дугаараа оруулна уу</h2>
 
                 <div class="forget-message">
                     <g:render template="/includes/warning" />
                 </div>
-                <g:form action="forgetPass" method="POST" name="auth-form">
+                <g:form action="idPost" method="POST" name="auth-form">
                     <div class="input">
-                        <input id="id_username" type="text" name="username" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
+                        <input id="registerId" type="text" name="registerId" maxlength="75" placeholder="Регистерийн дугаар">
                     </div>
                     <div class="actions clearfix">
-                        <input type="submit" value="Сэргээх" class="btn btn-green">
+                        <input type="submit" value="Илгээх" class="btn btn-green">
                     </div>
                 </g:form></div>
                 <g:render template="bottom" />

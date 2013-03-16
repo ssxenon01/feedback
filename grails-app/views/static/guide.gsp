@@ -97,7 +97,7 @@
 
                 <div class="row"><div class="span10 offset1"><h2>1284-ийн дэлгэрэнгүйг</h2>
 
-                    <p><a href="http://www.1284.mn/about" style="font-weight:bold;">энд</a> дарж авна уу.</p></div>
+                    <p><a href="<g:createLink uri="/about"/>" style="font-weight:bold;">энд</a> дарж авна уу.</p></div>
 
                     <div class="span1">&nbsp;</div></div>
             </div>

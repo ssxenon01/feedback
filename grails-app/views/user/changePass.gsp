@@ -18,16 +18,18 @@
     
 <div class="row-fluid">
     <div class="span6">
-        <g:form controller="user" action="changepass" method="POST" class="form-horizontal well user_change_password">
+        <g:form controller="user" action="changepass" params="${params}" method="POST" class="form-horizontal well user_change_password">
             <fieldset>
                 <p class="f_legend">Нууц үг солих</p>
-                <div class="control-group">
-                    <label class="control-label">Одоогийн нууц үг</label>
-                    <div class="controls">
-                        <input type="password" name="oldpassword" id="oldpassword" class="span10">
-                        <span class="help-block">хуучин нууц үгээ оруулна уу</span>
+                <g:if test="${!params.token}">
+                    <div class="control-group">
+                        <label class="control-label">Одоогийн нууц үг</label>
+                        <div class="controls">
+                            <input type="password" name="oldpassword" id="oldpassword" class="span10">
+                            <span class="help-block">хуучин нууц үгээ оруулна уу</span>
+                        </div>
                     </div>
-                </div>
+                </g:if>
                 <div class="control-group">
                     <label class="control-label">Шинэ нууц үг</label>
                     <div class="controls">
