@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="span12">
                         <div class="all-count">
-                            <h1><a href="#">Систем хэрхэн ажилладаг вэ ?</a></h1>
+                            <h1><a href="#">1284 Хэрхэн ажилладаг вэ ?</a></h1>
                         </div>
                     </div>
                 </div>
@@ -30,10 +30,11 @@
         <div class="guide">
             <div class="container">
                 <div class="row">
-                    <div class="span6"><h2>1284.mn -д Тавтай морилно уу!</h2>
+                    <div class="span6"><h2>1284-д Тавтай морилно уу!</h2>
 
                         <p>
-                            1284.mn бол Иргэдийн Санал, Гомдлыг цуглуулж, цуглуулсан Санал, Гомдлуудаасаа иргэдэд зайлшгүй шалгуулах шаардлагтай байгаа саналыг Иргэдийн өөрсдийнх нь тусламжтайгаар шийдвэрлэх онлайн Платформ юм.
+                            1284.mn бол Иргэдийн Санал, Гомдлыг цуглуулж, цуглуулсан Санал, Гомдлуудаасаа иргэдэд зайлшгүй шалгуулах шаардлагатай байгаа саналыг Иргэдийн өөрсдийнх нь тусламжтайгаар шийдвэрлэх онлайн Платформ юм. <a
+                                href="#">дэлгэрэнгүй</a>
                         </p>
                     </div>
 
@@ -51,18 +52,52 @@
                              alt="Our awards">
                     </div>
 
-                    <div class="span6"><h2>Таны Санал ямар үед шийдвэрлэгдэх вэ ?</h2>
+                    <div class="span6"><h2>Хэрхэн Санал, Гомдол дэвшүүлэх вэ ?</h2>
 
                         <p>
-                            Хэрэвээ дэвшүүлсэн Санал <span class="hott"><strong>1000</strong>
-                        </span>  хүний дэмжлэг авч чадвал, Таны саналыг шалгах болно.
+                            Иргэн 1284 -д бүртгүүлсэнээр Шударга бус өрсөлдөөн, Хэрэглэгчийн төлөө газарт гаргах гэж буй Санал, Гомдолоо онлайнаар дэвшүүлэх боломжтой болно.
                         </p>
                     </div>
+
+                    <div class="divider"></div>
                 </div>
 
-                <div class="row"><div class="span10 offset1"><h2>A little about 1284</h2>
+                <div class="row">
+                    <div class="span6"><h2>Яаж санал, Гомдол дэмжих вэ ?</h2>
 
-                    <p>asdasd <a href="http://www.1284.mn/">www.1284.mn</a>.</p></div>
+                        <p>
+                            Иргэн та системд бүртгэгдсэн бүхий л Санал, Гомдолд өөрийн саналаа өгөх боломжтой. Тухайн нэг Санал, Гомдлыг нэг л удаа дэмжих эрхтэй.
+                        </p>
+                    </div>
+
+                    <div class="span6">
+                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/perth-based.png"
+                             alt="Our awards">
+                    </div>
+
+                    <div class="divider"></div>
+                </div>
+
+                <div class="row">
+                    <div class="span6">
+                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/perth-based.png"
+                             alt="Our awards">
+                    </div>
+
+                    <div class="span6"><h2>Санал, Гомдол ямар үед шийдвэрлэгдэх вэ ?</h2>
+
+                        <p>
+                            Хэрэвээ дэвшүүлсэн Санал, Гомдол <span class="hott"><strong>1000</strong>
+                        </span>  хүний дэмжлэг авч чадвал, Тухайн Санал, Гомдлыг шалгах болно.
+                        </p>
+                    </div>
+
+                    <div class="divider"></div>
+                </div>
+
+                <div class="row"><div class="span10 offset1"><h2>1284-ийн дэлгэрэнгүйг</h2>
+
+                    <p><a href="http://www.1284.mn/about" style="font-weight:bold;">энд</a> дарж авна уу.</p></div>
 
                     <div class="span1">&nbsp;</div></div>
             </div>

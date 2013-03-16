@@ -23,6 +23,7 @@ class UrlMappings {
         "/categorylist"(view: 'app/categorylist')
         "/category"(view: 'app/category')
         "/adminindex"(view: 'app/admin')
-        "/guide"(view:'static/guide')
+        "/guide"(view: 'static/guide')
+        "/about"(view: 'static/page')
     }
 }

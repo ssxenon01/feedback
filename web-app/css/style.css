@@ -630,11 +630,11 @@ a.ticket-img {
 /* Footer */
 #footer {
     background: #f4f3f3;
-    font-family: "Adelle Sans Regular", sans-serif;
+    font-family: arial;
     color: #777;
     z-index: 10;
     position: relative;
-    height: 130px;
+    min-height: 210px;
     margin-top: 30px;
 }
 
@@ -664,10 +664,16 @@ a.ticket-img {
 #footer p a {
     display: inline-block;
     margin: 0 5px;
+    text-shadow: #fff 1px 1px 0;
+    color: #5b5b5b;
 }
 
 #footer p a:hover {
     color: #cb2027;
+}
+
+#backtoTop {
+    color: #cb2027 !important;
 }
 
 a.dim {
@@ -710,6 +716,8 @@ a.dim {
 
 .copyright {
     margin-left: 5px;
+    text-shadow: #fff 1px 1px 0;
+    color: #5b5b5b;
 }
 
 /* Text color */
@@ -1409,7 +1417,25 @@ hr.small {
     transition: all .2s linear;
 }
 
+.hero-unit .all-count h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+.hero-unit .all-count  h6 a {
+    color: #fff;
+    text-shadow: 0 1px 10px rgb(3, 3, 3), 0 0 30px rgba(255, 255, 255, 0.27);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
 .hero-unit .all-count h1 a:hover {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .4);
+}
+
+.hero-unit .all-count h6 a:hover {
     text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .4);
 }
 
@@ -1493,9 +1519,9 @@ hr.small {
 }
 
 .guide h2 {
-    color: #00bcdc;
+    color: #28708a;
     font-size: 28px;
-    text-shadow: rgb(139, 139, 139) 1px 1px 0;
+    text-shadow: #fff 1px 1px 0;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -1523,4 +1549,54 @@ hr.small {
     width: auto;
     height: auto;
     max-width: auto;
+}
+
+.about-nav ul li {
+    list-style: none;
+    border-bottom: 1px solid #e5e4e1;
+    padding: 7.5px 0 6.5px 0;
+    color: #28708a;
+    font-size: 16px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.about-nav ul li a.selected {
+    color: #404040;
+}
+
+.about-nav ul li a {
+    color: #28708a;
+    font-size: 16px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow: #fff 0px 1px 0;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.about-nav ul li a:hover {
+    text-shadow: #fff 0px 1px 0;
+    color: #404040;
+}
+
+.about-page {
+    padding-left: 10px;
+}
+
+.about-page .header {
+    padding-bottom: 12px;
+}
+
+.about-page .header h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    color: #28708a;
+}
+
+.about-page .body {
+    margin-top: 15px;
+    color: #404040;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Open Sans Condensed', sans-serif;
 }

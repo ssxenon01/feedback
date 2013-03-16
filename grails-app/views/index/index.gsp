@@ -18,7 +18,8 @@
                     </h2>
 
                     <div class="create">
-                        <a href="<g:createLink controller="ticket" action="create"/>" class="btn btn-large btn-like">Санал нэмэх!</a>
+                        <a href="<g:createLink controller="ticket" action="create"/>"
+                           class="btn btn-large btn-like">Санал нэмэх!</a>
                     </div>
                 </div>
             </div>
@@ -31,6 +32,8 @@
                 <div class="row">
                     <div class="span12">
                         <div class="all-count">
+                            <h6><a href="#">Нийт санал</a></h6>
+
                             <h1><a href="#">311.256</a></h1>
                         </div>
                     </div>
@@ -43,7 +46,7 @@
         <div class="row">
             <div class="span12">
                 <div class="header">
-                    <h3>1284 Хэрхэн ажилдаг вэ</h3>
+                    <h3>1284 Хэрхэн ажилладаг вэ ?</h3>
                 </div>
             </div>
 
