@@ -46,6 +46,7 @@
                         <tr>
                             <th>Хэрэглэгчийн нэр</th>
                             <th>Овог нэр</th>
+                            <th>Хандах эрх</th>
                             <th class="width140">Бүртгүүлсэн Огноо</th>
                             <th class="width140">Саналын тоо</th>
                             <th class="width60">Үйлдэл</th>
@@ -56,6 +57,7 @@
                             <tr>
                                 <td >${user.username}</td>
                                 <td >${user.firstname} ${user.lastname}</td>
+                                <td ><g:each in="${user.getAuthorities()}" var="role"><g:message code="authority.${role.authority}"/></g:each></td>
                                 <td >${user.dateCreated}</td>
                                 <td >${user.countTickets()}</td>
                                 <td>

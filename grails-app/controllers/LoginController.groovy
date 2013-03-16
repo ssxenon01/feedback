@@ -17,7 +17,6 @@ import mn.xenon.auth.UserRole
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 class LoginController {
-
 	def mailService
 
     static allowedMethods = [regAction: "POST", forgotPass: "POST"]
@@ -35,6 +34,18 @@ class LoginController {
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
 	 */
+	def id = {}
+	def idPost = {
+		if(params.registerId && params.registerId.size() >= 8){
+			def user = springSecurityService.currentUser
+			user.registerId = params.registerId
+			user.save()
+			redirect controller:'index', action:'index'
+		}else{
+			flash.error = "Регистерийн дугаар буруу байна"
+			redirect action:'id'
+		}
+	}
 	def index = {
 		if (springSecurityService.isLoggedIn()) {
 			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl

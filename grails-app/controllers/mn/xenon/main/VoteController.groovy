@@ -15,7 +15,9 @@ class VoteController {
        def result = [ success:false ]
        def status = 200
        if(SpringSecurityUtils.ifAnyGranted("ROLE_ADMIN,ROLE_USER")){
-          if(params.id){
+          if(!springSecurityService.currentUser.registerId)
+            status = 402
+          else if(params.id){
              Ticket ticket = Ticket.get(params.id)
              if (ticket){
                  if(!ticket.voteList.contains(currentUser())){
