@@ -13,11 +13,14 @@ import org.springframework.security.web.WebAttributes
 import mn.xenon.auth.User
 import mn.xenon.auth.Role
 import mn.xenon.auth.UserRole
+import mn.xenon.auth.RegistrationCode
 
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 class LoginController {
+	
 	def mailService
+	def customUserDetailService
 
     static allowedMethods = [regAction: "POST", forgotPass: "POST"]
 
@@ -31,6 +34,23 @@ class LoginController {
 	 */
 	def springSecurityService
 
+	def token = {
+		def success = false
+		if(params.id){
+			def rc = RegistrationCode.findByToken(params.id)
+			if(rc){
+				def user = User.get(rc.userId)
+				if(user){
+					springSecurityService.reauthenticate(user.username)
+					success = true
+					flash.message = "Нууц үгээ сольно уу"
+					redirect controller:"user", action:"changePass" , params:[token:params.id]
+				}
+			}
+		}
+		if(!success)
+			redirect controller:"index",action:'index'
+	}
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
 	 */
@@ -57,12 +77,14 @@ class LoginController {
 	def register = { }
 	def forgot = {}
 	def forgetPass = {
-		def user = User.findByEmailOrUsername(params.username,params.username)
-		if(user){
+
+		def token = customUserDetailService.lostPassToken(params.username)
+
+		if(token){
 			mailService.sendMail {
-			   to user.email
-			   subject "Welcome to 1284"
-			   html g.render(template:"/includes/mail/forgotpass",model:[user:user])
+			   to params.username
+			   subject "Welcome to 1284 ${token}"
+			   html g.render(template:"/includes/mail/forgotpass",model:[token:token])
 			}
 			flash.success = "Таны email хаяг руу шинэ нууц үгийг илгээсэн"
 		}else{
@@ -95,7 +117,6 @@ class LoginController {
 	 * Show the login page.
 	 */
 	def auth = {
-
 		def config = SpringSecurityUtils.securityConfig
 
 		if (springSecurityService.isLoggedIn()) {

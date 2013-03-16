@@ -28,7 +28,7 @@
                         <input id="id_username" type="text" name="username" maxlength="75" placeholder="Хэрэглэгчийн нэр эсвэл Имэйл">
                     </div>
                     <div class="actions clearfix">
-                        <input type="submit" value="Сэргээх< ></>" class="btn btn-green">
+                        <input type="submit" value="Сэргээх" class="btn btn-green">
                     </div>
                 </g:form></div>
                 <g:render template="bottom" />

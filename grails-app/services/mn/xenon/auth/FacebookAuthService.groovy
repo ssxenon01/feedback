@@ -16,7 +16,7 @@ class FacebookAuthService {
             def user = User.findByEmail(data.email)
             if(!user){
                 user = new User()
-                user.username = data.id
+                user.username = data.email
                 user.password = token.accessToken.accessToken
                 user.email = data.email
             }
