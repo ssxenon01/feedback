@@ -86,7 +86,7 @@ class LoginController {
 			   subject "Нууц үг сэргээх 1284.mn"
 			   html g.render(template:"/includes/mail/forgotpass",model:[user:user,token:token])
 			}
-			flash.success = "Таны email хаяг руу шинэ нууц үгийг илгээсэн"
+			flash.success = "Таны email хаяг руу шинэ нууц үгийг илгээсэн. Бидний илгээсэн email ийг хүлээн аваагүй бол spam хэсэгтээ шалгаж үзнэ үү"
 		}else{
 			flash.error = "Та манай системд бүртгэлгүй байна"
 		}

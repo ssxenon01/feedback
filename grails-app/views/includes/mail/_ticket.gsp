@@ -38,20 +38,20 @@
                     <td style="padding:25px 30px 50px 30px;font-size:13px;background-color:#f7f7f7;border-right:solid 1px #e5e5e5;border-left:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;word-wrap:break-word;">
                         <span style="font-size: 12px;line-height:12px; font-weight: bold;text-shadow: #fff 1px 1px 0;">Сайн байна уу, ${user.firstname} ${user.lastname}</span>
                         <br><br>
-                        <span>Та 1284 -д амжилттай бүртгэгдлээ. Тавтай морилно уу ! Доорх хаягаар орж бүртгэлээ баталгаажуулна уу:</span>
+                        <span>Таны 1284 -д дэвшүүлсэн  саналыг 1000 хүн дэмжлээ. Бид энэ асуудлыг шийдвэрлэж байна:</span>
                         <br><br>
-                        <a rel="nofollow" href="www.1284.mn" style="border:none;color: #28708a;text-decoration:none"
+                        <a rel="nofollow" href="<g:createLink controller="ticket" action="show" id="${ticket.id}"/>" style="border:none;color: #28708a;text-decoration:none"
                            target="_blank">
-                            http://www.1284.mn/app/my
+                            ${ticket.title}
                         </a>
                         <br><br><br>
-                      <span style="font-size:12px;line-height:18px;color:#999999">
+                      	<span style="font-size:12px;line-height:18px;color:#999999">
                           <a rel="nofollow" href="http://www.afccp.gov.mn/"
                              style="text-decoration:none;color:#999;border:none;text-decoration:none;text-decoration:none;color:#5b5b5b"
                              target="_blank">
                               - Шударга бус өрсөлдөөн, Хэрэглэгчийн төлөө газар.
                           </a>
-                      </span>
+                      	</span>
                     </td>
                 </tr>
             </table>
