@@ -44,7 +44,7 @@ class CustomUserDetailService implements GrailsUserDetailsService{
 
     String lostPassToken(String username) {
 
-        if (!username) {
+        if (!username||hasLost2ManyTimes()) {
             return null
         }
 

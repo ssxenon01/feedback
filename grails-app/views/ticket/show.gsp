@@ -41,7 +41,7 @@
                                         <h4><g:formatDate formatName="date.short"
                                                           date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
 
-                                        <div class="count diff-vote">${ticketInstance.voteStatus != 'hot'? 0: ticketInstance.maxVote - ticketInstance.vote}</div>
+                                        <div class="count diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
                                     </div>
 
                                     <div class="span3">

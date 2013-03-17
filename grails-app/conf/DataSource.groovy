@@ -25,8 +25,8 @@ environments {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
             url = "jdbc:mysql://localhost/testfeedback?useUnicode=yes&characterEncoding=UTF-8"
-            username = "test"
-            password = "testpw"
+            username = "root"
+            password = "pass"
         }
     }
     production {
