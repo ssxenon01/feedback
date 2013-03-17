@@ -25,7 +25,7 @@ class CheckVoteJob {
                 mailService.sendMail {
                    to ticket.author.email
                    subject "Таны дэвшүүлсэн саналыг 1000 хүн дэмжлээ 1284.mn"
-                   html g.render(template:"/includes/mail/ticket",model:[user:ticket.author])
+                   html g.render(template:"/includes/mail/ticket",model:[ticket:ticket])
                 }
             }
     		ticket.save()
