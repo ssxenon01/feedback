@@ -17,6 +17,9 @@ class Page implements Serializable{
 
 	String description
 
+	int priority = 30
+	
+
 	static hasMany = [tags: Tag]
 
 	static mapping = {
@@ -28,6 +31,7 @@ class Page implements Serializable{
 	}
 
 	static constraints = {
+		author nullable:true
 		title blank: false
         tags nullable: true, lazy: true, reference: false
         content nullable: true,blank:true
@@ -35,6 +39,6 @@ class Page implements Serializable{
 	}
 	def beforeInsert(){
         if(springSecurityService)
-        author = springSecurityService.currentUser as User
+        author = springSecurityService.currentUser
     }
 }

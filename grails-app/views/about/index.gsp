@@ -34,8 +34,8 @@
                     <div class="span3">
                         <div class="about-nav">
                             <ul>
-                                <g:each in="${Page.list()}" var="page">
-                                    <li> <g:link controller="page" action="show" id="${page.id}">${page.title}</g:link> </li>
+                                <g:each in="${pageList}" var="page" status="i">
+                                    <li> <g:link class="${(page.id.toString()==params.id || (!params.id && i==0))?'selected':''}" controller="about" action="index" id="${page.id}">${page.title}</g:link> </li>
                                 </g:each>
                                 %{-- <li><a href="#" class="selected">Заавар</a></li>
                                 <li>
@@ -52,17 +52,7 @@
                     </div>
 
                     <div class="span8">
-                        <div class="about-page">
-                            <div class="header">
-                                <h3>1284 Хэрхэн ажилдаг вэ</h3>
-                            </div>
-
-                            <div class="body">
-                                <p>
-                                    1284.mn бол Иргэдийн Санал, Гомдлыг цуглуулж, цуглуулсан Санал, Гомдлуудаасаа иргэдэд зайлшгүй шалгуулах шаардлагатай байгаа саналыг Иргэдийн өөрсдийнх нь тусламжтайгаар шийдвэрлэх онлайн Платформ юм.
-                                </p>
-                            </div>
-                        </div>
+                        <g:render template="page" model="${[page:current]}"/>
                     </div>
 
                 </div>

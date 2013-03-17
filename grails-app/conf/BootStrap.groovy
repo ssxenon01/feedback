@@ -49,7 +49,7 @@ class BootStrap {
             sampleTags.each{ label ->
                 tagList.add(new Tag(label:label).save(failOnError:true))
             }
-            def random = new Random()
+            /*def random = new Random()
             tagList.each { tag ->
                 for(def i in 0..30){
                     def ticket = new Ticket(author:defaultUser, title:"Ticket title: ${i} created from tag :${tag.label}",vote:random.nextInt(2000),
@@ -58,7 +58,7 @@ class BootStrap {
                     ticket.addToTags(tag)
                     ticket.save(failOnError:true)
                 }
-            }
+            }*/
     	}
     }
     def destroy = {

@@ -1,42 +1,16 @@
 <%@ page import="mn.xenon.domain.Page" %>
 
-<div class="fieldcontain ${hasErrors(bean: pageInstance, field: 'title', 'error')} required">
-	<label for="title">
-		<g:message code="page.title.label" default="Title" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="title" required="" value="${pageInstance?.title}"/>
-</div>
+<label for="title">Меню</label>
+<g:textField name="title" class="span12" value="${pageInstance.title}"/>
 
-<div class="fieldcontain ${hasErrors(bean: pageInstance, field: 'content', 'error')} ">
-	<label for="content">
-		<g:message code="page.content.label" default="Content" />
-		
-	</label>
-	<g:textArea name="content" value="${pageInstance?.content}"/>
-</div>
+<label for="description">Гарчиг</label>
 
-<div class="fieldcontain ${hasErrors(bean: pageInstance, field: 'description', 'error')} ">
-	<label for="description">
-		<g:message code="page.description.label" default="Description" />
-		
-	</label>
-	<g:textArea name="description" value="${pageInstance?.description}"/>
-</div>
+<g:textField name="description" class="span12" value="${pageInstance.description}"/>
 
-<div class="fieldcontain ${hasErrors(bean: pageInstance, field: 'objectStatus', 'error')} required">
-	<label for="objectStatus">
-		<g:message code="page.objectStatus.label" default="Object Status" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="objectStatus" type="number" value="${pageInstance.objectStatus}" required=""/>
-</div>
+<div class="ui_slider1"></div>
+<input type="hidden" name="priority" id="priority" value="${pageInstance.priority}"/>
 
-<div class="fieldcontain ${hasErrors(bean: pageInstance, field: 'tags', 'error')} ">
-	<label for="tags">
-		<g:message code="page.tags.label" default="Tags" />
-		
-	</label>
-	<g:select name="tags" from="${mn.xenon.domain.Tag.list()}" multiple="multiple" optionKey="id" size="5" value="${pageInstance?.tags*.id}" class="many-to-many"/>
-</div>
 
+<label for="wysiwg_full">Дэлгэрэнгүй</label>
+
+<textarea id="wysiwg_full" name="content" cols="10" rows="6" class="span12 auto_expand" style="margin-bottom: 10px;">${pageInstance.content}</textarea>

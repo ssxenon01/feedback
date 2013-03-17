@@ -40,7 +40,7 @@
                         <br><br>
                         <span>Таны 1284 -д дэвшүүлсэн  саналыг 1000 хүн дэмжлээ. Бид энэ асуудлыг шийдвэрлэж байна:</span>
                         <br><br>
-                        <a rel="nofollow" href="<g:createLink controller="ticket" action="show" id="${ticket.id}"/>" style="border:none;color: #28708a;text-decoration:none"
+                        <a rel="nofollow" href="<g:createLink absolute="true" controller="ticket" action="show" id="${ticket.id}"/>" style="border:none;color: #28708a;text-decoration:none"
                            target="_blank">
                             ${ticket.title}
                         </a>

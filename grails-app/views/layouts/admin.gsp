@@ -118,6 +118,7 @@
     <script src="${resource(dir: 'app/lib/validation', file: 'jquery.validate.min.js')}"></script>
     <!-- validation functions -->
     <script src="${resource(dir: 'app/js', file: 'gebo_validation.js')}"></script>
+    <script src="${resource(dir: 'app/lib/tiny_mce', file: 'jquery.tinymce.js')}"></script>
 
     <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.min.js')}"></script>
 %{-- <script src="${resource(dir: 'app/lib/flot', file: 'jquery.flot.resize.min.js')}"></script> --}%

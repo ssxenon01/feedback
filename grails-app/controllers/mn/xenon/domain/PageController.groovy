@@ -1,10 +1,13 @@
 package mn.xenon.domain
 
 import org.springframework.dao.DataIntegrityViolationException
+import org.springframework.security.access.annotation.Secured
 
+
+@Secured(['ROLE_ADMIN'])
 class PageController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -21,7 +24,7 @@ class PageController {
 
     def save() {
         def pageInstance = new Page(params)
-        if (!pageInstance.save(flush: true)) {
+        if (!pageInstance.save(flush: true,failOnError:true)) {
             render(view: "create", model: [pageInstance: pageInstance])
             return
         }
@@ -31,14 +34,7 @@ class PageController {
     }
 
     def show(Long id) {
-        def pageInstance = Page.get(id)
-        if (!pageInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'page.label', default: 'Page'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [pageInstance: pageInstance]
+        redirect controller:'about', action:'index', id:id
     }
 
     def edit(Long id) {

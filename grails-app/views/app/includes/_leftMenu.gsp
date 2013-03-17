@@ -75,7 +75,7 @@
                                             <li><g:link controller="user" action="list">Хэрэглэгчид</g:link></li>
                                             <li><g:link controller="tag" action="list">Чиглэлүүд</g:link></li>
                                             <li><g:link controller="app" action="statistic">Статистик</g:link></li>
-                                            <li><a href="#">Дүрэм журам</a></li>
+                                            <li><g:link controller="page" action="list">Хуудас</g:link></li>
                                             <li><a href="#">Системийн тухай</a></li>
                                         </ul>
                                     </div>
