@@ -48,7 +48,7 @@
 
                 <div class="row">
                     <div class="span6">
-                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/perth-based.png"
+                        <img src="${resource(dir: 'images/guide', file: 'for-video-01.png')}"
                              alt="Our awards">
                     </div>
 
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="span6">
-                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/perth-based.png"
+                        <img src="${resource(dir: 'images/guide', file: 'for-video-02.png')}"
                              alt="Our awards">
                     </div>
 
@@ -80,7 +80,7 @@
 
                 <div class="row">
                     <div class="span6">
-                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/perth-based.png"
+                        <img src="${resource(dir: 'images/guide', file: 'for-video-03.png')}"
                              alt="Our awards">
                     </div>
 
