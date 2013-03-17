@@ -1,8 +1,11 @@
 package mn.xenon.main
 
 import mn.xenon.domain.Ticket
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import grails.converters.JSON
 import mn.xenon.auth.User
+import mn.xenon.auth.Role
+import mn.xenon.auth.UserRole
 import org.springframework.security.access.annotation.Secured
 import mn.xenon.auth.RegistrationCode
 class UserController {
@@ -47,19 +50,36 @@ class UserController {
   def edit(){
     if(!params.id)
       redirect(action: "list")
-    [user:User.get(params.id)]
+
+    def user = User.get(params.id)
+    def roles = user.getAuthorities()
+    def isAdmin = roles.find{ role -> role.authority =='ROLE_ADMIN' }
+    render view:"profile",model:[user:user,isAdmin:isAdmin?true:false]
   }
   @Secured(['ROLE_USER'])
   def profile() {
     [user:User.get(currentUser().id)]
   }
   def editProfile(){
-    if(!params.id){
+    def admin
+    if(params.id&&SpringSecurityUtils.ifAnyGranted("ROLE_ADMIN")){
+      admin = true
+    }else{
       params.id = currentUser().id
     }
     def user = User.get(params.id)
     user.properties = params
 
+    if(params.id != springSecurityService.currentUser.id && SpringSecurityUtils.ifAnyGranted("ROLE_ADMIN")){
+        if(params.promoteAdmin){
+          def role = Role.findByAuthority('ROLE_ADMIN')
+          if (!user.authorities.contains(role)) {
+              UserRole.create(user, role)
+          }
+        }else{
+          UserRole.remove(user,Role.findByAuthority('ROLE_ADMIN'))
+        }
+    }
     def multipartFile = request.getFile("file")
     if(multipartFile){
         if(user.profile){
@@ -75,7 +95,10 @@ class UserController {
     } else {
         flash.success = "Профайл амжилттай шинэчлэгдлээ"
     }
-    redirect(action:'profile')
+    if(!admin)
+      redirect(action:'profile')
+    else
+      redirect(action:'edit',id:user.id)
   }
   @Secured(['ROLE_USER'])
   def changePass() { 

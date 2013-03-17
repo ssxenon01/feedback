@@ -170,7 +170,7 @@ $(function(){
                     return false;
                 }
             });
-    $( ".ui_slider1" ).slider({
+   /* $( ".ui_slider1" ).slider({
         value:30,
         min: 0,
         max: 100,
@@ -178,5 +178,5 @@ $(function(){
         slide: function( event, ui ) {
             $( "#priority" ).val( "$" + ui.value );
         }
-    });
+    });*/
 });

@@ -28,7 +28,7 @@
                             </g:form>
                         </div>
                     </div>
-                    <div class="pull-right">
+                    %{-- <div class="pull-right">
                         <div class="btn-group">
                             <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
                                 <i class="icon-cog"></i> <span class="caret"></span>
@@ -38,7 +38,7 @@
                                 <li><a href="#">Another action</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}%
                 </div>
                 <div class="w-box-content">
                     <table class="table table-striped table-borderP">
@@ -59,13 +59,11 @@
                                 <td >${user.username}</td>
                                 <td >${user.firstname} ${user.lastname}</td>
                                 <td >${user.enabled}</td>
-                                <td ><g:each in="${user.getAuthorities()}" var="role"><g:message code="authority.${role.authority}"/></g:each></td>
+                                <td ><g:each in="${user.getAuthorities()}" var="role"><g:message code="authority.${role.authority}"/>,</g:each></td>
                                 <td >${user.dateCreated}</td>
                                 <td >${user.countTickets()}</td>
                                 <td>
-                                    <a href="#" class="ttip_b" title="Мэдээлэл харах " title="Edit"><i class="splashy-document_letter_edit"></i></a>
-                                    <a href="#" class="ttip_b" title="Мэдээлэл харах "><i class="splashy-document_letter_okay"></i></a>
-                                    <a href="#" class="ttip_b" title="Мэдээлэл харах " title="Remove"><i class="splashy-document_letter_remove"></i></a>
+                                    <a href="<g:createLink controller="user" action="edit" id="${user.id}"/>" class="ttip_b" title="Засварлах " title="Edit"><i class="splashy-document_letter_edit"></i></a>
                                 </td>
                             </tr>
                         </g:each>

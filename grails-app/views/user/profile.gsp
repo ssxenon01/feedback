@@ -18,18 +18,21 @@
 <div class="row-fluid">
     <div class="span12">
         <h3 class="heading">${user.firstname} ${user.lastname}</h3>
-
+        
         <div class="row-fluid">
             <div class="span8">
-                <g:form controller="user" action="editProfile" method="POST" class="user_reg_valid" enctype="multipart/form-data">
+                <g:form controller="user" id="${user.id}" action="editProfile" method="POST" class="user_reg_valid" enctype="multipart/form-data">
                     <fieldset>
-                        <div class="control-group formSep">
+                        <sec:ifAnyGranted roles="ROLE_ADMIN">
+                            <strong>Админ болгох эсэх ?</strong> <input type="checkbox" name="promoteAdmin" ${isAdmin?'checked':''} value="${isAdmin}"/> <br>
+                        </sec:ifAnyGranted>
+                        %{-- <div class="control-group formSep">
                             <label class="control-label">Нэвтрэх нэр</label>
 
                             <div class="controls text_line">
-                                <strong>${user.username}</strong>
+                                <strong>${user.username}</strong> <br>
                             </div>
-                        </div>
+                        </div> --}%
 
                         <div class="control-group formSep">
                             <label for="fileinput" class="control-label">Аватар зураг оруулах</label>
