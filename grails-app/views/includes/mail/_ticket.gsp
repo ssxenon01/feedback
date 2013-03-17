@@ -36,7 +36,7 @@
             <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                     <td style="padding:25px 30px 50px 30px;font-size:13px;background-color:#f7f7f7;border-right:solid 1px #e5e5e5;border-left:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;word-wrap:break-word;">
-                        <span style="font-size: 12px;line-height:12px; font-weight: bold;text-shadow: #fff 1px 1px 0;">Сайн байна уу, ${user.firstname} ${user.lastname}</span>
+                        <span style="font-size: 12px;line-height:12px; font-weight: bold;text-shadow: #fff 1px 1px 0;">Сайн байна уу, ${ticket?.author?.firstname} ${ticket?.author?.lastname}</span>
                         <br><br>
                         <span>Таны 1284 -д дэвшүүлсэн  саналыг 1000 хүн дэмжлээ. Бид энэ асуудлыг шийдвэрлэж байна:</span>
                         <br><br>
