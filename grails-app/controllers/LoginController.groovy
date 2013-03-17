@@ -79,12 +79,12 @@ class LoginController {
 	def forgetPass = {
 
 		def token = customUserDetailService.lostPassToken(params.username)
-
+		def user = User.findByUsernameOrEmail(params.username,params.username)
 		if(token){
 			mailService.sendMail {
-			   to params.username
-			   subject "Welcome to 1284 ${token}"
-			   html g.render(template:"/includes/mail/forgotpass",model:[token:token])
+			   to user.email
+			   subject "Нууц үг сэргээх 1284.mn"
+			   html g.render(template:"/includes/mail/forgotpass",model:[user:user,token:token])
 			}
 			flash.success = "Таны email хаяг руу шинэ нууц үгийг илгээсэн"
 		}else{

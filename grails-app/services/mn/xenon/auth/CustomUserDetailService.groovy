@@ -42,26 +42,23 @@ class CustomUserDetailService implements GrailsUserDetailsService{
         }
     }
 
-    String lostPassToken(String username) {
-
-        if (!username||hasLost2ManyTimes()) {
-            return null
-        }
-
+    public String lostPassToken(String username) {
         def user = User.findByUsernameOrEmail(username,username)
         if(!user)
             return null
+
+        if (!username||hasLost2ManyTimes(user)) {
+            return null
+        }
         def registrationCode = new RegistrationCode(userId: user.id, dateCreated: new Date())
         registrationCode.save(failOnError: true, flush: true)
-
         return registrationCode.token
     }
 
-    Boolean hasLost2ManyTimes(String username) {
+    Boolean hasLost2ManyTimes(def user) {
         Date start = DateUtils.truncate(new Date(), Calendar.DATE)
         Date end = start + 1
         end = DateUtils.addMilliseconds(end, -1)
-        def user = User.findByUsername(username)
 
         def c = RegistrationCode.createCriteria()
         int count = c.count() {
