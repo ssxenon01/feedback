@@ -30,17 +30,30 @@
         <div class="guide">
             <div class="container">
                 <div class="row">
-                    <div class="span6"><h2>1284-д Тавтай морилно уу!</h2>
+                    <div class="intro clearfix">
+                        <div class="span6"><h2>1284-д Тавтай морилно уу!</h2>
 
-                        <p>
-                            1284.mn бол Иргэдийн Санал, Гомдлыг цуглуулж, цуглуулсан Санал, Гомдлуудаасаа иргэдэд зайлшгүй шалгуулах шаардлагатай байгаа саналыг Иргэдийн өөрсдийнх нь тусламжтайгаар шийдвэрлэх онлайн Платформ юм. <a
-                                href="#">дэлгэрэнгүй</a>
-                        </p>
+                            <p>
+                                1284.mn бол Иргэдийн Санал, Гомдлыг цуглуулж, цуглуулсан Санал, Гомдлуудаасаа иргэдэд зайлшгүй шалгуулах шаардлагатай байгаа саналыг Иргэдийн өөрсдийнх нь тусламжтайгаар шийдвэрлэх онлайн Платформ юм. <a
+                                    href="#">дэлгэрэнгүй</a>
+                            </p>
+                        </div>
+
+                        <div class="span6">
+                            <div class="intro">
+                                <a href="#introvideo" class="video-link">Танилцуулга үзэх</a>
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="span6">
-                        <img width="380" height="200" src="http://www.amnet.com.au/assets/images/award-winning.png"
-                             alt="Our awards">
+                    <div class="intro-show">
+                        <div class="span12">
+                            <iframe width="960" height="540"
+                                    src="http://www.youtube-nocookie.com/embed/phK-ksxmclQ?autoplay=1;wmode=transparent"
+                                    frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
 
                     <div class="divider"></div>
@@ -49,7 +62,7 @@
                 <div class="row">
                     <div class="span6">
                         <img src="${resource(dir: 'images/guide', file: 'for-video-01.png')}"
-                             alt="Our awards">
+                             alt="Spet 1" class="step1">
                     </div>
 
                     <div class="span6"><h2>Хэрхэн Санал, Гомдол дэвшүүлэх вэ ?</h2>
@@ -58,6 +71,8 @@
                             Иргэн та 1284 -д бүртгүүлсэнээр Шударга бус өрсөлдөөн, Хэрэглэгчийн төлөө газарт гаргах гэж буй Санал, Гомдолоо онлайнаар дэвшүүлэх боломжтой болно.
                         </p>
                     </div>
+
+                    <div class="clear"></div>
 
                     <div class="divider"></div>
                 </div>
@@ -72,8 +87,10 @@
 
                     <div class="span6">
                         <img src="${resource(dir: 'images/guide', file: 'for-video-02.png')}"
-                             alt="Our awards">
+                             alt="Step 2" class="step2">
                     </div>
+
+                    <div class="clear"></div>
 
                     <div class="divider"></div>
                 </div>
@@ -81,7 +98,7 @@
                 <div class="row">
                     <div class="span6">
                         <img src="${resource(dir: 'images/guide', file: 'for-video-03.png')}"
-                             alt="Our awards">
+                             alt="Step3" class="step3">
                     </div>
 
                     <div class="span6"><h2>Санал, Гомдол ямар үед шийдвэрлэгдэх вэ ?</h2>
@@ -91,6 +108,8 @@
                         </span>  хүний дэмжлэг авч чадвал, Тухайн Санал, Гомдлыг шалгах болно.
                         </p>
                     </div>
+
+                    <div class="clear"></div>
 
                     <div class="divider"></div>
                 </div>

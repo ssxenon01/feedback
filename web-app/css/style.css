@@ -1539,6 +1539,7 @@ hr.small {
 .guide .divider {
     clear: both;
     margin: 0 auto 30px;
+    margin-top: 20px;
     width: 100%;
     padding-right: 20px;
     height: 13px;
@@ -1549,6 +1550,18 @@ hr.small {
     width: auto;
     height: auto;
     max-width: auto;
+}
+
+.guide .step1 {
+    margin-left: 75px;
+}
+
+.guide .step2 {
+    margin-left: 75px;
+}
+
+.guide .step3 {
+    margin-left: 75px;
 }
 
 .about-nav ul li {
@@ -1599,4 +1612,27 @@ hr.small {
     font-size: 16px;
     line-height: 24px;
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.intro-show {
+    display: none;
+}
+
+.intro, .intro-show {
+    margin-bottom: 20px;
+}
+
+.intro a.video-link {
+    background: url(../images/guide/video-bg.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    display: inline-block;
+    text-indent: -9999px;
+    line-height: 1em;
+    width: 380px;
+    height: 200px;
+}
+
+.intro a:hover.video-link {
+    background-position: -380px 0px;
 }

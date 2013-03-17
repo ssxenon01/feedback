@@ -1,28 +1,28 @@
 <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span></a>
             <g:link elementId="logo" uri="/" title="Home">1284</g:link>
             <g:form controller="ticket" method="get" name="search-form">
-                <input id="search-q" name="q" type="text" maxlength="128" size="15" title="Enter search Petition" placeholder="Санал, Гомдлын дугаар ...">
+                <input id="search-q" name="q" type="text" maxlength="128" size="15" title="Enter search Petition"
+                       placeholder="Санал, Гомдлын дугаар ...">
                 <input id="search-submit" type="submit" value="Search">
             </g:form>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li>
                         <g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><i
-                                class="icon-white icon-list"></i> Нээлттэй</g:link>
+                                class="icon-white icon-list"></i> Санал, Гомдлууд</g:link>
                     </li>
+
                     <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus: "Pending"]}"><i
-                                class="icon-white icon-thumbs-up"></i> Шалгаж буй</g:link>
-                    </li>
-                    <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}"><i class="icon-white icon-comment"></i> Шийдвэрлэсэн </g:link>
+                        <g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}"><i
+                                class="icon-white icon-info-sign"></i> Танилцуулга</g:link>
                     </li>
                     <li class="">
-                        <g:link uri="/guide"><i class="icon-white icon-info-sign"></i> Заавар</g:link>
+                        <g:link uri="/guide"><i class="icon-white icon-play-circle"></i> Заавар</g:link>
                     </li>
                 </ul>
                 <sec:ifLoggedIn>
@@ -32,10 +32,14 @@
                                 <i class="icon-white icon-user"></i> Хэрэглэгч<b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<g:createLink controller="ticket" action="create"/>"><i class="icon-share-alt"></i> Санал оруулах</a></li>
-                                <li><a href="<g:createLink controller="app" action="my"/>"><i class="icon-list"></i> Миний саналууд</a></li>
-                                <li><a href="<g:createLink controller="user" action="profile"/>"><i class="icon-edit"></i> Хувийн тохиргоо</a></li>
-                                <li><a href="<g:createLink controller="logout"/>"><i class="icon-share"></i> Гарах</a></li>
+                                <li><a href="<g:createLink controller="ticket" action="create"/>"><i
+                                        class="icon-share-alt"></i> Санал оруулах</a></li>
+                                <li><a href="<g:createLink controller="app" action="my"/>"><i
+                                        class="icon-list"></i> Миний саналууд</a></li>
+                                <li><a href="<g:createLink controller="user" action="profile"/>"><i
+                                        class="icon-edit"></i> Хувийн тохиргоо</a></li>
+                                <li><a href="<g:createLink controller="logout"/>"><i class="icon-share"></i> Гарах</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
