@@ -1,5 +1,5 @@
 $(function () {
-    $(".mercury").each(function(i,el){
+    $(".mercury").each(function (i, el) {
         $(el).width($(el).attr('termo'));
     });
     $('#ifpic').click(function () {
@@ -9,39 +9,44 @@ $(function () {
             $(".picture-upload").hide();
         }
     });
+    $('.video-link').click(function () {
+        $(".intro").hide('slow');
+        $(".intro-show").toggle('slow');
+    });
     $('#ticket-title-unique').typeahead({
         items:10,
         minLength:10,
-        source: function (query, process) {
+        source:function (query, process) {
             var me = this;
-            $('#character-limit-unique').html(150-query.length);
-            $.get(contextPath+'/ticket/complete', { q: query }, function (data) {
+            $('#character-limit-unique').html(150 - query.length);
+            $.get(contextPath + '/ticket/complete', { q:query }, function (data) {
                 me.process(data.data);
             });
         },
-        process: function (items) {
-          if (!items.length) {
-            return this.shown ? this.hide() : this
-          }
+        process:function (items) {
+            if (!items.length) {
+                return this.shown ? this.hide() : this
+            }
 
-          return this.render(items).show()
+            return this.render(items).show()
         },
-        render: function (items) {
-          var that = this
-          items = $(items).map(function (i, item) {
-            i = $(that.options.item).attr('data-value', item.title)
-            i.find('a').html(that.highlighter(item.title));
-            i.find('a').attr('href', contextPath+'/ticket/show/'+item.id );
-            i.find('a').attr('target', '_blank');
-            return i[0]
-          })
+        render:function (items) {
+            var that = this
+            items = $(items).map(function (i, item) {
+                i = $(that.options.item).attr('data-value', item.title)
+                i.find('a').html(that.highlighter(item.title));
+                i.find('a').attr('href', contextPath + '/ticket/show/' + item.id);
+                i.find('a').attr('target', '_blank');
+                return i[0]
+            })
 
-          items.first().addClass('active')
-          this.$menu.html(items)
-          return this
+            items.first().addClass('active')
+            this.$menu.html(items)
+            return this
         },
-        click: function (e) { }
-        
+        click:function (e) {
+        }
+
     });
     $('#filter-button').click(function () {
         $('.filter-collapse').slideToggle('slow', function () {
@@ -172,14 +177,14 @@ $(function () {
         if (id) {
             $.ajax({
                 type:"GET",
-                url:contextPath+"/vote/up/" + id,
+                url:contextPath + "/vote/up/" + id,
                 statusCode:{
                     401:function () {
                         $('#loggedin').modal('show');
                         // showLogin();
                     },
                     402:function () {
-                        window.location = contextPath+"/login/id"
+                        window.location = contextPath + "/login/id"
                     },
                     200:function () {
                         callback();
@@ -189,6 +194,5 @@ $(function () {
         }
     }
 
-    
-    
+
 });
