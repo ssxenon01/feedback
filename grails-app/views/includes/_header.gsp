@@ -18,7 +18,7 @@
                     </li>
 
                     <li>
-                        <g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}"><i
+                        <g:link controller="about" action="index" ><i
                                 class="icon-white icon-info-sign"></i> Танилцуулга</g:link>
                     </li>
                     <li class="">
