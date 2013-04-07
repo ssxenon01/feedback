@@ -6553,6 +6553,14 @@ button.close {
 }
 
 @media (max-width: 480px) {
+    #search-q {
+        width: 160px !important;
+    }
+
+    #search-submit {
+        left: 183px !important;
+    }
+
     .nav-collapse {
         -webkit-transform: translate3d(0, 0, 0);
     }

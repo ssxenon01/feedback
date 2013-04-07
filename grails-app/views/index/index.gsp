@@ -14,7 +14,7 @@
             <div class="home-panel">
                 <div class="jumbotron">
                     <h2>Иргэний оролцоо <br>
-                        <span class="grey">Шууд засаглал!</span>
+                        <span class="grey">Шууд ардчилал!</span>
                     </h2>
 
                     <div class="create">
