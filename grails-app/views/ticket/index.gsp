@@ -13,7 +13,7 @@
         <div class="row">
             <div class="span12">
                 <div class="header">
-                    <div class="pull-left"><h1>Бүх саналууд</h1></div>
+                    <div class="pull-left"><h1>Бүх <g:message code="tickets"/></h1></div>
 
                     <div class="pull-right">
                         <div class="btn-group">

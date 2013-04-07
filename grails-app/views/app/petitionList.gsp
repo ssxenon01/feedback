@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<h3 class="heading">Нээлттэй саналууд</h3>
+<h3 class="heading">Нээлттэй <g:message code="tickets"/></h3>
 
 <div class="row-fluid ">
     <div class="span12">
@@ -36,7 +36,7 @@
                     <input type="text" class="ttip_b" title="Дуусах огноо"/><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
-                <div class="input-append date date pull-left mr15" id="dp_end">
+                <div class="input-append date date pull-left mr15">
                     <select>
                         <option>Нээлттэй</option>
                         <option>Хаасан</option>
@@ -206,8 +206,8 @@
     <div class="span12">
         <div class="w-box">
             <div class="w-box-header">
-                Нээлттэй саналууд <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
-                <div class="pull-right"><span class="label label-success">123 Санал байна</span></div>
+                Нээлттэй <g:message code="tickets"/> <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
+                <div class="pull-right"><span class="label label-success">123 <g:message code="tickets"/> байна</span></div>
             </div>
 
             <div class="w-box-content">

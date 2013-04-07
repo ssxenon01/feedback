@@ -18,7 +18,7 @@
                 <li><a href="<g:createLink params="${[from:new Date().format("MM/dd/yyyy")]}"/>" style="background-image: url(img/gCons/chat-.png)"><span class="label label-info">+${statistic?.created}</span> Өнөөдөр</a></li>
                 <li><a href="<g:createLink params="${[objectStatus:ObjectStatus.Deleted]}"/>" style="background-image: url(img/gCons/recycle-full.png)"><span class="label label-important">-${statistic?.deleted}</span> Устгагдсан</a></li>
                 <li><a href="<g:createLink params="${[objectStatus:ObjectStatus.Closed]}"/>" style="background-image: url(img/gCons/badge.png)"><span class="label label-success">${statistic?.closed}</span> Шийдвэрлэсэн</a></li>
-                <li><a href="<g:createLink params="${}"/>" style="background-image: url(img/gCons/chat-.png)"><span class="label label-important">${statistic?.total}</span> Нийт</a></li>
+                <li><a href="<g:createLink />" style="background-image: url(img/gCons/chat-.png)"><span class="label label-important">${statistic?.total}</span> Нийт</a></li>
             </ul>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <g:form method="GET">
         <div class="w-box">
             <div class="w-box-header">
-                Санал гомдол шүүх
+                Өргөдөл, Гомдол шүүх
                 <div class="pull-right">
                     <button type="submit" class="btn btn-small btn-file">Шүүх <i class="splashy-zoom icon-white"></i></button>
                 </div>
@@ -46,7 +46,7 @@
                     <input name="to" type="text" class="ttip_b" title="Дуусах огноо" value="<g:if test="${params.to}"><g:formatDate format="MM/dd/yyyy" date="${params.to}"/></g:if>" /><span class="add-on"><i class="splashy-calendar_day_up"></i></span>
                 </div>
 
-                <div class="input-append date date pull-left mr15" id="dp_end">
+                <div class="input-append date date pull-left mr15">
                     <select name="objectStatus">
                         <g:each in="${ObjectStatus.list()}" var="status">
                             <option ${status.name()==params.objectStatus?'selected':''} value="${status}"><g:message code="objectStatus.${status}"/></option>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="pull-left mr15">
-                    <input name="q" type="text" class="" placeholder="Санал №, утас, нэр, имэйл, регистер № ..." value="${params.q}">
+                    <input name="q" type="text" class="" placeholder="№, утас, нэр, имэйл, регистер № ..." value="${params.q}">
                 </div>
 
                 <div class="pull-left">
@@ -110,8 +110,8 @@
     <div class="span12">
         <div class="w-box">
             <div class="w-box-header">
-                <g:message code="objectStatus.${params.objectStatus}"/> саналууд <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
-                <div class="pull-right"><span class="label label-success">${ticketInstanceTotal} Санал байна</span></div>
+                <g:message code="objectStatus.${params.objectStatus}"/> Өргөдөл гомдолууд <!-- Хаагдсан саналууд, Шалгагдаж байгаа саналууд, -->
+                <div class="pull-right"><span class="label label-success">${ticketInstanceTotal} Өрөгдөл, Гомдол байна</span></div>
             </div>
 
             <div class="w-box-content">
@@ -133,7 +133,7 @@
 
                                     <p class="sepH_b item_description">${ticketInstance.content}</p>
 
-                                    <p class="sepH_a"><strong>Саналын дугаар: №${ticketInstance.id}</strong></p>
+                                    <p class="sepH_a"><strong>Өргөдөл, Гомдолын дугаар: №${ticketInstance.id}</strong></p>
                                     <g:each in="${ticketInstance.tags}" var="tag">
                                            <small>${tag.label}</small>
                                     </g:each>

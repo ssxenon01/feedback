@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page import="mn.xenon.domain.Tag" %>
 <%@ page import="mn.xenon.domain.ObjectStatus" %>
+<%@ page import="mn.xenon.domain.Statistic" %>
 <html>
 <head>
     <meta name="layout" content="base"/>
@@ -32,9 +33,8 @@
                 <div class="row">
                     <div class="span12">
                         <div class="all-count">
-                            <h6><a href="#">Нийт санал</a></h6>
-
-                            <h1><a href="#">311.256</a></h1>
+                            <h6><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}">Нийт <g:message code="ticket" /></g:link></h6>
+                            <h1><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}">${Statistic.last()?.total}</g:link></h1>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="step">
                         <div class="like"></div>
 
-                        <div class="content"><h3><a href="#">Өргөдөл, Гомдолууд харах</a></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><g:message code="tickets" /> харах</g:link></h3></div>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                     <div class="step">
                         <div class="add"></div>
 
-                        <div class="content"><h3><a href="#">Өргөдөл, Гомдолууд нэмэх</a></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="create">Өргөдөл, Гомдолууд нэмэх</g:link></h3></div>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                     <div class="step">
                         <div class="conclusion"></div>
 
-                        <div class="content"><h3><a href="#">Шийдвэрлэгдсэн Өргөдөл, Гомдолууд</a></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}">Шийдвэрлэгдсэн <g:message code="tickets" /></g:link></h3></div>
                     </div>
                 </div>
             </div>

@@ -19,14 +19,14 @@
         <option value="${group.name()}"><g:message code="group.${group.name()}"/></option>
     </g:each>
 </select>
-<label>Санал, Гомдлын нэр?</label>
+<label><g:message code="ticket"/>ын нэр?</label>
 <g:textField id="ticket-title-unique" name="title" required="" value="${ticketInstance?.title}"
              class="input-block-level"
              placeholder="Та саналынхаа нэрийг 150 тэмдэгтэнд багтаан бичнэ үү ..." data-provide="typeahead"
              autocomplete="off"/>
 <div class="character-limit" id="character-limit-unique">150</div>
-<label>Таны дэвшүүлж буй Санал, Гомдол дэлгэрэнгүй</label>
-<g:textArea name="content" required="" value="${ticketInstance?.content}" placeholder="Type something…"
+<label>Таны дэвшүүлж буй <g:message code="ticket"/>ын дэлгэрэнгүй</label>
+<g:textArea name="content" required="" value="${ticketInstance?.content}" placeholder="Дэлгэрэнгүй"
             class="input-block-level" rows="5" cols=""/>
 <label class="checkbox">
     <input type="checkbox" value="" id="ifpic">

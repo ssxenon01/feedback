@@ -13,10 +13,10 @@
                     </ul>
 
                     <p><a href="#" id="backtoTop">Back to Top</a> ·
-                        <a href="#" class="dim">Бидний тухай</a> ·
-                        <a href="#" class="dim">Заавар</a> ·
+                        <a href="<g:createLink controller="about"/>" class="dim">Бидний тухай</a> ·
+                        <a href="<g:createLink uri="/guide"/>" class="dim">Заавар</a> ·
                         <a href="#" class="dim">Дүрэм журам</a> ·
-                        <a href="#" href="mailto:info@1284.mn?Subject=Сайн байна уу?" class="dim">Холбоо барих</a> ·
+                        <a href="mailto:info@1284.mn?Subject=Сайн байна уу?" class="dim">Холбоо барих</a> ·
 
                     </p>
 

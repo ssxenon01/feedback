@@ -9,6 +9,8 @@ import java.util.Random
 
 class BootStrap {
 
+    def tagList = []
+
     def init = { servletContext ->
         javax.servlet.http.HttpServletRequest.metaClass.getSiteUrl = {
             return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
@@ -44,12 +46,15 @@ class BootStrap {
     }
 
     def setupTicket() {
-        if (Ticket.count() == 0) {
-            def tagList = []
+        if (Tag.count()==0){
             def sampleTags = ['Хөдөө аж ахуй, ан агнуур, ойн аж ахуй', 'Уул уурхай, олборлох үйлдвэр', 'Боловсруулах үйлдвэр', 'Хүнсний болон хөнгөн үйлдвэр', 'Цахилгаан, дулааны үйлдвэрлэл, үйлчилгээ', 'Усан хангамж', 'Барилга', 'Худалдаа', 'Гэр ахуйн болон авто машины засварлах үйлчилгээ', 'Зочид буудал', 'Зоогийн газар', 'Тээвэр', 'Харилцаа холбоо, мэдээллийн технологи', 'Банк, санхүүгийн үйл ажиллагаа', 'Үл хөдлөх хөрөнгө зуучлалын үйлчилгээ', 'Түрээс, бизнесийн бусад үйл ажиллагаа', 'Боловсрол, шинжлэх ухаан', 'Эрүүл мэнд, нийгмийн хамгаалал ', 'Түлш, газрын тос', 'Аялал жуулчлал']
             sampleTags.each { label ->
                 tagList.add(new Tag(label: label).save(failOnError: true))
             }
+        }else{
+            tagList = Tag.list()
+        }
+        if (Ticket.count() == 0) {
             /*def random = new Random()
             tagList.each { tag ->
                 for(def i in 0..30){

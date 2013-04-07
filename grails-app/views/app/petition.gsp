@@ -30,14 +30,14 @@
                     <div class="doc_view">
                         <div class="doc_view_header">
                             <dl class="dl-horizontal">
-                                <dt>Саналын төрөл</dt>
+                                <dt>Төрөл</dt>
                                 <dd><span>Шударга бус өрсөлдөөний улмаас</span></dd>
-                                <dt>Саналын гарчиг</dt>
+                                <dt>Гарчиг</dt>
                                 <dd>1284 гэсэн утас ерөөсөө авахгүй байна.</dd>
                                 <dt><a href="#" class="ttip_b" title="Хэрэглэгчийн мэдээлэл харах"><i class="splashy-contact_blue"></i></a></dt>
                                 <dd><span>Амар Pagva</span></dd>
 
-                                <dt>Санал үүссэн</dt>
+                                <dt>Өрөгдөл, Гомдол үүссэн</dt>
                                 <dd>20 June 2012 12:32:25</dd>
                                 <dt><a href="#" class="ttip_b" title="1455 Иргэн дэмжсэн"><i class="splashy-thumb_up"></i> </a></dt>
                                 <dd><span class="label label-warning">1455</span></dd>
@@ -158,7 +158,7 @@
                                          <div class="vcard-item">2014/02/15 02:15</div>
                                      </li>
                                      <li>
-                                         <span class="item-key">Саналын статус</span>
+                                         <span class="item-key">Статус</span>
                                          <div class="vcard-item">Нээлттэй байгаа</div>
                                      </li>
 
