@@ -67,7 +67,7 @@ environments {
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
-        grails.config.locations = ['/var/lib/tomcat7/1284_db.properties']
+        grails.config.locations = ['file:/var/lib/tomcat7/1284_db.properties']
     }
 }
 grails.views.javascript.library="jquery"
