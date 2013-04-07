@@ -32,7 +32,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://124.158.104.23/prodfeedback?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost/prodfeedback?useUnicode=yes&characterEncoding=UTF-8"
             username = "prod"
             password = "prodpw"
         }
