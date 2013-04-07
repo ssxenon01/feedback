@@ -19,7 +19,7 @@
 
                     <div class="create">
                         <a href="<g:createLink controller="ticket" action="create"/>"
-                           class="btn btn-large btn-like">Санал нэмэх!</a>
+                           class="btn btn-large btn-like">Өргөдөл, Гомдол нэмэх!</a>
                     </div>
                 </div>
             </div>
@@ -55,25 +55,26 @@
             <div class="howitworks clearfix">
                 <div class="span4">
                     <div class="step">
-                        <div class="add"></div>
+                        <div class="like"></div>
 
-                        <div class="content"><h3><a href="#">Саналаа оруулах</a></h3></div>
+                        <div class="content"><h3><a href="#">Өргөдөл, Гомдолууд харах</a></h3></div>
                     </div>
                 </div>
 
                 <div class="span4">
                     <div class="step">
-                        <div class="like"></div>
+                        <div class="add"></div>
 
-                        <div class="content"><h3><a href="#">Саналаа дэмжүүлэх</a></h3></div>
+                        <div class="content"><h3><a href="#">Өргөдөл, Гомдолууд нэмэх</a></h3></div>
                     </div>
                 </div>
+
 
                 <div class="span4">
                     <div class="step">
                         <div class="conclusion"></div>
 
-                        <div class="content"><h3><a href="#">Шийдвэрлүүлэх</a></h3></div>
+                        <div class="content"><h3><a href="#">Шийдвэрлэгдсэн Өргөдөл, Гомдолууд</a></h3></div>
                     </div>
                 </div>
             </div>
