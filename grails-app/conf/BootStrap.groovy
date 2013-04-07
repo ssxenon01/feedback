@@ -6,48 +6,49 @@ import mn.xenon.domain.Tag
 import mn.xenon.domain.ObjectStatus
 import grails.converters.JSON
 import java.util.Random
+
 class BootStrap {
 
     def init = { servletContext ->
         javax.servlet.http.HttpServletRequest.metaClass.getSiteUrl = {
-          return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
+            return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
         }
         JSON.registerObjectMarshaller(Date) {
             return it?.format("d/M/yyyy H:m:s")
-         }
-    	setupUsers()
-    	setupTicket()
+        }
+        setupUsers()
+        setupTicket()
     }
     def defaultUser
-    def setupUsers(){
-	    Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
+
+    def setupUsers() {
+        Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
         Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
         Role.findByAuthority('ROLE_FACEBOOK') ?: new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true)
         Role.findByAuthority('ROLE_TWITTER') ?: new Role(authority: 'ROLE_TWITTER').save(failOnError: true)
 
         if (User.count() == 0) {
-        	def sampleUsers = [
-                [username:'admin',role: 'ROLE_ADMIN', password: 'pass', firstname: 'Admin', lastname: 'Admin',email:'admin@example.com',phone:'99999999',registerId:'УБ12345678'],
-                [username:'user',role: 'ROLE_USER', password: 'pass', firstname: 'User', lastname: 'User',email:'user@example.com',phone:'88888888',registerId:'УБ87654321']
+            def sampleUsers = [
+                    [username: 'admin', role: 'ROLE_ADMIN', password: 'pass', firstname: 'Admin', lastname: 'Admin', email: 'admin@example.com', phone: '99999999', registerId: 'УБ12345678'],
+                    [username: 'user', role: 'ROLE_USER', password: 'pass', firstname: 'User', lastname: 'User', email: 'user@example.com', phone: '88888888', registerId: 'УБ87654321']
             ]
             sampleUsers.each { attrs ->
-            	def user = new User(attrs).save(failOnError: true)
-            	def role = Role.findByAuthority(attrs.role)
-		        if (!user.authorities.contains(role)) {
-		            UserRole.create(user, role)
-		        }
+                def user = new User(attrs).save(failOnError: true)
+                def role = Role.findByAuthority(attrs.role)
+                if (!user.authorities.contains(role)) {
+                    UserRole.create(user, role)
+                }
                 defaultUser = user
             }
         }
     }
-    def setupTicket(){
-    	if(Ticket.count() == 0){
+
+    def setupTicket() {
+        if (Ticket.count() == 0) {
             def tagList = []
-            def sampleTags = ['Хэрэглэгчийн хууль','Худалдаа үйлчилгээ','Хөдөө аж ахуй','Мэдээллийн технологи','Түлш эрчим хүч, Барилга орон сууц','Аялал жуулчлал','Шинжлэх ухаан',
-            'Эмнэлэгийн хэрэгслийн худалдаа','Түлш эрчим хүч, Уул уурхай','Өрсөлдөөний хууль','Төрийн болон Төрийн бус байгууллага','Банк санхүү, худалдаа үйлчилгээний салбар',
-            'Харилцаа холбоо, Мэдээллийн технологи','Нийтийн аж ахуй, Зам тээвэр','Боловсрол, Соёл урлаг','Эрүүл мэндийн үйлчилгээ','Үйлдвэрлэл, Ниймгмийн хамгаалал']
-            sampleTags.each{ label ->
-                tagList.add(new Tag(label:label).save(failOnError:true))
+            def sampleTags = ['Хөдөө аж ахуй, ан агнуур, ойн аж ахуй', 'Уул уурхай, олборлох үйлдвэр', 'Боловсруулах үйлдвэр', 'Хүнсний болон хөнгөн үйлдвэр', 'Цахилгаан, дулааны үйлдвэрлэл, үйлчилгээ', 'Усан хангамж', 'Барилга', 'Худалдаа', 'Гэр ахуйн болон авто машины засварлах үйлчилгээ', 'Зочид буудал', 'Зоогийн газар', 'Тээвэр', 'Харилцаа холбоо, мэдээллийн технологи', 'Банк, санхүүгийн үйл ажиллагаа', 'Үл хөдлөх хөрөнгө зуучлалын үйлчилгээ', 'Түрээс, бизнесийн бусад үйл ажиллагаа', 'Боловсрол, шинжлэх ухаан', 'Эрүүл мэнд, нийгмийн хамгаалал ', 'Түлш, газрын тос', 'Аялал жуулчлал']
+            sampleTags.each { label ->
+                tagList.add(new Tag(label: label).save(failOnError: true))
             }
             /*def random = new Random()
             tagList.each { tag ->
@@ -59,8 +60,9 @@ class BootStrap {
                     ticket.save(failOnError:true)
                 }
             }*/
-    	}
+        }
     }
+
     def destroy = {
     }
 }
