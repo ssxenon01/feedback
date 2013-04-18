@@ -34,7 +34,7 @@
                             </li>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i
-                                        class="icon-th icon-white"></i>  Шударга бус өрсөлдөөний улмаас  <b class="caret"></b></a>
+                                        class="icon-th icon-white"></i>  <g:message code="group.Company"/>  <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><g:link controller="ticket" action="index" params="${[type:"Competition"]}"><g:message code="objectStatus.null"/></g:link></li>
                                     <li><g:link controller="ticket" action="index" params="${[type:"Competition",objectStatus:"Closed"]}"><g:message code="objectStatus.${ObjectStatus.Closed.name()}"/></g:link></li>

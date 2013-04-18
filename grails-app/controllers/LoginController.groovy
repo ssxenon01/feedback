@@ -105,7 +105,7 @@ class LoginController {
 				   html g.render(template:"/includes/mail/registered",model:[user:user])
 				}
 			}
-			UserRole.create(user, Role.findByAuthority("ROLE_ADMIN"))
+			UserRole.create(user, Role.findByAuthority("ROLE_USER"))
 			springSecurityService.reauthenticate(params.email,params.password)
 			redirect(controller:'index',action:'index')
 		}else{

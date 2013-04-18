@@ -20,7 +20,7 @@
 
                     </p>
 
-                    <p class="copyright">© 2013 Шударга өрсөлдөөн, Хэрэглэгчийн төлөө газар.</p>
+                    <p class="copyright">© 2013 <g:message  code="site.name"/></p>
                 </div>
             </div>
         </div>

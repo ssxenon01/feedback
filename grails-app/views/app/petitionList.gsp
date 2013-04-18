@@ -57,11 +57,11 @@
                 <div class="">
                     <label class="checkbox">
                         <input type="checkbox" value="option1" name="optionsCheckboxList1">
-                        Шударга бус өрсөлдөөний улмаас
+                        <g:message code="group.Company"/>
                     </label>
                     <label class="checkbox">
                         <input type="checkbox" value="option2" name="optionsCheckboxList2">
-                        Хэрэглэгчийн эрх зөрчигдсөний улмаас
+                        <g:message code="group.Citizen"/>
                     </label>
                 </div>
 

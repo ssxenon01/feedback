@@ -52,11 +52,11 @@
                         </div>
                         <div class="doc_view_reply">
                             <div class="msg clearfix">
-                                <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
+                                <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name"><g:message code="site.name"/></span></div>
                                 <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
                             </div>
                             <div class="msg clearfix">
-                                <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
+                                <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name"><g:message code="site.name"/></span></div>
                                 <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
                             </div>
 

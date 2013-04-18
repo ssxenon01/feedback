@@ -73,17 +73,6 @@
                                 </div>
                                 </sec:ifAnyGranted>
                             </g:each>
-                            %{-- <div class="msg clearfix">
-                                <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
-                                <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
-                            </div> --}%
-
-                   
-                    %{-- <div class="msg clearfix">
-                       <div class="msg-heading"><span class="msg_date">2013/02/25 12:44</span><span class="user_name">Шударга бус өрсөлдөөнтэй тэмцэх, Хэрэглэгчийн төлөө газар</span></div>
-                       <div class="msg_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at porta odio. Sed non consectetur neque. Donec nec enim eget ligula tristique scelerisque.</div>
-                   </div> --}%
-
                     </div>
 
                 </div>
@@ -197,7 +186,7 @@
                                      </li>
                                      <li>
                                          <span class="item-key">Төрөл</span>
-                                         <div class="vcard-item">Шударга бус өрсөлдөөний улмаас</div>
+                                         <div class="vcard-item"><g:message code="group.Company"/></div>
                                      </li>
                                      <li>
                                          <span class="item-key">Хүчинтэй хугацаа</span>

@@ -70,11 +70,11 @@
                 <div class="">
                     <label class="radio">
                         <input type="radio" value="${Type.Competition.name()}" name="type" ${params.type=="Interests"?'checked=""':''}>
-                        Шударга бус өрсөлдөөний улмаас
+                        <g:message code="group.Company"/>
                     </label>
                     <label class="radio">
                         <input type="radio" value="${Type.Interests.name()}" name="type" ${params.type=="Competition"?'checked=""':''}>
-                        Хэрэглэгчийн эрх ашиг зөрчигдсөний улмаас
+                        <g:message code="group.Citizen"/>
                     </label>
                 </div>
 

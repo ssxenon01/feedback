@@ -49,7 +49,7 @@
                           <a rel="nofollow" href="http://www.afccp.gov.mn/"
                              style="text-decoration:none;color:#999;border:none;text-decoration:none;text-decoration:none;color:#5b5b5b"
                              target="_blank">
-                              - Шударга бус өрсөлдөөн, Хэрэглэгчийн төлөө газар.
+                              - <g:message  code="site.name"/>
                           </a>
                       	</span>
                     </td>
