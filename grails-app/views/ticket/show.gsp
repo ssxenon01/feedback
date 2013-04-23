@@ -18,7 +18,7 @@
             <div class="span8" style="min-height: 600px;">
                 <div class="petition-single-content">
                     <g:if test="${ticketInstance.img}">
-                        <div class="media-box"><img src="${resource(dir: 'tmp', file: ticketInstance.img)}"
+                        <div class="media-box"><img src="<g:createLink controller="file" action="index" id="${ticketInstance.img}" />"
                                                     class="rounded-corners" width="600">
                         </div>
                     </g:if>

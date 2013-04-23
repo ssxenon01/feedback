@@ -14,7 +14,7 @@ class FileService {
 		def fileExtension = file.originalFilename.substring(file.originalFilename.lastIndexOf('.') + 1)
 		if(allowed.contains(fileExtension)){
 			def fileUrl = "${fileName}.${fileExtension}"
-			file.transferTo(new File(SCH.servletContext.getRealPath("/")+'/tmp/' + fileUrl))
+			file.transferTo(new File('/opt/grails/tmp/' + fileUrl))
 			return fileUrl
 		}else{
 			return false
@@ -22,7 +22,7 @@ class FileService {
 	}
 	def boolean deleteFile(String path) {
 	    def borro = false;
-	    def file = new File(SCH.servletContext.getRealPath("/") +'/tmp/'+ path)
+	    def file = new File('/opt/grails/tmp/'+ path)
 	    if (file.exists()) {
 		    if (file.delete()) {
 		        borro=true;

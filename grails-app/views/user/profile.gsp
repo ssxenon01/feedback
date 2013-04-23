@@ -42,7 +42,7 @@
                                     <input type="hidden">
 
                                     <div style="width: 80px; height: 80px;" class="fileupload-new thumbnail"><img
-                                            src="${user.profile?resource(dir: 'tmp', file: user.profile):'http://www.placehold.it/80x80/EFEFEF/AAAAAA'}" alt=""></div>
+                                            src="${user.profile?createLink(controller: 'file', action: 'index' , id: user.profile):'http://www.placehold.it/80x80/EFEFEF/AAAAAA'}" alt=""></div>
 
                                     <div style="width: 80px; height: 80px; line-height: 80px;" class="fileupload-preview fileupload-exists thumbnail"></div>
                                     <span class="btn btn-file"><span class="fileupload-new">Select image</span><span
