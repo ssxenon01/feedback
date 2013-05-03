@@ -31,7 +31,7 @@ class Ticket implements Serializable{
 	int maxVote = 1000
 	boolean getVoted(){
 		if(springSecurityService.currentUser)
-			return voteList.contains(springSecurityService.currentUser)
+			return voteList?.id?.contains(springSecurityService.currentUser?.id)
 		else
 			return false
 	}

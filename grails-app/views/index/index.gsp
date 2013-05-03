@@ -34,7 +34,7 @@
                     <div class="span12">
                         <div class="all-count">
                             <h6><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}">Нийт <g:message code="ticket" /></g:link></h6>
-                            <h1><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}">${Statistic.last()?.total}</g:link></h1>
+                            <h1><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}">${mn.xenon.domain.Ticket.count()}</g:link></h1>
                         </div>
                     </div>
                 </div>

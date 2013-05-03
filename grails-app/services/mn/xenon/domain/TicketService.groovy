@@ -155,7 +155,7 @@ class TicketService {
     def hotTickets(params = null){
         	return Ticket.createCriteria().list(params) {
 	            'gtProperty'('maxVote','vote')
-	            'eq'('type',Type.Interests)
+//	            'eq'('type',Type.Interests)
 	            'not'{            	
 	            	'in'('objectStatus',[ObjectStatus.Deleted,ObjectStatus.Expired,ObjectStatus.Closed])
 	            }
