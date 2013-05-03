@@ -32,6 +32,8 @@
         <script src="${resource(dir: 'js', file: 'jquery-latest.js')}"></script>
     </g:if>
     <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'slimbox2.js')}"></script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'slimbox2.css')}" type="text/css" media="screen" />
     <g:layoutHead/>
 </head>
 <body style="${pageProperty(name:'body.style')}" >

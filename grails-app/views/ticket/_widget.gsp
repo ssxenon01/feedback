@@ -24,7 +24,7 @@
             <span class="stats-narrow">
                 <span class="stats">
                     <g:if test="${ticket.img}">
-                        <i class="icon-picture"></i> <a href="<g:createLink controller="file" action="index" id="${ticket.img}" />">Зураг харах</a>
+                        <i class="icon-picture"></i> <a href="<g:createLink controller="file" action="index" id="${ticket.img}" />" rel="lightbox">Зураг харах</a>
                     </g:if>
                     %{--  <span class="picture">
                        <i class="icon-picture"></i> <a href="#">Зураг харах</a>

@@ -12,7 +12,7 @@
         <p>${fieldValue(bean: ticketInstance, field: "content")}</p>
         <div class="action">
             <g:if test="${ticketInstance.img}">
-                <i class="icon-picture"></i> <a class="ticket-img" href="<g:createLink controller="file" action="index" id="${ticketInstance.img}" />">Зураг харах</a>
+                <i class="icon-picture"></i> <a class="ticket-img" rel="lightbox" href="<g:createLink controller="file" action="index" id="${ticketInstance.img}" />">Зураг харах</a>
             </g:if>
             <a href="<g:createLink controller="ticket" action="show" id="${ticketInstance.id}" />" class="more"><g:message code="readMore"/></a>
         </div>
