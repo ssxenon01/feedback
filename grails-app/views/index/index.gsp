@@ -20,7 +20,7 @@
 
                     <div class="create">
                         <a href="<g:createLink controller="ticket" action="create"/>"
-                           class="btn btn-large btn-like">Өргөдөл, Гомдол нэмэх!</a>
+                           class="btn btn-large btn-like"><g:message code="ticket.add" />!</a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <div class="step">
                         <div class="like"></div>
 
-                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><g:message code="tickets" /> харах</g:link></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><g:message code="ticket" /> харах</g:link></h3></div>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                     <div class="step">
                         <div class="add"></div>
 
-                        <div class="content"><h3><g:link controller="ticket" action="create">Өргөдөл, Гомдолууд нэмэх</g:link></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="create"><g:message code="ticket.add" /></g:link></h3></div>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                     <div class="step">
                         <div class="conclusion"></div>
 
-                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}">Шийдвэрлэгдсэн <g:message code="tickets" /></g:link></h3></div>
+                        <div class="content"><h3><g:link controller="ticket" action="index" params="${[objectStatus: "Closed"]}">Шийдвэрлэгдсэн <g:message code="ticket" /></g:link></h3></div>
                     </div>
                 </div>
             </div>

@@ -7,14 +7,14 @@
             <g:link elementId="logo" uri="/" title="Home">1284</g:link>
             <g:form controller="ticket" method="get" name="search-form">
                 <input id="search-q" name="q" type="text" maxlength="128" size="15" title="Хайх утга аа оруулна уу"
-                       placeholder="<g:message code="ticket" />ын дугаар ...">
+                       placeholder="Өргөдөл, гомдлын дугаар...">
                 <input id="search-submit" type="submit" value="Search">
             </g:form>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li>
                         <g:link controller="ticket" action="index" params="${[objectStatus: "Open"]}"><i
-                                class="icon-white icon-list"></i> <g:message code="tickets"/> </g:link>
+                                class="icon-white icon-list"></i> <g:message code="ticket"/> </g:link>
                     </li>
 
                     <li>
