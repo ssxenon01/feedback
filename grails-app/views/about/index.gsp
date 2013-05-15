@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="span12">
                         <div class="all-count">
-                            <h1><a href="#">Таны санал нийгмийг өөрчлөнө.</a></h1>
+                            <h1><a href="#">Таны санал нийгмийг өөрчилнө.</a></h1>
                         </div>
                     </div>
                 </div>
