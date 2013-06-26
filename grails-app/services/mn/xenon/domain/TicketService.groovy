@@ -23,7 +23,7 @@ class TicketService {
 			}else if(params.to){
 				'le'('dateCreated',params.to)
 			}
-			if(params.objectStatus)
+			if(params.objectStatus )
 				eq('objectStatus',params.objectStatus as ObjectStatus)
 			if(params.type)
 				eq('type',params.type as Type)
