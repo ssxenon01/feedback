@@ -12,7 +12,7 @@ beans = {
             ROLE_ADMIN  > ROLE_USER
         '''
     }
-    userDetailsService(CustomUserDetailService)
+//    userDetailsService(CustomUserDetailService)
     /*myAuthenticationProvider(EmailAuthenticationProvider){
     	springSecurityService = ref("springSecurityService")
     }*/
