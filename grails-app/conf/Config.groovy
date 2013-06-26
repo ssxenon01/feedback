@@ -66,7 +66,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://1284.mn"
+        grails.serverURL = "http://www.1284.mn"
         grails.config.locations = ['file:/var/lib/tomcat7/1284_db.properties']
     }
 }

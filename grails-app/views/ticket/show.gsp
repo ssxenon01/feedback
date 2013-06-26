@@ -90,7 +90,9 @@
                             <div class="connect-buttons clearfix">
                                 <div class="pull-left">
                                     <a href="https://twitter.com/share" class="twitter-share-button" text="${ticketInstance.title}" data-via="Ursulduun"
-                                       data-url="<g:createLink controller="ticket" action="show"
+                                        data-counturl="<g:createLink controller="ticket" action="show"
+                                                                     id="${ticketInstance.id}"
+                                                                     absolute="true"/>" data-url="<g:createLink controller="ticket" action="show"
                                                                id="${ticketInstance.id}"
                                                                absolute="true"/>"  data-lang="en">Tweet</a>
                                 </div>
