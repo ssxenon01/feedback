@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
         // compile ":jquery-ui:1.8.24"
         // compile ":famfamfam:1.0.1"
         // runtime ":resources:1.1.6"
-        // compile ":webxml:1.4.1"
+        compile ":webxml:1.4.1"
         
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
