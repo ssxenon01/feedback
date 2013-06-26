@@ -1,4 +1,5 @@
 // Place your Spring DSL code here
+
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl
 import mn.xenon.auth.CustomUserDetailService
 
@@ -11,9 +12,7 @@ beans = {
             ROLE_ADMIN  > ROLE_USER
         '''
     }
-    beans = {
-        userDetailsService(CustomUserDetailService)
-    }
+    userDetailsService(CustomUserDetailService)
     /*myAuthenticationProvider(EmailAuthenticationProvider){
     	springSecurityService = ref("springSecurityService")
     }*/

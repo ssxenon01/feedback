@@ -5,6 +5,8 @@ import mn.xenon.domain.Ticket
 import mn.xenon.domain.Tag
 import mn.xenon.domain.ObjectStatus
 import grails.converters.JSON
+import org.codehaus.groovy.grails.commons.ApplicationAttributes
+
 import java.util.Random
 
 class BootStrap {
@@ -12,6 +14,20 @@ class BootStrap {
     def tagList = []
 
     def init = { servletContext ->
+
+        def ctx=servletContext.getAttribute(
+                ApplicationAttributes.APPLICATION_CONTEXT)
+        def dataSource = ctx.dataSource.targetDataSource
+
+        dataSource.setMinEvictableIdleTimeMillis(1000 * 60 * 30)
+        dataSource.setTimeBetweenEvictionRunsMillis(1000 * 60 * 30)
+        dataSource.setNumTestsPerEvictionRun(3)
+
+        dataSource.setTestOnBorrow(true)
+        dataSource.setTestWhileIdle(false)
+        dataSource.setTestOnReturn(false)
+        dataSource.setValidationQuery("SELECT 1")
+
         javax.servlet.http.HttpServletRequest.metaClass.getSiteUrl = {
             return (delegate.scheme + "://" + delegate.serverName + ":" + delegate.serverPort + delegate.getContextPath())
         }
