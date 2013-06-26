@@ -7,8 +7,7 @@
 <html>
 <head>
     <meta name="layout" content="base">
-    <g:set var="entityName" value="${message(code: 'ticket.label', default: 'Ticket')}"/>
-    <title><g:message code="default.show.label" args="[entityName]"/></title>
+    <title>${ticketInstance.title}</title>
 </head>
 
 <body>
@@ -90,8 +89,10 @@
                         <div class="social-form">
                             <div class="connect-buttons clearfix">
                                 <div class="pull-left">
-                                    <a href="https://twitter.com/share" class="twitter-share-button"
-                                       data-lang="en">Tweet</a>
+                                    <a href="https://twitter.com/share" class="twitter-share-button" text="${ticketInstance.title}" data-via="Ursulduun"
+                                       data-url="<g:createLink controller="ticket" action="show"
+                                                               id="${ticketInstance.id}"
+                                                               absolute="true"/>"  data-lang="en">Tweet</a>
                                 </div>
 
                                 <div class="pull-left">
