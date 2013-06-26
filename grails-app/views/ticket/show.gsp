@@ -22,7 +22,7 @@
                         </div>
                     </g:if>
                     <div class="media-content">
-                        <h1 class="title">${ticketInstance.title}</h1>
+                        <h1 class="title"><span class="label label-info">№: ${ticketInstance.id}</span> ${ticketInstance.title}</h1>
 
                         <p>${ticketInstance.content}</p>
 
@@ -38,7 +38,7 @@
                                 <div class="row">
                                     <div class="span4">
                                         <h4><g:formatDate formatName="date.short"
-                                                          date="${ticketInstance.dateCreated}"/> ны дотор хураах саналын хэмжээ</h4>
+                                                          date="${org.apache.commons.lang.time.DateUtils.addYears(ticketInstance.dateCreated,1)}"/> ны дотор хураах саналын хэмжээ</h4>
 
                                         <div class="count diff-vote">${ticketInstance.maxVote - ticketInstance.vote}</div>
                                     </div>
@@ -145,7 +145,7 @@
 
                         <div class="clear"></div>
                         <sec:ifNotLoggedIn>
-                            <g:form action="${request.contextPath}/j_spring_security_check">
+                            <g:form uri="/j_spring_security_check">
                                 <fieldset>
                                     <label>User name</label>
                                     <input name="j_username" type="text" class="input-block-level"

@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta name="layout" content="base"/>
-    <title>Tickets</title>
+    <title><g:message code="tickets"/></title>
 </head>
 
 <body>

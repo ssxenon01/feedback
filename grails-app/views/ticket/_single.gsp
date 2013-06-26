@@ -8,7 +8,7 @@
             <span class="like-this"><a href="#" tID="${ticketInstance.id}" class="btn btn-small vote-action ${ticketInstance.getVoted()?"disabled":"btn-like"}"><i class="icon-thumbs-up"></i></a></span>
     </div>
     <div class="info">
-        <g:link controller="ticket" action="show" id="${ticketInstance.id}">${ticketInstance.title}</g:link>
+        <g:link controller="ticket" action="show" id="${ticketInstance.id}"> <span class="label label-info">№: ${ticketInstance.id}</span> ${ticketInstance.title}</g:link>
         <p>${fieldValue(bean: ticketInstance, field: "content")}</p>
         <div class="action">
             <g:if test="${ticketInstance.img}">

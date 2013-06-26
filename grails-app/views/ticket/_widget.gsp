@@ -2,7 +2,7 @@
     <div class="inner">
         <div class="title">
             <h4><a href="<g:createLink controller="ticket" action="show" id="${ticket.id}"/>" rel="tooltip" data-toggle="tooltip" title=""
-                   data-original-title="<g:message code="readMore"/>" data-placement="bottom">${fieldValue(bean: ticket, field: "title")}</a></h4>
+                   data-original-title="<g:message code="readMore"/>" data-placement="bottom">  <span class="label label-info">№: ${ticket.id}</span> ${fieldValue(bean: ticket, field: "title")}</a></h4>
         </div>
 
         <div class="dateline">
