@@ -6551,7 +6551,14 @@ button.close {
         top: 20px;
     }
 }
-
+@media (max-width: 300px) {
+    #search-q {
+        width: 80px !important;
+    }
+    #search-submit {
+        left: 103px !important;
+    }
+}
 @media (max-width: 480px) {
     #search-q {
         width: 160px !important;
