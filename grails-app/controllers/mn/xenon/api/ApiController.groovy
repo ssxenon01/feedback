@@ -12,7 +12,7 @@ class ApiController {
 
         params.sort = params.sort?:"dateCreated"
         params.order = params.order?:"desc"
-        params.limit = params.limit?:5
+        params.max = params.max?:5
 
         result.data = ticketService.closedList(params).collect{
             [
