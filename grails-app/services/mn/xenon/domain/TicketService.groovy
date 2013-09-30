@@ -87,7 +87,7 @@ class TicketService {
 		}
 	}
 
-	def closedList(params){
+	List<Ticket> closedList(params){
 		return Ticket.createCriteria().list(params){
 			// checking only closed tickets
 			'eq'('objectStatus',ObjectStatus.Closed)
